@@ -52,9 +52,9 @@
         "serve":"php -S localhost:8200/index.php -t public"
     },
     "config": {
-        "preferred-install": "dist",
-        "sort-packages": true,
-        "optimize-autoloader": true
+        "process-timeout": 0,
+        "secure-http": false,
+        "preferred-install": "dist"
     },
     "minimum-stability": "dev",
     "prefer-stable": true
