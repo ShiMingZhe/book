@@ -70,7 +70,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-8">
-                    <a href="{{@url('/login')}}" class="text-center btn btn-default btn-flat">登陆</a>
+                    <a href="{{@url('/login')}}" class="text-center">已是管理员去登陆</a>
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-4">

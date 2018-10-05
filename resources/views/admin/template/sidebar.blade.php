@@ -9,7 +9,7 @@
                 <img src="{{@asset("/admin-lte/dist/img/user2-160x160.jpg")}}" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p>Alexander Pierce</p>
+                <p>{{$adminName}}</p>
                 <!-- Status -->
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -32,35 +32,15 @@
             <li class="header">HEADER</li>
             <!-- Optionally, you can add icons to the links -->
             <li><a href="{{@url("/listen")}}"><i class="fa fa-book"></i> <span>听诗管理</span></a></li>
-            <li><a href="{{@url("/user/admin/index")}}"><i class="fa fa-user"></i> <span>人员管理</span></a></li>
-            <li><a href="{{@url("/task/admin/index")}}"><i class="fa fa-tasks"></i> <span>任务管理</span></a></li>
-            {{--<li class="active treeview menu-open">
-                <a href="/listen">
-                    <i class="fa fa-book"></i> <span>扫码听</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="/listen/find"><i class="fa fa-assistive-listening-systems"></i> 古诗词</a></li>
-                    <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-                </ul>
-            </li>
-
-            <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-            <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-            <li class="treeview">
-                <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
-                    <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="#">Link in level 2</a></li>
-                    <li><a href="#">Link in level 2</a></li>
-                </ul>
-            </li>
-        </ul>--}}
+            @if($roleId == '1')
+                <li><a href="{{@url("/user/admin/index")}}"><i class="fa fa-user"></i> <span>人员管理</span></a></li>
+            @endif
+            @if($roleId == '1')
+                <li><a href="{{@url("/task/admin/index")}}"><i class="fa fa-tasks"></i> <span>任务管理</span></a></li>
+            @else
+                <li><a href="{{@url("/task/admin/index")}}"><i class="fa fa-tasks"></i> <span>查看任务</span></a></li>
+            @endif
+        </ul>
         <!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

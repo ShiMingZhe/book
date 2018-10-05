@@ -21,5 +21,5 @@ class Task extends Model
 
     public $timestamps = false;
 
-    protected $fillable = ['name', 'type', 'is_pass', 'operator', 'task_id'];
+    protected $fillable = ['name', 'type', 'is_pass', 'operator_id', 'operator', 'task_id', 'describe'];
 }

@@ -25,9 +25,13 @@ class LoginController extends Controller
         $input = Input::except('_token');
         $user = Users::where('email',$input['email'])->get();
         if (!$user->isEmpty()) {
-            Session::put('user',$user);
+            if ($input['password'] == decrypt($user->first()->password)) {
+                Session::put('user',$user);
 
-            return redirect('/listen');
+                return redirect('/listen');
+            }
+
+            return redirect('/login');
         }
 
         return redirect('/login');
@@ -49,12 +53,16 @@ class LoginController extends Controller
     {
         $input = Input::except('_token');
         if (!empty($input)) {
+            if ($input['password'] != $input['retype_password']) {
+                return redirect('/register');
+            }
+            $input['password'] = encrypt($input['password']);
             $res = Users::create($input);
             if ($res) {
                 return redirect("/listen");
             }
         }
 
-        return view('/admin/register');
+        return redirect('/register');
     }
 }

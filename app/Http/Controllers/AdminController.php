@@ -29,8 +29,9 @@ class AdminController extends Controller
                     'name' => $input['title'],
                     'type' => '1',
                     'is_pass' => '0',
-                    'operator' => Session::get('user')->first()->name,
-                    'task_id' => $input['id'],
+                    'operator_id' => Session::get('user')->first()->id,
+                    'task_id' => $res->id,
+                    'describe' => '新增听词',
                 ]);
                 if ($task) {
                     return redirect("/listen");

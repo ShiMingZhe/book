@@ -2,6 +2,8 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Role;
+use App\Models\Task;
 use Closure;
 use Illuminate\Support\Facades\Session;
 
@@ -19,6 +21,31 @@ class AdminLogin
         if (!Session::exists('user')) {
             return redirect('/login');
         }
+        $user = Session::get('user');
+        $userOne = $user->first();
+        $roleId = $userOne->role_id;
+        $userId = $userOne->id;
+        $tk = 0;
+        if ($roleId == '1') {
+            $tasks = Task::where('is_pass','0')->get();
+            $tk = count($tasks);
+        } else {
+            $tasks = Task::where('operator_id', $userId)->get();
+            foreach ($tasks as $key => $task) {
+                if ($task->is_pass == '2') {
+                    $tk += 1;
+                }
+            }
+        }
+        $admin = Role::where('id', $roleId)->first();
+        $adminRole = $admin->name;
+        $adminName = $userOne->name;
+        view()->share([
+            'adminRole' => $adminRole,
+            'adminName' => $adminName,
+            'task' => $tk,
+            'roleId' => $roleId,
+        ]);
 
         return $next($request);
     }

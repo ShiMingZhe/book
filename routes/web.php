@@ -26,25 +26,32 @@ Route::get('/index', 'IndexController@index');
 
 //页面渲染
 
-Route::any('/listenAdd', 'AdminController@listenAdd');
-Route::get('/listen/editor/{poetry_id}', 'AdminController@editor');
-Route::post('/listen/update', 'AdminController@update');
 
-Route::get('/login', 'LoginController@login');
-Route::post('/login/validation', 'LoginController@validation');
-Route::get('/register', 'LoginController@register');
-Route::post('/register_save', 'LoginController@register_save');
-Route::get('/login_out', 'LoginController@login_out');
 
 Route::group(['middleware' => ['web', 'admin.login']], function () {
     Route::get('/mkadmin', 'AdminController@index');
     Route::get('/listen', 'AdminController@listen');
 });
 
-Route::get('/user/admin/index', 'UserController@index');
-Route::post('/user/admin/changeRole', 'UserController@changeRole');
+Route::group(['middleware' => ['view.dispatch']], function () {
+    Route::any('/listenAdd', 'AdminController@listenAdd');
+    Route::get('/listen/editor/{poetry_id}', 'AdminController@editor');
+    Route::post('/listen/update', 'AdminController@update');
 
-Route::get('/task/admin/index', 'TaskController@index');
+    Route::get('/login', 'LoginController@login');
+    Route::post('/login/validation', 'LoginController@validation');
+    Route::get('/register', 'LoginController@register');
+    Route::post('/register_save', 'LoginController@register_save');
+    Route::get('/login_out', 'LoginController@login_out');
+
+    Route::get('/user/admin/index', 'UserController@index');
+    Route::post('/user/admin/changeRole', 'UserController@changeRole');
+
+    Route::get('/task/admin/index', 'TaskController@index');
+    Route::get('/task/admin/pass/{id}/{task_id}/{type}', 'TaskController@taskPass');
+    Route::get('/task/admin/reject/{id}/{task_id}/{type}', 'TaskController@taskReject');
+});
+
 
 //API接口
 Route::post('/poetry/save', 'AdminApiController@save');

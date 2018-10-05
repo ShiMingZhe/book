@@ -21,19 +21,21 @@
             <tbody>
 
             @foreach($poetries as $poetry)
-                <tr>
-                    <td>{{$poetry->id}}</td>
-                    <td>{{$poetry->title}}</td>
-                    <td>{{$poetry->author}}</td>
-                    <td><pre>{{$poetry->content}}</pre></td>
-                    <td>{{$poetry->mp3_url}}</td>
-                    <td>
-                        <a href="{{@url("/listen/editor/$poetry->id")}}">
-                            <button type="button" class="btn btn-block btn-primary">编辑</button>
-                        </a>
-                        <button type="button" class="btn btn-block btn-danger">删除</button>
-                    </td>
-                </tr>
+                @if($poetry->is_available == '1')
+                    <tr>
+                        <td>{{$poetry->id}}</td>
+                        <td>{{$poetry->title}}</td>
+                        <td>{{$poetry->author}}</td>
+                        <td>{{$poetry->content}}</td>
+                        <td>{{$poetry->mp3_url}}</td>
+                        <td>
+                            <a href="{{@url("/listen/editor/$poetry->id")}}">
+                                <button type="button" class="btn btn-block btn-primary">编辑</button>
+                            </a>
+                            <button type="button" class="btn btn-block btn-danger">删除</button>
+                        </td>
+                    </tr>
+                @endif
             @endforeach
             </tbody>
         </table>
