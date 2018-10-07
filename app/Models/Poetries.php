@@ -21,6 +21,6 @@ class Poetries extends Model
 
     public $timestamps = false;
 
-    protected $fillable = ['title', 'author', 'content', 'mp3_url', 'is_available'];
+    protected $fillable = ['title', 'author', 'content', 'mp3_url', 'is_available', 'uniq_id'];
 
 }

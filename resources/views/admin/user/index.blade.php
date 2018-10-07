@@ -12,7 +12,6 @@
                 <td>姓名</td>
                 <td>性别</td>
                 <td>邮箱</td>
-                <td>密码</td>
                 <td>手机</td>
                 <td>头像</td>
                 <td>昵称</td>
@@ -26,9 +25,14 @@
                 <tr>
                     <td>{{$user->id}}</td>
                     <td>{{$user->name}}</td>
-                    <td>{{$user->sex}}</td>
+                    @if($user->sex == '0')
+                        <td>男</td>
+                    @elseif($user->sex == '1')
+                        <td>女</td>
+                    @else
+                        <td>未知</td>
+                    @endif
                     <td>{{$user->email}}</td>
-                    <td>{{$user->password}}</td>
                     <td>{{$user->phone}}</td>
                     <td>{{$user->headimgurl}}</td>
                     <td>{{$user->nickname}}</td>

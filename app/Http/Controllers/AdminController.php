@@ -57,13 +57,33 @@ class AdminController extends Controller
     {
         $input = Input::except('_token');
         if (!empty($input)) {
-            $res = Poetries::where('id',$input['id'])->update($input);
+            $res = Poetries::where('id', $input['id'])->update($input);
             if ($res) {
                 return redirect('/listen');
             }
 
             return view('admin.listenEditor',['data' => $input]);
         }
+    }
+
+    //生成唯一码
+    public function createUniqId($id)
+    {
+        $uniqId = $this->randomKeys(10);
+        $res = Poetries::where('id', $id)->update(['uniq_id' => $uniqId]);
+        if ($res) {
+            return redirect('/listen');
+        }
+    }
+
+    public function randomKeys($length)
+    {
+        $pattern = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLOMNOPQRSTUVWXYZ';
+        str_shuffle($pattern);
+        $str = substr($pattern, 16, $length);
+
+        return md5(time().$str);
+
     }
 
     public function index()

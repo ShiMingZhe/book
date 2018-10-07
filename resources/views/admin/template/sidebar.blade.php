@@ -31,7 +31,7 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">HEADER</li>
             <!-- Optionally, you can add icons to the links -->
-            <li><a href="{{@url("/listen")}}"><i class="fa fa-book"></i> <span>听诗管理</span></a></li>
+            <li><a href="{{@url("/listen")}}"><i class="fa fa-book"></i> <span>诗词管理</span></a></li>
             @if($roleId == '1')
                 <li><a href="{{@url("/user/admin/index")}}"><i class="fa fa-user"></i> <span>人员管理</span></a></li>
             @endif

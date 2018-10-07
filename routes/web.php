@@ -58,7 +58,8 @@ Route::post('/poetry/save', 'AdminApiController@save');
  * 移动端
  */
 
-Route::get('/listen/{poetry_id}', 'MobileController@listenPoetry');
+Route::get('/listen/{uniq_id}', 'MobileController@listenPoetry');
+Route::get('/listen/uniqid/{poetry_id}', 'AdminController@createUniqId');
 //测试
 Route::get('/', function () {
     echo phpinfo();

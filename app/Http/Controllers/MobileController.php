@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Poetries;
 use Illuminate\Support\Facades\DB;
 
 class MobileController
 {
-    public function listenPoetry($poetry_id)
+    public function listenPoetry($uniq_id)
     {
-        $poetry = DB::table('mv_poetry')->select('title','author','content','mp3_url')
-            ->where('id','=',$poetry_id)->first();
+        $poetry = Poetries::where('uniq_id', $uniq_id)->first();
 
         return view('mobile/index',
             [
