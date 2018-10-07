@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Users;
+use Gregwar\Captcha\CaptchaBuilder;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 
@@ -17,7 +18,9 @@ class LoginController extends Controller
 {
     public function login()
     {
-        return view('/admin/login');
+        $code = $this->captchaCode();
+
+        return view('/admin/login',['code' => $code]);
     }
 
     public function validation()
@@ -25,7 +28,7 @@ class LoginController extends Controller
         $input = Input::except('_token');
         $user = Users::where('email',$input['email'])->get();
         if (!$user->isEmpty()) {
-            if ($input['password'] == decrypt($user->first()->password)) {
+            if ($input['password'] == decrypt($user->first()->password) && $input['code'] == Session::get('code')) {
                 Session::put('user',$user);
 
                 return redirect('/listen');
@@ -46,14 +49,16 @@ class LoginController extends Controller
 
     public function register()
     {
-        return view('/admin/register');
+        $code = $this->captchaCode();
+
+        return view('/admin/register', ['code' => $code]);
     }
 
     public function register_save()
     {
         $input = Input::except('_token');
         if (!empty($input)) {
-            if ($input['password'] != $input['retype_password']) {
+            if ($input['password'] != $input['retype_password'] || $input['code'] != Session::get('code')) {
                 return redirect('/register');
             }
             $input['password'] = encrypt($input['password']);
@@ -64,5 +69,14 @@ class LoginController extends Controller
         }
 
         return redirect('/register');
+    }
+
+    public function captchaCode()
+    {
+        $builder = new CaptchaBuilder();
+        $code = $builder->build()->inline();
+        Session::put('code',$builder->getPhrase());
+
+        return $code;
     }
 }

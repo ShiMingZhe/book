@@ -68,6 +68,12 @@
                 <input type="text" class="form-control" placeholder="昵称" name="nickname">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
+            <div class="form-group has-feedback">
+                <input type="text" class="form-control" placeholder="验证码" name="code">
+                <span class="fa-calendar-check-o form-control-feedback"></span>
+
+            </div>
+            <a href="{{@url("/register")}}"><img src="{{$code}}"></a>
             <div class="row">
                 <div class="col-xs-8">
                     <a href="{{@url('/login')}}" class="text-center">已是管理员去登陆</a>

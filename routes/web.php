@@ -26,8 +26,6 @@ Route::get('/index', 'IndexController@index');
 
 //页面渲染
 
-
-
 Route::group(['middleware' => ['web', 'admin.login']], function () {
     Route::get('/mkadmin', 'AdminController@index');
     Route::get('/listen', 'AdminController@listen');
@@ -52,6 +50,7 @@ Route::group(['middleware' => ['view.dispatch']], function () {
     Route::get('/task/admin/reject/{id}/{task_id}/{type}', 'TaskController@taskReject');
 });
 
+Route::any('/captcha/code', 'LoginController@captchaCode');
 
 //API接口
 Route::post('/poetry/save', 'AdminApiController@save');

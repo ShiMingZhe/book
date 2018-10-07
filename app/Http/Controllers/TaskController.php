@@ -25,7 +25,9 @@ class TaskController extends Controller
             $tasks = Task::where('is_pass','0')->get();
             foreach ($tasks as $key => $task) {
                 $user = Users::where('id', $task->operator_id)->first();
-                $tasks[$key]->operator = $user->name;
+                if (!empty($user)) {
+                    $tasks[$key]->operator = $user->name;
+                }
             }
 
             return view('admin.task.index', ['data' => $tasks]);
