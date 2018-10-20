@@ -35,9 +35,15 @@
                                 <button type="button" class="btn btn-block btn-primary">编辑</button>
                             </a>
                             <button type="button" class="btn btn-block btn-danger">删除</button>
-                            <a href="{{@url("/listen/uniqid/$poetry->id")}}">
-                                <button type="button" class="btn btn-block btn-success">生成唯一码</button>
-                            </a>
+                            @if(empty($poetry->uniq_id))
+                                <a href="{{@url("/listen/uniqid/$poetry->id")}}">
+                                    <button type="button" class="btn btn-block btn-success">生成唯一码</button>
+                                </a>
+                            @else
+                                <a href="{{@url("/listen/uniqid/$poetry->id")}}">
+                                    <button type="button" class="btn btn-block btn-success" disabled>生成唯一码</button>
+                                </a>
+                            @endif
                         </td>
                     </tr>
                 @endif

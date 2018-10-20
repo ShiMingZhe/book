@@ -31,7 +31,7 @@ class AdminController extends Controller
                     'is_pass' => '0',
                     'operator_id' => Session::get('user')->first()->id,
                     'task_id' => $res->id,
-                    'describe' => '新增听词',
+                    'describe' => '诗词管理',
                 ]);
                 if ($task) {
                     return redirect("/listen");
@@ -83,7 +83,6 @@ class AdminController extends Controller
         $str = substr($pattern, 16, $length);
 
         return md5(time().$str);
-
     }
 
     public function index()

@@ -54,6 +54,7 @@ Route::any('/captcha/code', 'LoginController@captchaCode');
 
 //API接口
 Route::post('/poetry/save', 'AdminApiController@save');
+
 /**
  * 移动端
  */

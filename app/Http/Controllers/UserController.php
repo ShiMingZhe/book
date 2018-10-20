@@ -27,9 +27,9 @@ class UserController extends Controller
                 foreach ($users as $key => $admin) {
                     $users[$key]->role_name = $roles->get($admin->role_id-1)->name;
                 }
-
-                return view('admin.user.index', ['data' => $users]);
             }
+
+            return view('admin.user.index', ['data' => $users]);
         }
 
         return view('admin.user.permission');

@@ -20,31 +20,30 @@
             </tr>
             </thead>
             <tbody>
-
-            @foreach($data as $user)
-                <tr>
-                    <td>{{$user->id}}</td>
-                    <td>{{$user->name}}</td>
-                    @if($user->sex == '0')
-                        <td>男</td>
-                    @elseif($user->sex == '1')
-                        <td>女</td>
-                    @else
-                        <td>未知</td>
-                    @endif
-                    <td>{{$user->email}}</td>
-                    <td>{{$user->phone}}</td>
-                    <td>{{$user->headimgurl}}</td>
-                    <td>{{$user->nickname}}</td>
-                    <td>{{$user->role_name}}</td>
-                    <td>
-                        <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#modal-default">
-                            更改角色
-                        </button>
-                        <button type="button" class="btn btn-block btn-danger">删除</button>
-                    </td>
-                </tr>
-            @endforeach
+                @foreach($data as $user)
+                    <tr>
+                        <td>{{$user->id}}</td>
+                        <td>{{$user->name}}</td>
+                        @if($user->sex == '0')
+                            <td>男</td>
+                        @elseif($user->sex == '1')
+                            <td>女</td>
+                        @else
+                            <td>未知</td>
+                        @endif
+                        <td>{{$user->email}}</td>
+                        <td>{{$user->phone}}</td>
+                        <td>{{$user->headimgurl}}</td>
+                        <td>{{$user->nickname}}</td>
+                        <td>{{$user->role_name}}</td>
+                        <td>
+                            <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#modal-default">
+                                更改角色
+                            </button>
+                            <button type="button" class="btn btn-block btn-danger">删除</button>
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
@@ -57,6 +56,7 @@
                         <span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">更改角色</h4>
                 </div>
+                @isset($user)
                 <!-- radio -->
                 <form role="form" class="form-group" action="{{@url("/user/admin/changeRole")}}" method="post">
                     {{csrf_field()}}
@@ -95,6 +95,7 @@
                         <button type="submit" class="btn btn-primary">确定</button>
                     </div>
                 </form>
+                @endisset
             </div>
             <!-- /.modal-content -->
         </div>
