@@ -486,10 +486,6 @@ div.jp-video-play:hover a.jp-video-play-icon {
 	background: url("jplayer.blue.monday.video.play.png") 0 -100px no-repeat;
 }
 
-
-
-
-
 div.jp-jplayer audio,
 div.jp-jplayer {
 	width:0px;
@@ -499,10 +495,6 @@ div.jp-jplayer {
 div.jp-jplayer {
 	background-color: #000000;
 }
-
-
-
-
 
 /* @group TOGGLES */
 

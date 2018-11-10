@@ -1,4 +1,5 @@
 (function (root, factory) {
+	"use strict";
 	if (typeof define === 'function' && define.amd) {
 		// AMD. Register as an anonymous module.
 		define(['jquery'], factory);
@@ -7,12 +8,12 @@
 		factory(root.jQuery);
 	}
 }(this, function ($, undefined) {
-
+	"use strict";
 	// Adapted from jquery.ui.widget.js (1.8.7): $.widget.bridge
 	$.fn.jPlayer = function( options ) {
 		var name = "jPlayer";
 		var isMethodCall = typeof options === "string",
-			args = Array.prototype.slice.call( arguments, 1 ),
+			args = Array.prototype.slice.call( arguments, 1 ),//把对象转换为数组
 			returnValue = this;
 
 		// allow multiple hashes to be passed on init
@@ -118,7 +119,7 @@
 
 	$.jPlayer.htmlEvent = [ // These HTML events are bubbled through to the jPlayer event, without any internal action.
 		"loadstart",
-		// "progress", // jPlayer uses internally before bubbling.
+		//"progress", // jPlayer uses internally before bubbling.
 		// "suspend", // jPlayer uses internally before bubbling.
 		"abort",
 		// "error", // jPlayer uses internally before bubbling.

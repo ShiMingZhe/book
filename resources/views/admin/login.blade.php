@@ -48,7 +48,8 @@
                 <span class="fa-calendar-check-o form-control-feedback"></span>
 
             </div>
-            <a href="{{@url("/login")}}"><img src="{{$code}}"></a>
+            <img id="code" src="{{$code}}" onclick="changeCode()">
+            {{--<a href="{{@url("/login")}}"><img src="{{$code}}"></a>--}}
             <div class="row">
                 <div class="col-xs-8">
                     <div class="checkbox icheck">
@@ -90,6 +91,13 @@
         });
 
     });
+    function changeCode() {
+        var data = $.ajax({
+            url:'/captcha_code',
+            async:false
+        });
+        $("#code").attr("src", data.responseText);
+    }
 </script>
 </body>
 </html>

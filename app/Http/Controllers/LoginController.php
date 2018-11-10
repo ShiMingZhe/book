@@ -16,13 +16,21 @@ use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
+    /**
+     * 登录页面
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function login()
     {
         $code = $this->captchaCode();
 
-        return view('/admin/login',['code' => $code]);
+        return view('admin.login',['code' => $code]);
     }
 
+    /**
+     * 登录校验
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function validation()
     {
         $input = Input::except('_token');
@@ -40,6 +48,10 @@ class LoginController extends Controller
         return redirect('/login');
     }
 
+    /**
+     *  退出登录
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function login_out()
     {
         Session::flush();
@@ -47,6 +59,10 @@ class LoginController extends Controller
         return redirect('/login');
     }
 
+    /**
+     * 注册页面
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function register()
     {
         $code = $this->captchaCode();
@@ -54,6 +70,10 @@ class LoginController extends Controller
         return view('/admin/register', ['code' => $code]);
     }
 
+    /**
+     * 保存注册信息
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function register_save()
     {
         $input = Input::except('_token');
@@ -71,6 +91,10 @@ class LoginController extends Controller
         return redirect('/register');
     }
 
+    /**
+     * 验证码
+     * @return string
+     */
     public function captchaCode()
     {
         $builder = new CaptchaBuilder();

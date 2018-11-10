@@ -73,7 +73,7 @@
                 <span class="fa-calendar-check-o form-control-feedback"></span>
 
             </div>
-            <a href="{{@url("/register")}}"><img src="{{$code}}"></a>
+            <img id="code" src="{{$code}}" onclick="changeCode()">
             <div class="row">
                 <div class="col-xs-8">
                     <a href="{{@url('/login')}}" class="text-center">已是管理员去登陆</a>
@@ -85,8 +85,6 @@
                 <!-- /.col -->
             </div>
         </form>
-
-
     </div>
     <!-- /.form-box -->
 </div>
@@ -111,6 +109,14 @@
             increaseArea: '20%' /* optional */
         });
     });
+    //验证码
+    function changeCode() {
+        var data = $.ajax({
+            url:'/captcha_code',
+            async:false
+        });
+        $("#code").attr("src", data.responseText);
+    }
 </script>
 </body>
 </html>

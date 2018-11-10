@@ -37,6 +37,7 @@ Route::group(['middleware' => ['view.dispatch']], function () {
     Route::post('/listen/update', 'AdminController@update');
 
     Route::get('/login', 'LoginController@login');
+    Route::get('/captcha_code', 'LoginController@captchaCode');
     Route::post('/login/validation', 'LoginController@validation');
     Route::get('/register', 'LoginController@register');
     Route::post('/register_save', 'LoginController@register_save');
@@ -59,8 +60,22 @@ Route::post('/poetry/save', 'AdminApiController@save');
  * 移动端
  */
 
-Route::get('/listen/{uniq_id}', 'MobileController@listenPoetry');
-Route::get('/listen/uniqid/{poetry_id}', 'AdminController@createUniqId');
+//Route::get('/play/{uniq_id}', 'MobileController@listenPoetry');
+//Route::get('/listen/{uniq_id}', 'MobileController@play');
+//Route::get('/play/{uniq_id}', 'MobileController@listenPo');
+//Route::get('/listen/uniqid/{poetry_id}', 'AdminController@createUniqId');
+
+/**
+ * webapp
+ */
+
+Route::get('/web', 'WebAppController@index');
+Route::get('/home','WebAppController@home');
+Route::get('/addressbook','WebAppController@addressbook');
+Route::get('/group','WebAppController@group');
+Route::get('/setting','WebAppController@setting');
+
+
 //测试
 Route::get('/', function () {
     echo phpinfo();
