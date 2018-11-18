@@ -1,20 +1,23 @@
 <template>
     <div class="audio-box">
+        <div id="lrc_content"></div>
         <div class="audio-container">
             <div class="audio-view">
-                <audio src="http://www.mukeen.com/yangcong.mp3" ref="audio"></audio>
-                <div class="audio-cover" ></div>
+                <audio src="http://www.mukeen.com/yangcong.mp3" ref="audio" @timeupdate="updateTime"></audio>
+                <!--<div class="audio-cover" ></div>-->
                 <div class="audio-body">
-                    <h3 class="audio-title">未知歌曲</h3>
+                    <div class="audio-title">未知歌曲</div>
                     <div class="audio-backs">
-                        <div class="audio-this-time">00:00</div>
-                        <div class="audio-count-time">00:00</div>
-                        <div class="audio-setbacks">
+                        <div class="audio-setbacks" @click="setProgress">
                             <i class="audio-this-setbacks">
                                 <span class="audio-backs-btn"></span>
                             </i>
                             <span class="audio-cache-setbacks">
 							</span>
+                        </div>
+                        <div class="audio-time">
+                            <div class="audio-this-time">{{currentTime}}</div>
+                            <div class="audio-count-time">{{duration}}</div>
                         </div>
                     </div>
                 </div>
@@ -28,18 +31,10 @@
                         <div class="audio-volume" @click="showVolume"></div>
                     </div>
                     <div class="audio-set-volume">
-                        <div class="volume-box">
+                        <div class="volume-box" @click="set_voluem">
                             <i><span></span></i>
                         </div>
                     </div>
-                    <!--<div class="audio-list">
-                        <div class="audio-list-head">
-                            <p>歌单</p>
-                            <span class="menu-close">关闭</span>
-                        </div>
-                        <ul class="audio-inline">
-                        </ul>
-                    </div>-->
                 </div>
             </div>
         </div>
@@ -60,13 +55,26 @@
             return {
                 isPlay:true,
                 isStop:false,
+                currentTime:"00:00",
+                duration:"00:00",
+                lrc_index:[],
+                lrc_content:[],
+                lrc_tmp:''
             }
         },
         async mounted () {
-            //异步加载，先加载出player再使用
-            /*await this.init();*/
-            /*let aplayer = this.$refs.player.control;
-            aplayer.play();*/
+            let content = this.setLrc();
+            let html = '';
+            let lrc_index = [];
+            let lrc_content = [];
+            content.forEach(function (val, index) {
+                html += "<p>"+val+"</p>";
+                lrc_index.push(index);
+                lrc_content[index] = val;
+            });
+            this.lrc_index = lrc_index;
+            this.lrc_content = lrc_content;
+            $("#lrc_content").html(html);
         },
         methods: {
             audioPlay() {
@@ -79,103 +87,109 @@
                     this.isPlay = true;
                     this.isStop = false;
                 }
-
             },
-            setVolume() {
-                this.$refs.audio.volume = volume.value;
+            set_voluem(event) {
+                let v_height = $(".volume-box").height();
+                let v_layerY = event.layerY;
+                let V_totalHeight = v_height - v_layerY;
+                $(".volume-box i").height(V_totalHeight);
+                this.$refs.audio.volume = V_totalHeight / v_height;
+            },
+            updateTime (event) {
+                let interval = event.target.currentTime | 0;
+                let interDuration = event.target.duration;
+                this.duration = (interDuration / 60 | 0) + ':' + (interDuration % 60 | 0);
+                let munite = interval / 60 | 0;
+                let secend = interval % 60;
+                if (secend < 60) {
+                    munite = '0'+munite;
+                }
+                if (secend < 10) {
+                    secend = '0'+secend;
+                }
+                this.currentTime = munite+':'+secend;
+                $(".audio-this-setbacks").width((interval / interDuration) * 100 + '%');
+                let content = this.setLrc();
+                let lrc_content = this.lrc_content;
+                if (content[interval] && this.lrc_tmp !== interval) {
+                    let html = this.updateLrc(interval,lrc_content,'#fff');
+                    $("#lrc_content").html(html);
+                    this.lrc_tmp = this.lrc_index.shift();
+                    let prev_all = $("#currentPosition").prevAll();
+                    prev_all.remove();
+                }
+            },
+            setProgress(event) {
+                let len = $(".audio-setbacks").width();
+                let layer_x = event.layerX;
+                let duration = this.$refs.audio.duration;
+                this.$refs.audio.currentTime = (layer_x / len) * duration;
+            },
+            setLrc() {
+                let content = '[00:03.00]洋葱\n' +
+                    '[00:06.00]演唱：平安\n' +
+                    '[00:11.38]如果你眼神能够为我片刻的降临\n' +
+                    '[00:21.23]如果你能听到心碎的声音\n' +
+                    '[00:28.88]盘底的洋葱像我永远是配角戏\n' +
+                    '[00:35.74]偷偷的看着你偷偷的隐藏着自己\n' +
+                    '[00:44.90]如果你愿意一层一层\n' +
+                    '[00:48.46]一层的剥开我的心\n' +
+                    '[00:52.66]你会发现你会讶异\n' +
+                    '[00:56.40]你是我最压抑最深处的秘密\n' +
+                    '[01:00.26]如果你愿意一层一层\n' +
+                    '[01:03.69]一层的剥开我的心\n' +
+                    '[01:07.76]你会鼻酸你会流泪\n' +
+                    '[01:11.60]只要你能听到我看到我的全心全意\n' +
+                    '[01:19.11]如果你愿意一层一层\n' +
+                    '[01:22.57]一层的剥开我的心\n' +
+                    '[01:26.66]你会发现你会讶异\n' +
+                    '[01:30.41]你是我最压抑最深处的秘密\n' +
+                    '[01:34.48]如果你愿意一层一层\n' +
+                    '[01:37.58]一层的剥开我的心\n' +
+                    '[01:41.51]你会鼻酸你会流泪\n' +
+                    '[01:45.15]只要你能听到我看到我的全心全意\n' +
+                    '[01:55.65]你会鼻酸你会流泪\n' +
+                    '[01:59.84]只要你能听到我看到我的全心全意';
+                let tmp = content.split("[");
+                let html = [];
+                for (let i = 0;i < tmp.length; i++) {
+                    let line_arr = tmp[i].split(']');
+                    if (line_arr) {
+                        let text = line_arr[1];
+                        let time = line_arr[0];
+                        let tmp_dot = time.split('.');
+                        let ms = tmp_dot[1];/*毫秒*/
+                        let tmp_second = tmp_dot[0].split(':');
+                        let m = tmp_second[0];/*分*/
+                        let s = tmp_second[1];/*秒*/
+                        let total_time = parseInt(m * 60) + parseInt(s);
+                        if (text) {
+                            html[total_time] = text;
+                        }
+                    }
+                }
+
+                return html;
+            },
+            updateLrc(currentTime,content,color) {
+                let html = '';
+                content.forEach(function (val,index) {
+                    if (index == currentTime) {
+                        html += "<p id='currentPosition' style='color:"+color+";font-size: 23px;'>"+ val +"</p>";
+                    }
+                    html += "<p>"+ val + "</p>";
+                });
+
+                return html;
             },
             showVolume() {
-
+                $(".audio-set-volume").toggle();
             }
         }
     }
-
-    /*var audio = document.getElementById("demo");
-    var pastime = document.getElementById("pastime");*/
-
-    /*var audio = $('audio')[0];
-    // 点击播放/暂停图片时，控制音乐的播放与暂停
-    $('#audioPlayer').click(function () {
-        if (audio.paused) {
-            // 开始播放当前点击的音频
-            audio.play();
-            $('#audioPlayer').attr('src', './image/pause.png');
-        } else {
-            audio.pause();
-            $('#audioPlayer').attr('src', './image/play.png');
-        }
-    });
-
-    // 监听音频播放时间并更新进度条
-    audio.addEventListener('timeupdate', function () {
-        updateProgress(audio);
-    }, false);
-
-    /!**
-     * 更新进度条与当前播放时间
-     * @param {object} audio - audio对象
-     *!/
-    function updateProgress(audio) {
-        var value = audio.currentTime / audio.duration;
-        $('#progressBar').css('width', value * 100 + '%');
-        $('#progressDot').css('left', value * 100 + '%');
-        $('#audioCurTime').html(transTime(audio.currentTime));
-    }
-
-    /!**
-     * 音频播放时间换算
-     * @param {number} value - 音频当前播放时间，单位秒
-     *!/
-    function transTime(value) {
-        var time = "";
-        var h = parseInt(value / 3600);
-        value %= 3600;
-        var m = parseInt(value / 60);
-        var s = parseInt(value % 60);
-        if (h > 0) {
-            time = formatTime(h + ":" + m + ":" + s);
-        } else {
-            time = formatTime(m + ":" + s);
-        }
-
-        return time;
-    }
-
-    /!**
-     * 格式化时间显示，补零对齐
-     * eg：2:4  -->  02:04
-     * @param {string} value - 形如 h:m:s 的字符串
-     *!/
-    function formatTime(value) {
-        var time = "";
-        var s = value.split(':');
-        var i = 0;
-        for (; i < s.length - 1; i++) {
-            time += s[i].length == 1 ? ("0" + s[i]) : s[i];
-            time += ":";
-        }
-        time += s[i].length == 1 ? ("0" + s[i]) : s[i];
-
-        return time;
-    }
-
-    // 监听播放完成事件
-    audio.addEventListener('ended', function () {
-        audioEnded();
-    }, false);
-
-    /!**
-     * 播放完成时把进度调回开始的位置
-     *!/
-    function audioEnded() {
-        $('#progressBar').css('width', 0);
-        $('#progressDot').css('left', 0);
-        $('#audioPlayer').attr('src', 'image/play.png');
-    }*/
 </script>
 
 <style scoped>
-    @charset "utf-8";
     *{
         margin: 0;
         padding: 0;
@@ -186,80 +200,80 @@
     ul li{
         list-style-type: none;
     }
+    #lrc_content {
+        width: 100%;
+        height: 50%;
+        text-align: center;
+        overflow: hidden;
+        padding-top: 100px;
+        font-size: larger;
+        color: #fff;
+    }
     .audio-box{
         width: 100%;
+        height: 100%;
         left: 0;
-        background-color: #000;
-        background-color: rgba(0,0,0,1);
+        /*background-color: #f0ad4e;*/
+        position: relative;
+        background-color: rgba(240, 173, 78,1);
         color: #fff;
     }
     .audio-container{
-        width: 1000px;
-        margin: auto;
+        width: 100%;
+        position: absolute;
+        bottom: 50px;
+        background-color: #f0ad4e;
     }
     .audio-view{
-        position: relative;
-        padding-left: 100px;
-        padding-right: 180px;
+        width: 100%;
         height: 100px;
-    }
-    .audio-cover{
-        width: 100px;
-        height: 100px;
-        overflow: hidden;
-        position: absolute;
-        left: 0;
-        top: 0;
-        background-size: auto 100%;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-color: #000;
-    }
-    .audio-cover img{
-        display: block;
-        height: 100%;
-        margin: auto;
     }
     .audio-body{
-        padding: 0 10px;
+        width: 80%;
+        height: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+        float: left;
     }
     .audio-title{
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 40px;
-        overflow: hidden;
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
     }
     .audio-backs{
-        position: relative;
-        padding-left: 60px;
-        padding-right: 60px;
-        margin-top: 10px;
-        height: 20px;
+        width: 100%;
+        height: 70px;
+    }
+    .audio-time {
+        width: 100%;
+        height: 30px;
+        margin-top: 20px;
+        float: left;
     }
     .audio-this-time,
     .audio-count-time{
-        position: absolute;
-        top: 0;
-        width: 60px;
-        font-size: 16px;
-        height: 20px;
-        line-height: 20px;
+        width: 20%;
+
     }
     .audio-this-time{
+        float: left;
         left: 0;
     }
     .audio-count-time{
+        float: right;
         right: 0;
         text-align: right;
     }
     .audio-setbacks{
+        float: left;
+        width: 100%;
         height: 6px;
         border-radius: 3px;
         background-color: #333;
     }
     .audio-setbacks{
         position: relative;
-        top: 50%;
+        top: 10%;
     }
     .audio-cache-setbacks,
     .audio-this-setbacks{
@@ -275,7 +289,8 @@
         cursor: pointer;
     }
     .audio-this-setbacks{
-        background-color: #c70c0c;
+        background-color: #80ff9d;
+        width: 0px;
         z-index: 2;
     }
     .audio-backs-btn{
@@ -290,17 +305,15 @@
         cursor: pointer;
     }
     .audio-btn{
-        position: absolute;
-        width: 150px;
+        float: right;
+        width: 20%;
         height: 100px;
-        right: 0;
-        top: 0;
+        line-height: 100px;
     }
     .audio-select{
         height: 20px;
-        margin-top: 50px;
-        width: 150px;
-        float: right;
+        margin-top: 30px;
+        width: 100%;
     }
     .audio-select > div{
         width: 20px;
@@ -332,73 +345,18 @@
     .audio-volume{
         background-image: url('../../../../public/webapp/images/volume.png');
     }
-    .audio-list{
-        position: absolute;
-        right: 0;
-        color: #000;
-        background-color: #fff;
-        bottom: 100px;
-        border: 1px solid #ccc;
-        width: 240px;
-        border-radius: 5px;
-        padding-top: 10px;
-        display: none;
-    }
-    .audio-list-head{
-        position: relative;
-        padding-bottom: 10px;
-    }
-    .audio-list-head p{
-        padding-left: 8px;
-        font-size: 18px;
-    }
-    .audio-list-head span{
-        position: absolute;
-        right: 8px;
-        top: 0;
-        font-size: 12px;
-        display: block;
-        width: 35px;
-        line-height: 25px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-        text-align: center;
-        cursor: pointer;
-    }
-    .audio-inline{
-        height: 165px;
-        overflow-y: scroll;
-    }
-    .audio-inline li{
-        font-size: 16px;
-        line-height: 2;
-        padding-left: 8px;
-        padding-right: 8px;
-        border-top: 1px solid #ccc;
-    }
-    .audio-inline a{
-        font-size: inherit;
-        color: inherit;
-        text-decoration: none;
-        height: 32px;
-        overflow: hidden;
-        display: block;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-    .menu-show,
-    .audio-show-volume{
-        display: block !important;
-    }
-    .audio-set-volume{
-        background-color: #000;
+
+    .audio-set-volume {
+        background-color: #d3d6d6;
         background-color: rgba(0,0,0,0.5);
         position: absolute;
-        bottom: 100px;
+        bottom: 68px;
         width: 30px;
         height: 120px;
-        right: 5px;
         z-index: 999;
+        display:block;
+        margin-left: 23px;
+        float: left;
         display: none;
     }
     .volume-box{

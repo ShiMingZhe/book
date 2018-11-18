@@ -6,7 +6,6 @@
     <title>木客网</title>
     <link rel="stylesheet" type="text/css" href="{{@asset("/css/app.css")}}">
     <link rel="stylesheet" type="text/css" href="{{@asset("/webapp/css/app.css")}}">
-    <link href="{{@asset("/mobile/player/css/player.css")}}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
     <div id="app">
@@ -21,8 +20,8 @@
             <router-view></router-view>
         </div>
         <footer class="nav">
-            <router-link class="nav-item" to="/listen">听诗词</router-link>
-            <router-link class="nav-item" to="/index1">资料库</router-link>
+            <router-link class="nav-item" to="/listen">听一听</router-link>
+            <router-link class="nav-item" to="/library">看一看</router-link>
         </footer>
     </div>
     <script type="text/javascript" src="{{@asset("js/app.js")}}"></script>

@@ -40,6 +40,7 @@
             @else
                 <li><a href="{{@url("/task/admin/index")}}"><i class="fa fa-tasks"></i> <span>查看任务</span></a></li>
             @endif
+            <li><a href="{{@url("/listen")}}"><i class="fa fa-bookmark-o"></i> <span>资料库</span></a></li>
         </ul>
         <!-- /.sidebar-menu -->
     </section>
