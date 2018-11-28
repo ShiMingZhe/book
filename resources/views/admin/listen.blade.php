@@ -16,6 +16,7 @@
                 <td>内容</td>
                 <td>MP3地址</td>
                 <td>唯一码</td>
+                <td>二维码</td>
                 <td>操作</td>
             </tr>
             </thead>
@@ -31,6 +32,13 @@
                         <td>{{$poetry->mp3_url}}</td>
                         <td>{{$poetry->uniq_id}}</td>
                         <td>
+                            @if(empty(@asset("qrcode/".$poetry->uniq_id.".png")))
+                                <h3>暂无图片</h3>
+                            @else
+                                <img width="60px" height="60px" src="{{@asset("qrcode/".$poetry->uniq_id.".png")}}">
+                            @endif
+                        </td>
+                        <td>
                             <a href="{{@url("/listen/editor/$poetry->id")}}">
                                 <button type="button" class="btn btn-block btn-primary">编辑</button>
                             </a>
@@ -39,9 +47,19 @@
                                 <a href="{{@url("/listen/uniqid/$poetry->id")}}">
                                     <button type="button" class="btn btn-block btn-success">生成唯一码</button>
                                 </a>
+
                             @else
                                 <a href="{{@url("/listen/uniqid/$poetry->id")}}">
                                     <button type="button" class="btn btn-block btn-success" disabled>生成唯一码</button>
+                                </a>
+                            @endif
+                            @if(empty(@asset("qrcode/".$poetry->uniq_id.".png")))
+                                <a href="{{@url("/createQr/$poetry->uniq_id")}}">
+                                    <button type="button" class="btn btn-block btn-default">生成二维码</button>
+                                </a>
+                            @else
+                                <a href="{{@url("/createQr/$poetry->uniq_id")}}">
+                                    <button type="button" class="btn btn-block btn-default" disabled>生成二维码</button>
                                 </a>
                             @endif
                         </td>

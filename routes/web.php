@@ -10,9 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
-use App\Models\Poetries;
 
 /**
  * 官网
@@ -24,12 +22,12 @@ Route::get('/index', 'IndexController@index');
  * 管理后台
  */
 
-//页面渲染
-
 Route::group(['middleware' => ['web', 'admin.login']], function () {
     Route::get('/mkadmin', 'AdminController@index');
     Route::get('/listen', 'AdminController@listen');
 });
+
+Route::get('/createQr/{uniqId}', 'AdminController@createQr');
 
 Route::group(['middleware' => ['view.dispatch']], function () {
     Route::any('/listenAdd', 'AdminController@listenAdd');
@@ -57,32 +55,13 @@ Route::any('/captcha/code', 'LoginController@captchaCode');
 Route::post('/poetry/save', 'AdminApiController@save');
 
 /**
- * 移动端
+ * 移动端API接口
  */
-
-//Route::get('/play/{uniq_id}', 'MobileController@listenPoetry');
-//Route::get('/listen/{uniq_id}', 'MobileController@play');
-//Route::get('/play/{uniq_id}', 'MobileController@listenPo');
-//Route::get('/listen/uniqid/{poetry_id}', 'AdminController@createUniqId');
+Route::get('/findPoetryContent/{uniq_id}','Mobile\MobileApiController@getPoetryContent');
 
 /**
  * webapp
  */
 
-Route::get('/web', 'WebAppController@index');
-Route::get('/home','WebAppController@home');
-Route::get('/addressbook','WebAppController@addressbook');
-Route::get('/group','WebAppController@group');
-Route::get('/setting','WebAppController@setting');
-
-
-//测试
-Route::get('/', function () {
-    echo phpinfo();
-    //return view('welcome');
-});
-
-Route::get('/database', function () {
-    $book = Poetries::all();
-    dd($book);
-});
+Route::get('/qr/{uniq_id}', 'WebAppController@index');
+Route::get('/library', 'WebAppController@library');

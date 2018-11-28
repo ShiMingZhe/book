@@ -1,5 +1,5 @@
 <template>
-    
+   <h1>资料库</h1>
 </template>
 
 <script>

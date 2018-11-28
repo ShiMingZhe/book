@@ -6,7 +6,7 @@
                 <audio src="http://www.mukeen.com/yangcong.mp3" ref="audio" @timeupdate="updateTime"></audio>
                 <!--<div class="audio-cover" ></div>-->
                 <div class="audio-body">
-                    <div class="audio-title">未知歌曲</div>
+                    <div class="audio-title">{{poetry_content.title}}</div>
                     <div class="audio-backs">
                         <div class="audio-setbacks" @click="setProgress">
                             <i class="audio-this-setbacks">
@@ -59,22 +59,29 @@
                 duration:"00:00",
                 lrc_index:[],
                 lrc_content:[],
-                lrc_tmp:''
+                lrc_tmp:'',
+                poetry_content:''
             }
         },
-        async mounted () {
-            let content = this.setLrc();
-            let html = '';
-            let lrc_index = [];
-            let lrc_content = [];
-            content.forEach(function (val, index) {
-                html += "<p>"+val+"</p>";
-                lrc_index.push(index);
-                lrc_content[index] = val;
+        async mounted () {/*36b53bc405f81442ded755027b43c676*/
+            let uniqId = this.$route.params.uniqId;
+            this.$http.get('/findPoetryContent/'+uniqId).then(response => {
+                this.poetry_content = response.body;
+                let content = this.setLrc();
+                let html = '';
+                let lrc_index = [];
+                let lrc_content = [];
+                content.forEach(function (val, index) {
+                    html += "<p>"+val+"</p>";
+                    lrc_index.push(index);
+                    lrc_content[index] = val;
+                });
+                this.lrc_index = lrc_index;
+                this.lrc_content = lrc_content;
+                $("#lrc_content").html(html);
+            }, response => {
+                console.log('error');
             });
-            this.lrc_index = lrc_index;
-            this.lrc_content = lrc_content;
-            $("#lrc_content").html(html);
         },
         methods: {
             audioPlay() {
@@ -126,30 +133,8 @@
                 this.$refs.audio.currentTime = (layer_x / len) * duration;
             },
             setLrc() {
-                let content = '[00:03.00]洋葱\n' +
-                    '[00:06.00]演唱：平安\n' +
-                    '[00:11.38]如果你眼神能够为我片刻的降临\n' +
-                    '[00:21.23]如果你能听到心碎的声音\n' +
-                    '[00:28.88]盘底的洋葱像我永远是配角戏\n' +
-                    '[00:35.74]偷偷的看着你偷偷的隐藏着自己\n' +
-                    '[00:44.90]如果你愿意一层一层\n' +
-                    '[00:48.46]一层的剥开我的心\n' +
-                    '[00:52.66]你会发现你会讶异\n' +
-                    '[00:56.40]你是我最压抑最深处的秘密\n' +
-                    '[01:00.26]如果你愿意一层一层\n' +
-                    '[01:03.69]一层的剥开我的心\n' +
-                    '[01:07.76]你会鼻酸你会流泪\n' +
-                    '[01:11.60]只要你能听到我看到我的全心全意\n' +
-                    '[01:19.11]如果你愿意一层一层\n' +
-                    '[01:22.57]一层的剥开我的心\n' +
-                    '[01:26.66]你会发现你会讶异\n' +
-                    '[01:30.41]你是我最压抑最深处的秘密\n' +
-                    '[01:34.48]如果你愿意一层一层\n' +
-                    '[01:37.58]一层的剥开我的心\n' +
-                    '[01:41.51]你会鼻酸你会流泪\n' +
-                    '[01:45.15]只要你能听到我看到我的全心全意\n' +
-                    '[01:55.65]你会鼻酸你会流泪\n' +
-                    '[01:59.84]只要你能听到我看到我的全心全意';
+                let contentObj = this.poetry_content;
+                let content = contentObj.content;
                 let tmp = content.split("[");
                 let html = [];
                 for (let i = 0;i < tmp.length; i++) {

@@ -20,7 +20,7 @@
             <router-view></router-view>
         </div>
         <footer class="nav">
-            <router-link class="nav-item" to="/listen">听一听</router-link>
+            <router-link class="nav-item" to="/qr/{{$uniqId}}">听一听</router-link>
             <router-link class="nav-item" to="/library">看一看</router-link>
         </footer>
     </div>

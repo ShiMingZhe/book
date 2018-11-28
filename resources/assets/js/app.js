@@ -10,12 +10,15 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import VueRouter from 'vue-router';
+import VueResource from 'vue-resource';
 Vue.use(VueRouter);
+Vue.use(VueResource);
 import store from './store/';//vuex 数据存储所需对象
 import routes from './routes';//路由配置文件
 //实例化路由
 const router = new VueRouter({
-    routes
+    mode:'history',
+    routes:routes
 });
 var vm = new Vue({
     store,
@@ -26,9 +29,3 @@ var vm = new Vue({
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
-/*Vue.component('example-component', require('./components/ExampleComponent.vue'));
-
-const app = new Vue({
-    el: '#app'
-});*/

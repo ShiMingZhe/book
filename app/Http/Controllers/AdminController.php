@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Poetries;
 use App\Models\Task;
+use Endroid\QrCode\QrCode;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 
@@ -14,6 +15,12 @@ class AdminController extends Controller
     public function listen()
     {
         $poetries = Poetries::all();
+        foreach ($poetries as $k => $v) {
+            if ($v['uniq_id']) {
+                //$this->createQr(url('/qrcode/'.$v['uniq_id']));
+                $poetries[$k]['qr_url'] = url('public/qrcode/'.$v['uniq_id'].'.png');
+            }
+        }
 
         return view('admin/listen', ['poetries' => $poetries]);
     }
@@ -88,5 +95,14 @@ class AdminController extends Controller
     public function index()
     {
         return view('admin/index');
+    }
+
+    //生成二维码
+    protected function createQr($uniqId)
+    {
+        $internalUrl = url('/qr/'.$uniqId);
+        $qrCode = new QrCode($internalUrl);
+        $qrCode->setSize(300);
+        $qrCode->writeFile(__DIR__ . '/../../../public/qrcode/' .$uniqId.'.png');
     }
 }
