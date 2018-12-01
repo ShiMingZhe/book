@@ -25,7 +25,7 @@ class MobileApiController extends Controller
     //看一看
     public function haveALook($offset)
     {
-        $poetries = Poetries::offset($offset)->limit(10)->get();
+        $poetries = Poetries::where('is_available', 1)->offset($offset)->limit(10)->get();
 
         return $poetries;
     }

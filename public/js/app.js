@@ -54850,7 +54850,7 @@ var render = function() {
     { ref: "poetry_content", attrs: { id: "container" } },
     [
       _vm._l(_vm.contents, function(content) {
-        return content.is_available == 0 && _vm.is_list
+        return content.is_available == 1 && _vm.is_list
           ? _c(
               "div",
               {

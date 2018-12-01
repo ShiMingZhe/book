@@ -1,6 +1,6 @@
 <template>
    <div id="container" ref="poetry_content">
-      <div v-for="content in contents" v-if="content.is_available == 0 && is_list" id="item" @click="goTo(content.detail)">
+      <div v-for="content in contents" v-if="content.is_available == 1 && is_list" id="item" @click="goTo(content.detail)">
          <div id="content_left">
             <div id="introduce_top">
                <span id="title">{{ content.title }}</span>
