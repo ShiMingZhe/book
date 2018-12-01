@@ -13,7 +13,9 @@
                 <td>id</td>
                 <td>标题</td>
                 <td>作者</td>
-                <td>内容</td>
+                <td>一句话简介</td>
+                <td>音频词内容</td>
+                <td>详情</td>
                 <td>MP3地址</td>
                 <td>唯一码</td>
                 <td>二维码</td>
@@ -28,13 +30,13 @@
                         <td>{{$poetry->id}}</td>
                         <td>{{$poetry->title}}</td>
                         <td>{{$poetry->author}}</td>
+                        <td>{{$poetry->short_introduce}}</td>
                         <td>{{$poetry->content}}</td>
+                        <td>{{$poetry->detail}}</td>
                         <td>{{$poetry->mp3_url}}</td>
                         <td>{{$poetry->uniq_id}}</td>
                         <td>
-                            @if(empty(@asset("qrcode/".$poetry->uniq_id.".png")))
-                                <h3>暂无图片</h3>
-                            @else
+                            @if($poetry->qr_url)
                                 <img width="60px" height="60px" src="{{@asset("qrcode/".$poetry->uniq_id.".png")}}">
                             @endif
                         </td>
@@ -53,7 +55,7 @@
                                     <button type="button" class="btn btn-block btn-success" disabled>生成唯一码</button>
                                 </a>
                             @endif
-                            @if(empty(@asset("qrcode/".$poetry->uniq_id.".png")))
+                            @if(!$poetry->qr_url)
                                 <a href="{{@url("/createQr/$poetry->uniq_id")}}">
                                     <button type="button" class="btn btn-block btn-default">生成二维码</button>
                                 </a>

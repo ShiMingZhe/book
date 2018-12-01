@@ -14,10 +14,11 @@
     z-index: 1;
 }
 
-.container {
+.container_main {
     padding-left: 0px;
     padding-right: 0px;
     max-width: 100%;
+    background-color: #ebebeb;
 }
 
 .nav {
@@ -25,19 +26,35 @@
     line-height: 40px;
     display: flex;
     text-align: center;
+    border-top-style: solid;
+    border-width: 1px;
+    border-color: #d3d6d6;
 }
 
 .nav-item {
     flex: 1;
     text-decoration: none;
+    background-color: white;
+    color: black;
 }
 
-.nav-item:link,.nav-item:visited{
+/*.nav-item:link,.nav-item:visited{
     background-color: white;
     color: black;
 
-}
+}*/
 .nav-item:hover,.nav-item:active {
     color: white;
-    background-color: #d3d6d6;
+    background-color: #59c258;
+}
+/*.nav-item:active {
+    color: white;
+    background-color: #59c258;
+}*/
+.router-link-exact-active {
+    color: white;
+    background-color: #59c258;
+}
+a:hover {
+    text-decoration: none;
 }

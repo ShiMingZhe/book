@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <meta name="csrf-token" content="@{{ csrf_token }}">
-    <title>木客网</title>
+    <title>古诗词深度学习</title>
     <link rel="stylesheet" type="text/css" href="{{@asset("/css/app.css")}}">
     <link rel="stylesheet" type="text/css" href="{{@asset("/webapp/css/app.css")}}">
 </head>
@@ -16,7 +16,7 @@
                 </div>
             </div>
         </nav>--}}
-        <div class="container main">
+        <div class="container_main">
             <router-view></router-view>
         </div>
         <footer class="nav">

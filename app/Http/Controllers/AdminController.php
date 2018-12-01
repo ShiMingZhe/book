@@ -15,10 +15,12 @@ class AdminController extends Controller
     public function listen()
     {
         $poetries = Poetries::all();
+        $files = scandir('../public/qrcode');
         foreach ($poetries as $k => $v) {
-            if ($v['uniq_id']) {
-                //$this->createQr(url('/qrcode/'.$v['uniq_id']));
-                $poetries[$k]['qr_url'] = url('public/qrcode/'.$v['uniq_id'].'.png');
+            if (in_array($v['uniq_id'].'.png', $files)) {
+                $poetries[$k]['qr_url'] = true;
+            } else {
+                $poetries[$k]['qr_url'] = false;
             }
         }
 

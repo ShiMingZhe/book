@@ -14,10 +14,19 @@ use App\Models\Poetries;
 
 class MobileApiController extends Controller
 {
+    //获取诗词
     public function getPoetryContent($uniqId)
     {
-        $poetry = Poetries::where('uniq_id', $uniqId)->first();/*'36b53bc405f81442ded755027b43c676'*/
+        $poetry = Poetries::where('uniq_id', $uniqId)->first();
 
         return $poetry;
+    }
+
+    //看一看
+    public function haveALook($offset)
+    {
+        $poetries = Poetries::offset($offset)->limit(10)->get();
+
+        return $poetries;
     }
 }

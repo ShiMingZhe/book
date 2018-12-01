@@ -43,13 +43,11 @@
 
 <script>
     import $ from 'jquery'
-    import Aplayer from 'vue-aplayer'
     import Predefine from "element-ui/packages/color-picker/src/components/predefine";
     export default {
         name: "App",
         components: {
-            Predefine,
-            "aplayer":Aplayer
+            Predefine
         },
         data() {
             return {

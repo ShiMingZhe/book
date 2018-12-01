@@ -19,8 +19,18 @@
             </div>
 
             <div class="form-group">
-                <label>内容</label>
-                <textarea id="editor1" name="content" rows="10" cols="80"></textarea>
+                <label>一句话简介</label>
+                <input type="text" class="form-control" name="short_introduce">
+            </div>
+
+            <div class="form-group">
+                <label>音频词内容</label><br>
+                <textarea name="content" rows="10" cols="100" style="width: 100%;"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>详情</label>
+                <textarea id="editor1" name="detail" rows="10" cols="80"></textarea>
             </div>
 
             <div class="form-group">
