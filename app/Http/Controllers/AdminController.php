@@ -111,7 +111,6 @@ class AdminController extends Controller
     public function downloadQr($uniqId,$name)
     {
         $file = __DIR__ . '/../../../public/qrcode/'.$uniqId.'.png';
-        //$name = basename($file);
         $name = $name.'.png';
 
         return response()->download($file,$name);

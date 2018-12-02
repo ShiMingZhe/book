@@ -64,7 +64,6 @@
             let uniqId = this.$route.params.uniqId;
             this.$http.get('/findPoetryContent/'+uniqId).then(response => {
                 this.poetry_content = response.body;
-                console.log(this.poetry_content);
                 let content = this.setLrc();
                 let html = '';
                 let lrc_index = [];
@@ -196,7 +195,6 @@
         width: 100%;
         height: 100%;
         left: 0;
-        /*background-color: #f0ad4e;*/
         position: relative;
         background-color: rgba(240, 173, 78,1);
         color: #fff;
