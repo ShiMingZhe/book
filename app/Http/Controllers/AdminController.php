@@ -107,4 +107,13 @@ class AdminController extends Controller
         $qrCode->setSize(300);
         $qrCode->writeFile(__DIR__ . '/../../../public/qrcode/' .$uniqId.'.png');
     }
+
+    public function downloadQr($uniqId,$name)
+    {
+        $file = __DIR__ . '/../../../public/qrcode/'.$uniqId.'.png';
+        //$name = basename($file);
+        $name = $name.'.png';
+
+        return response()->download($file,$name);
+    }
 }

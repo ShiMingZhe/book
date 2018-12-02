@@ -53131,7 +53131,6 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
-//
 
 
 
@@ -53166,6 +53165,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
                             this.$http.get('/findPoetryContent/' + uniqId).then(function (response) {
                                 _this.poetry_content = response.body;
+                                console.log(_this.poetry_content);
                                 var content = _this.setLrc();
                                 var html = '';
                                 var lrc_index = [];
@@ -54558,7 +54558,7 @@ var render = function() {
       _c("div", { staticClass: "audio-view" }, [
         _c("audio", {
           ref: "audio",
-          attrs: { src: "http://www.mukeen.com/yangcong.mp3" },
+          attrs: { src: _vm.poetry_content.mp3_url },
           on: { timeupdate: _vm.updateTime }
         }),
         _vm._v(" "),

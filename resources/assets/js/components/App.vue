@@ -3,8 +3,7 @@
         <div id="lrc_content"></div>
         <div class="audio-container">
             <div class="audio-view">
-                <audio src="http://www.mukeen.com/yangcong.mp3" ref="audio" @timeupdate="updateTime"></audio>
-                <!--<div class="audio-cover" ></div>-->
+                <audio :src="poetry_content.mp3_url" ref="audio" @timeupdate="updateTime"></audio>
                 <div class="audio-body">
                     <div class="audio-title">{{poetry_content.title}}</div>
                     <div class="audio-backs">
@@ -65,6 +64,7 @@
             let uniqId = this.$route.params.uniqId;
             this.$http.get('/findPoetryContent/'+uniqId).then(response => {
                 this.poetry_content = response.body;
+                console.log(this.poetry_content);
                 let content = this.setLrc();
                 let html = '';
                 let lrc_index = [];

@@ -35,9 +35,11 @@
                         <td>{{$poetry->detail}}</td>
                         <td>{{$poetry->mp3_url}}</td>
                         <td>{{$poetry->uniq_id}}</td>
-                        <td>
+                        <td align="center">
                             @if($poetry->qr_url)
                                 <img width="60px" height="60px" src="{{@asset("qrcode/".$poetry->uniq_id.".png")}}">
+                                <a href="{{@url("/downloadQr/$poetry->uniq_id/$poetry->title")}}" download="download"
+                                   style="font-size: 16px;color: #c2574a;">下载</a>
                             @endif
                         </td>
                         <td>

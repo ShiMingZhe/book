@@ -26,8 +26,10 @@ Route::group(['middleware' => ['web', 'admin.login']], function () {
     Route::get('/mkadmin', 'AdminController@index');
     Route::get('/listen', 'AdminController@listen');
 });
-
+//生成二维码
 Route::get('/createQr/{uniqId}', 'AdminController@createQr');
+//下载二维码
+Route::get('/downloadQr/{uniqId}/{name}', 'AdminController@downloadQr');
 
 Route::group(['middleware' => ['view.dispatch']], function () {
     Route::any('/listenAdd', 'AdminController@listenAdd');
