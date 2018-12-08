@@ -19,7 +19,5 @@ class Role extends Model
     //指定主键
     protected $primaryKey = 'id';
 
-    public $timestamps = false;
-
     protected $fillable = ['name'];
 }

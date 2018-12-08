@@ -36,16 +36,17 @@ class LoginController extends Controller
         $input = Input::except('_token');
         $user = Users::where('email',$input['email'])->get();
         if (!$user->isEmpty()) {
-            if ($input['password'] == decrypt($user->first()->password) && $input['code'] == Session::get('code')) {
-                Session::put('user',$user);
-
-                return redirect('/listen');
+            if ($input['password'] != decrypt($user->first()->password)) {
+                return redirect('/login')->with(['login_errors' => '登录密码错误']);
+            } elseif($input['code'] != Session::get('code')) {
+                return redirect('/login')->with(['login_errors' => '登录验证码错误']);
             }
+            Session::put('user',$user);
 
-            return redirect('/login');
+            return redirect('/listen');
         }
 
-        return redirect('/login');
+        return redirect('/login')->with(['login_errors' => '系统错误']);
     }
 
     /**
@@ -78,8 +79,10 @@ class LoginController extends Controller
     {
         $input = Input::except('_token');
         if (!empty($input)) {
-            if ($input['password'] != $input['retype_password'] || $input['code'] != Session::get('code')) {
-                return redirect('/register');
+            if ($input['password'] != $input['retype_password']) {
+                return redirect('/register')->with(['errors' => '两次输入的密码不一致']);
+            } elseif($input['code'] != Session::get('code')) {
+                return redirect('/register')->with(['errors' => '验证码输入不正确']);
             }
             $input['password'] = encrypt($input['password']);
             $res = Users::create($input);

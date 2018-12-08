@@ -32,7 +32,9 @@
     <!-- /.login-logo -->
     <div class="login-box-body">
         <p class="login-box-msg">管理员登陆</p>
-
+        @if(session('login_errors'))
+            <p style="color: red">{{session('login_errors')}}</p>
+        @endif
         <form action="{{@url("/login/validation")}}" method="post">
             {{csrf_field()}}
             <div class="form-group has-feedback">
@@ -52,11 +54,11 @@
             {{--<a href="{{@url("/login")}}"><img src="{{$code}}"></a>--}}
             <div class="row">
                 <div class="col-xs-8">
-                    <div class="checkbox icheck">
+                    {{--<div class="checkbox icheck">
                         <label>
                             <input type="checkbox"> 记住？
                         </label>
-                    </div>
+                    </div>--}}
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-4">

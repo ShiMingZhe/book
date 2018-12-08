@@ -14,13 +14,12 @@ use Illuminate\Database\Eloquent\Model;
 class Poetries extends Model
 {
     //指定表名
-    protected $table = 'mv_poetry';
+    protected $table = 'mk_poetry';
 
     //指定主键
     protected $primaryKey = 'id';
 
-    public $timestamps = false;
-
-    protected $fillable = ['title', 'author', 'content', 'mp3_url', 'is_available', 'uniq_id', 'short_introduce', 'detail'];
+    protected $fillable = ['title', 'author', 'content', 'mp3_url',
+        'is_available', 'uniq_code', 'short_introduce', 'detail'];
 
 }

@@ -19,7 +19,5 @@ class Users extends Model
     //指定主键
     protected $primaryKey = 'id';
 
-    public $timestamps = false;
-
-    protected $fillable = ['name', 'sex', 'email', 'password', 'phone', 'headimgurl', 'nickname', 'role_id'];
+    protected $fillable = ['name', 'sex', 'email', 'password', 'phone', 'headimgurl', 'role_id'];
 }

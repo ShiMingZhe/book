@@ -34,7 +34,9 @@
 
     <div class="register-box-body">
         <p class="login-box-msg">注册成为管理员</p>
-
+        @if(session('errors'))
+        <p style="color: red;">{{$errors}}</p>
+        @endif
         <form action="{{@url("/register_save")}}" method="post">
             {{csrf_field()}}
             <div class="form-group has-feedback">
@@ -63,10 +65,6 @@
             <div class="form-group has-feedback">
                 <input type="text" class="form-control" placeholder="手机" name="phone">
                 <span class="glyphicon glyphicon-phone form-control-feedback"></span>
-            </div>
-            <div class="form-group has-feedback">
-                <input type="text" class="form-control" placeholder="昵称" name="nickname">
-                <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
                 <input type="text" class="form-control" placeholder="验证码" name="code">
