@@ -116,7 +116,7 @@
                 let content = this.setLrc();
                 let lrc_content = this.lrc_content;
                 if (content[interval] && this.lrc_tmp !== interval) {
-                    let html = this.updateLrc(interval,lrc_content,'#fff');
+                    let html = this.updateLrc(interval,lrc_content,'#2b2b2b');
                     $("#lrc_content").html(html);
                     this.lrc_tmp = this.lrc_index.shift();
                     let prev_all = $("#currentPosition").prevAll();
@@ -189,21 +189,27 @@
         overflow: hidden;
         padding-top: 100px;
         font-size: larger;
-        color: #fff;
+        color: #2b2b2b;
     }
-    .audio-box{
+    .audio-box {
         width: 100%;
         height: 100%;
         left: 0;
         position: relative;
-        background-color: rgb(43, 43, 43);
-        color: #fff;
+        /*background-color: rgb(43, 43, 43);*/
+        background: url("../../../../public/webapp/images/music_background_img.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        background-position: center 0;
+        color: #2b2b2b;
     }
     .audio-container{
         width: 100%;
         position: absolute;
         bottom: 50px;
-        background-color: rgb(43, 43, 43);
+        /*background-color: rgb(43, 43, 43);*/
     }
     .audio-view{
         width: 100%;

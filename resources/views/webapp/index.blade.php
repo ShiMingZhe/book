@@ -23,11 +23,11 @@
         <footer class="nav">
             <router-link class="nav-item" to="/qr/{{$uniqId}}">
                 <div class="glyphicon glyphicon-music" id="music-item"></div>
-                <div id="music-item">听一听</div>
+                <div id="music-item"><span>听一听</span></div>
             </router-link>
             <router-link class="nav-item" to="/library">
                 <div class="glyphicon glyphicon-book" id="music-item"></div>
-                <div id="music-item">看一看</div>
+                <div id="music-item"><span>看一看</span></div>
             </router-link>
         </footer>
     </div>

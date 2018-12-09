@@ -43,15 +43,14 @@
 #music-item {
     flex: 1;
     line-height: 30px;
-    font-size: 20px;
+    font-size: 25px;
     padding: 0px;
     margin: 0px;
 }
 
-.glyphicon .glyphicon-music {
-    font-size: 70px;
+#music-item span {
+    font-size: 10px;
 }
-
 /*.nav-item:link,.nav-item:visited{
     background-color: white;
     color: black;
