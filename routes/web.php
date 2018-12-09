@@ -52,6 +52,7 @@ Route::group(['middleware' => ['view.dispatch']], function () {
     Route::get('/task/admin/reject/{id}/{task_id}/{type}', 'TaskController@taskReject');
 
     Route::get('/datas', 'DatasController@index');
+    Route::get('/music/list', 'DatasController@list');
 });
 
 Route::any('/captcha/code', 'LoginController@captchaCode');
