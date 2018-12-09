@@ -8,7 +8,6 @@
 
 namespace App\Http\Controllers\Mobile;
 
-
 use App\Http\Controllers\Controller;
 use App\Models\Poetries;
 
@@ -17,7 +16,7 @@ class MobileApiController extends Controller
     //获取诗词
     public function getPoetryContent($uniqId)
     {
-        $poetry = Poetries::where('uniq_id', $uniqId)->first();
+        $poetry = Poetries::where('uniq_code', $uniqId)->first();
 
         return $poetry;
     }

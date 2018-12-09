@@ -34,11 +34,11 @@
                         <td>{{$poetry->content}}</td>
                         <td>{{$poetry->detail}}</td>
                         <td>{{$poetry->mp3_url}}</td>
-                        <td>{{$poetry->uniq_id}}</td>
+                        <td>{{$poetry->uniq_code}}</td>
                         <td align="center">
                             @if($poetry->qr_url)
-                                <img width="60px" height="60px" src="{{@asset("qrcode/".$poetry->uniq_id.".png")}}">
-                                <a href="{{@url("/downloadQr/$poetry->uniq_id/$poetry->title")}}" download="download"
+                                <img width="60px" height="60px" src="{{@asset("qrcode/".$poetry->uniq_code.".png")}}">
+                                <a href="{{@url("/downloadQr/$poetry->uniq_code/$poetry->title")}}" download="download"
                                    style="font-size: 16px;color: #c2574a;">下载</a>
                             @endif
                         </td>
@@ -47,7 +47,7 @@
                                 <button type="button" class="btn btn-block btn-primary">编辑</button>
                             </a>
                             <button type="button" class="btn btn-block btn-danger">删除</button>
-                            @if(empty($poetry->uniq_id))
+                            @if(empty($poetry->uniq_code))
                                 <a href="{{@url("/listen/uniqid/$poetry->id")}}">
                                     <button type="button" class="btn btn-block btn-success">生成唯一码</button>
                                 </a>
@@ -56,16 +56,17 @@
                                 <a href="{{@url("/listen/uniqid/$poetry->id")}}">
                                     <button type="button" class="btn btn-block btn-success" disabled>生成唯一码</button>
                                 </a>
+                                @if(!$poetry->qr_url)
+                                    <a href="{{@url("/createQr/$poetry->uniq_code")}}">
+                                        <button type="button" class="btn btn-block btn-default">生成二维码</button>
+                                    </a>
+                                @else
+                                    <a href="{{@url("/createQr/$poetry->uniq_code")}}">
+                                        <button type="button" class="btn btn-block btn-default" disabled>生成二维码</button>
+                                    </a>
+                                @endif
                             @endif
-                            @if(!$poetry->qr_url)
-                                <a href="{{@url("/createQr/$poetry->uniq_id")}}">
-                                    <button type="button" class="btn btn-block btn-default">生成二维码</button>
-                                </a>
-                            @else
-                                <a href="{{@url("/createQr/$poetry->uniq_id")}}">
-                                    <button type="button" class="btn btn-block btn-default" disabled>生成二维码</button>
-                                </a>
-                            @endif
+
                         </td>
                     </tr>
                 @endif

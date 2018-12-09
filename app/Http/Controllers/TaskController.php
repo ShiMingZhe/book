@@ -46,13 +46,12 @@ class TaskController extends Controller
         foreach ($tasks as $key => $task) {
             $user = Users::where('id', $task->operator_id)->first();
             $tasks[$key]->operator = $user->name;
+            $total += 1;
             if ($task->is_pass == '1') {
                 $pass += 1;
-                $total += 1;
                 continue;
             } elseif ($task->is_pass == '2') {
                 $reject += 1;
-                $total += 1;
             }
             $tasksDo[] = $tasks[$key];
         }

@@ -46,7 +46,7 @@ class LoginController extends Controller
             return redirect('/listen');
         }
 
-        return redirect('/login')->with(['login_errors' => '系统错误']);
+        return redirect('/login')->with(['login_errors' => '该用户不存在']);
     }
 
     /**

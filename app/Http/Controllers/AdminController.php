@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Models\Poetries;
 use App\Models\Task;
 use Endroid\QrCode\QrCode;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
@@ -17,7 +17,7 @@ class AdminController extends Controller
         $poetries = Poetries::all();
         $files = scandir('../public/qrcode');
         foreach ($poetries as $k => $v) {
-            if (in_array($v['uniq_id'].'.png', $files)) {
+            if (in_array($v['uniq_code'].'.png', $files)) {
                 $poetries[$k]['qr_url'] = true;
             } else {
                 $poetries[$k]['qr_url'] = false;
@@ -31,7 +31,13 @@ class AdminController extends Controller
     public function listenAdd()
     {
         $input = Input::except('_token');
-        if (!empty($input)) {
+        $validator = Validator::make($input, [
+            'title' => 'required',
+            'content' => 'required',
+            'mp3_url' => 'required',
+            'detail' => 'required',
+        ]);
+        if (!$validator->fails()) {
             $res = Poetries::create($input);
             if ($res) {
                 $task = Task::create([
@@ -65,7 +71,13 @@ class AdminController extends Controller
     public function update()
     {
         $input = Input::except('_token');
-        if (!empty($input)) {
+        $validator = Validator::make($input, [
+            'title' => 'required',
+            'content' => 'required',
+            'mp3_url' => 'required',
+            'detail' => 'required',
+        ]);
+        if (!$validator->fails()) {
             $res = Poetries::where('id', $input['id'])->update($input);
             if ($res) {
                 return redirect('/listen');
@@ -79,7 +91,7 @@ class AdminController extends Controller
     public function createUniqId($id)
     {
         $uniqId = $this->randomKeys(10);
-        $res = Poetries::where('id', $id)->update(['uniq_id' => $uniqId]);
+        $res = Poetries::where('id', $id)->update(['uniq_code' => $uniqId]);
         if ($res) {
             return redirect('/listen');
         }
@@ -106,8 +118,10 @@ class AdminController extends Controller
         $qrCode = new QrCode($internalUrl);
         $qrCode->setSize(300);
         $qrCode->writeFile(__DIR__ . '/../../../public/qrcode/' .$uniqId.'.png');
-    }
 
+        return redirect('/listen');
+    }
+    //下载二维码
     public function downloadQr($uniqId,$name)
     {
         $file = __DIR__ . '/../../../public/qrcode/'.$uniqId.'.png';

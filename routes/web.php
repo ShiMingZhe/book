@@ -34,6 +34,7 @@ Route::get('/downloadQr/{uniqId}/{name}', 'AdminController@downloadQr');
 Route::group(['middleware' => ['view.dispatch']], function () {
     Route::any('/listenAdd', 'AdminController@listenAdd');
     Route::get('/listen/editor/{poetry_id}', 'AdminController@editor');
+    Route::get('/listen/uniqid/{poetry_id}', 'AdminController@createUniqId');
     Route::post('/listen/update', 'AdminController@update');
 
     Route::get('/login', 'LoginController@login');
@@ -49,6 +50,8 @@ Route::group(['middleware' => ['view.dispatch']], function () {
     Route::get('/task/admin/index', 'TaskController@index');
     Route::get('/task/admin/pass/{id}/{task_id}/{type}', 'TaskController@taskPass');
     Route::get('/task/admin/reject/{id}/{task_id}/{type}', 'TaskController@taskReject');
+
+    Route::get('/datas', 'DatasController@index');
 });
 
 Route::any('/captcha/code', 'LoginController@captchaCode');
