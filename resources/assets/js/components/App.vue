@@ -203,7 +203,6 @@
         width: 100%;
         position: absolute;
         bottom: 50px;
-        /*background-color: #f0ad4e;*/
         background-color: rgb(43, 43, 43);
     }
     .audio-view{
