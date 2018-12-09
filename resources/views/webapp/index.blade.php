@@ -6,6 +6,7 @@
     <title>古诗词深度学习</title>
     <link rel="stylesheet" type="text/css" href="{{@asset("/css/app.css")}}">
     <link rel="stylesheet" type="text/css" href="{{@asset("/webapp/css/app.css")}}">
+    <link rel="stylesheet" type="text/css" href="{{@asset("/css/bootstrap.min.css")}}">
 </head>
 <body>
     <div id="app">
@@ -20,8 +21,14 @@
             <router-view></router-view>
         </div>
         <footer class="nav">
-            <router-link class="nav-item" to="/qr/{{$uniqId}}">听一听</router-link>
-            <router-link class="nav-item" to="/library">看一看</router-link>
+            <router-link class="nav-item" to="/qr/{{$uniqId}}">
+                <div class="glyphicon glyphicon-music" id="music-item"></div>
+                <div id="music-item">听一听</div>
+            </router-link>
+            <router-link class="nav-item" to="/library">
+                <div class="glyphicon glyphicon-book" id="music-item"></div>
+                <div id="music-item">看一看</div>
+            </router-link>
         </footer>
     </div>
     <script type="text/javascript" src="{{@asset("js/app.js")}}"></script>

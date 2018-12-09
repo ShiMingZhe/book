@@ -196,14 +196,15 @@
         height: 100%;
         left: 0;
         position: relative;
-        background-color: rgba(240, 173, 78,1);
+        background-color: rgb(43, 43, 43);
         color: #fff;
     }
     .audio-container{
         width: 100%;
         position: absolute;
         bottom: 50px;
-        background-color: #f0ad4e;
+        /*background-color: #f0ad4e;*/
+        background-color: rgb(43, 43, 43);
     }
     .audio-view{
         width: 100%;
@@ -248,9 +249,10 @@
     .audio-setbacks{
         float: left;
         width: 100%;
-        height: 6px;
+        height: 2px;
         border-radius: 3px;
-        background-color: #333;
+        /*background-color: #333;*/
+        background-color: #676060;
     }
     .audio-setbacks{
         position: relative;
@@ -270,7 +272,7 @@
         cursor: pointer;
     }
     .audio-this-setbacks{
-        background-color: #80ff9d;
+        background-color: #ffffff;
         width: 0px;
         z-index: 2;
     }
