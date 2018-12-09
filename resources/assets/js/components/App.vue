@@ -251,7 +251,6 @@
         width: 100%;
         height: 2px;
         border-radius: 3px;
-        /*background-color: #333;*/
         background-color: #676060;
     }
     .audio-setbacks{
