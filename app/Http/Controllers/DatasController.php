@@ -17,7 +17,7 @@ class DatasController
     //音频列表
     public function list() {
         //$dir = $_SERVER['DOCUMENT_ROOT'].'/qrcode/';
-        $dir = $_SERVER['DOCUMENT_ROOT'].'../../../data';
+        $dir = $_SERVER['DOCUMENT_ROOT'].'/../../../data';
         $data = scandir($dir);
         unset($data[0]);
         unset($data[1]);
