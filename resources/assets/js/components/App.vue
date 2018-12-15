@@ -34,7 +34,7 @@
                     <a :href="'/qr/'+item.uniq_code" v-if="item.uniq_code" v-for="(item, index) in poetry_list">
                         <li><span class="bottom-index">{{ index +1 }}</span>{{item.title}}</li>
                     </a>
-                    <span class="bottom-load" v-if=" poetry_list.length%10 == 0 " @click="getData(poetry_list.length)">点击加载更多</span>
+                    <span class="bottom-load" v-show=" poetry_list.length%10 == 0 " @click="getData(poetry_list.length)" v-cloak>{{more_load}}</span>
                 </scroller>
             </div>
             <div class="bottom-display-close" @click="bottomDisplayClose">关闭</div>
@@ -62,6 +62,7 @@
                 poetry_content:'',
                 is_close:false,//是否关闭音频菜单
                 poetry_list:[],//音频菜单
+                more_load:'点击加载更多',
             }
         },
         async mounted () {
@@ -192,6 +193,9 @@
 </script>
 
 <style scoped>
+    [v-cloak] {
+        display: none;
+    }
     *{
         margin: 0;
         padding: 0;
