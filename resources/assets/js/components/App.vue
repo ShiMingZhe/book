@@ -24,18 +24,29 @@
                     <div class="audio-select">
                         <!--<div class="audio-prev"></div>-->
                         <div :class="{'audio-play':isPlay,'audio-stop':isStop}" @click="audioPlay"></div>
-                        <!--<div class="audio-stop"></div>-->
+                        <!--<div class="audio-stop" @click="audioStop"></div>-->
                         <!--<div class="audio-next"></div>-->
-                        <!--<div class="audio-menu"></div>-->
-                        <div class="audio-volume" @click="showVolume"></div>
+                        <div class="audio-menu" @click="audoMenu"></div>
+                        <!--<div class="audio-volume" @click="showVolume"></div>-->
                     </div>
-                    <div class="audio-set-volume">
+                    <!--<div class="audio-set-volume">
                         <div class="volume-box" @click="set_voluem">
                             <i><span></span></i>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
+        </div>
+        <div class="bottom-display" v-if="is_close">
+            <div class="bottom-content">
+                <scroller>
+                    <a :href="'/qr/'+item.uniq_code" v-if="item.uniq_code" v-for="(item, index) in poetry_list">
+                        <li><span class="bottom-index">{{ index+1 }}</span>{{item.title}}</li>
+                    </a>
+                    <span class="bottom-load" v-if=" poetry_list.length%10 == 0 " @click="getData(poetry_list.length)">点击加载更多</span>
+                </scroller>
+            </div>
+            <div class="bottom-display-close" @click="bottomDisplayClose">关闭</div>
         </div>
     </div>
 </template>
@@ -57,10 +68,12 @@
                 lrc_index:[],
                 lrc_content:[],
                 lrc_tmp:'',
-                poetry_content:''
+                poetry_content:'',
+                is_close:false,//是否关闭音频菜单
+                poetry_list:[]//音频菜单
             }
         },
-        async mounted () {/*36b53bc405f81442ded755027b43c676*/
+        async mounted () {
             let uniqId = this.$route.params.uniqId;
             this.$http.get('/findPoetryContent/'+uniqId).then(response => {
                 this.poetry_content = response.body;
@@ -92,6 +105,22 @@
                     this.isStop = false;
                 }
             },
+            bottomDisplayClose() {
+                this.is_close = false;
+            },
+            getData(offset) {
+                this.$http.get('/have_a_look/'+offset).then(response => {
+                    let bodyContent = response.body;
+                    for (let i = 0;i < bodyContent.length;i++) {
+                        this.poetry_list.push(bodyContent[i]);
+                    }
+                });
+            },
+            audoMenu() {
+                this.is_close = true;
+                this.poetry_list = [];
+                this.getData(0);
+            },
             set_voluem(event) {
                 let v_height = $(".volume-box").height();
                 let v_layerY = event.layerY;
@@ -116,7 +145,7 @@
                 let content = this.setLrc();
                 let lrc_content = this.lrc_content;
                 if (content[interval] && this.lrc_tmp !== interval) {
-                    let html = this.updateLrc(interval,lrc_content,'#2b2b2b');
+                    let html = this.updateLrc(interval,lrc_content,'#f8f8f8');
                     $("#lrc_content").html(html);
                     this.lrc_tmp = this.lrc_index.shift();
                     let prev_all = $("#currentPosition").prevAll();
@@ -189,15 +218,73 @@
         overflow: hidden;
         padding-top: 100px;
         font-size: larger;
-        color: #2b2b2b;
+        color: #f8f8f8;
+    }
+    .bottom-display {
+        width: 100%;
+        height: 60%;
+        background-color: #ebebeb;
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+        background: rgba(0,0,0,0.8);
+        /*opacity:0.5;
+        filter:Alpha(opacity=50);*/ /* IE8 以及更早的浏览器 */
+    }
+    .bottom-content {
+        width: 100%;
+        height: 70%;
+        float: left;
+        position: absolute;
+        /*background-color: #f8f8f8;
+        border-radius: 5px;*/
+    }
+    .bottom-content li {
+        width: 90%;
+        height: 40px;
+        line-height: 40px;
+        margin-left: 5%;
+        margin-top: 10px;
+        color: #f8f8f8;
+        font-size: 20px;
+        list-style-type: none;
+        border-bottom: 1px solid #3b3b3b;
+    }
+    .bottom-content .bottom-load {
+        color: #f8f8f8;
+        font-size: 20px;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        /*max-width: 50%;
+        text-align: center;*/
+    }
+    .bottom-display-close {
+        position: absolute;
+        width: 90%;
+        height: 50px;
+        line-height: 50px;
+        float: left;
+        bottom: 10px;
+        background-color: #f8f8f8;
+        margin-left: 5%;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 20px;
+    }
+    .bottom-index {
+        color: #00b3ee;
+        font-size: 30px;
+        font-style: italic;
+        margin-right: 20px;
     }
     .audio-box {
         width: 100%;
         height: 100%;
         left: 0;
         position: relative;
-        /*background-color: rgb(43, 43, 43);*/
-        background: url("../../../../public/webapp/images/music_background_img.jpeg");
+        background-color: rgba(16, 9, 9, 0.85);
+        /*background: url("../../../../public/webapp/images/music_background_img.jpeg");*/
         background-repeat: no-repeat;
         background-size: cover;
         -webkit-background-size: cover;
@@ -208,15 +295,14 @@
     .audio-container{
         width: 100%;
         position: absolute;
-        bottom: 50px;
-        /*background-color: rgb(43, 43, 43);*/
+        bottom: 120px;
     }
     .audio-view{
         width: 100%;
-        height: 100px;
+        height: 80px;
     }
     .audio-body{
-        width: 80%;
+        width: 100%;
         height: 100%;
         padding-left: 5%;
         padding-right: 5%;
@@ -226,16 +312,19 @@
         width: 100%;
         height: 30px;
         line-height: 30px;
+        color: #f9f8f6;
+        font-size: 20px;
     }
     .audio-backs{
         width: 100%;
-        height: 70px;
+        height: 50px;
     }
     .audio-time {
         width: 100%;
         height: 30px;
         margin-top: 20px;
         float: left;
+        color: #60d846;
     }
     .audio-this-time,
     .audio-count-time{
@@ -292,19 +381,21 @@
         cursor: pointer;
     }
     .audio-btn{
-        float: right;
-        width: 20%;
-        height: 100px;
-        line-height: 100px;
+        float: left;
+        width: 100%;
+        height: 25px;
+        line-height: 25px;
     }
     .audio-select{
-        height: 20px;
-        margin-top: 30px;
-        width: 100%;
+        height: 39px;
+        margin-top: 5px;
+        width: 178px;
+        margin-left: auto;
+        margin-right: auto;
     }
     .audio-select > div{
-        width: 20px;
-        height: 20px;
+        width: 39px;
+        height: 39px;
         background-size: 100% 100%;
         background-position: center center;
         background-repeat: no-repeat;
@@ -312,7 +403,8 @@
         cursor: pointer;
     }
     .audio-select > div + div{
-        margin-left: 10px;
+        cursor: pointer;
+        margin-left: 100px;
     }
     .audio-prev{
         background-image: url('../../../../public/webapp/images/prev.png');

@@ -56,19 +56,25 @@
     color: black;
 
 }*/
-.nav-item:hover,.nav-item:active {
+/*.nav-item:hover,.nav-item:active {
+    color: white;
+    background-color: #59c258;
+    text-decoration: none;
+}*/
+.nav-item:active {
     color: white;
     background-color: #59c258;
     text-decoration: none;
 }
-/*.nav-item:active {
-    color: white;
-    background-color: #59c258;
-}*/
 .router-link-exact-active {
     color: white;
     background-color: #59c258;
 }
 a:hover {
-    text-decoration: none;
+    text-decoration: none !important;
+}
+
+a:focus {
+    color: #f8f9fa !important;
+    text-decoration: underline;
 }
