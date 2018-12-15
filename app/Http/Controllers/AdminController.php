@@ -70,7 +70,7 @@ class AdminController extends Controller
     //更新
     public function update()
     {
-        $input = Input::except('_token');
+        $input = Input::only(['id','title', 'author', 'short_introduce', 'content' ,'detail' ,'mp3_url']);
         $validator = Validator::make($input, [
             'title' => 'required',
             'content' => 'required',
