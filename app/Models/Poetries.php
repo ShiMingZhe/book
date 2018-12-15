@@ -20,6 +20,6 @@ class Poetries extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = ['title', 'author', 'content', 'mp3_url',
-        'is_available', 'uniq_code', 'short_introduce', 'detail'];
+        'is_available', 'uniq_code', 'short_introduce', 'detail', 'sub_content'];
 
 }

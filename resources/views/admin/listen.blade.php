@@ -15,6 +15,7 @@
                 <td>作者</td>
                 <td>一句话简介</td>
                 <td>音频词内容</td>
+                <td>诗词内容</td>
                 <td>详情</td>
                 <td>MP3地址</td>
                 <td>唯一码</td>
@@ -32,6 +33,7 @@
                         <td>{{$poetry->author}}</td>
                         <td>{{$poetry->short_introduce}}</td>
                         <td>{{$poetry->content}}</td>
+                        <td>{{$poetry->sub_content}}</td>
                         <td>{{$poetry->detail}}</td>
                         <td>{{$poetry->mp3_url}}</td>
                         <td>{{$poetry->uniq_code}}</td>

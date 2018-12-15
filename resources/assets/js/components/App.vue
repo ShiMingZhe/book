@@ -1,6 +1,7 @@
 <template>
     <div class="audio-box">
         <div id="lrc_content"></div>
+        <div id="content-detail" v-html="poetry_content.sub_content"></div>
         <div class="audio-container">
             <div class="audio-view">
                 <audio :src="poetry_content.mp3_url" ref="audio" @timeupdate="updateTime"></audio>
@@ -137,7 +138,7 @@
                 let content = this.setLrc();
                 let lrc_content = this.lrc_content;
                 if (content[interval] && this.lrc_tmp !== interval) {
-                    let html = this.updateLrc(interval,lrc_content,'#000000');
+                    let html = this.updateLrc(interval,lrc_content,'#0a612f');
                     $("#lrc_content").html(html);
                     this.lrc_tmp = this.lrc_index.shift();
                     let prev_all = $("#currentPosition").prevAll();
@@ -208,12 +209,18 @@
     }
     #lrc_content {
         width: 100%;
-        height: 50%;
+        height: 7%;
         text-align: center;
         overflow: hidden;
-        padding-top: 100px;
-        font-size: larger;
-        color: #000000;
+        padding-top: 20px;
+        font-size: 23px;
+        color: #0a612f;
+    }
+    #content-detail {
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        margin-top: 60px;
     }
     .bottom-display {
         width: 100%;

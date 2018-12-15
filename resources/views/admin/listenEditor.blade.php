@@ -31,8 +31,13 @@
             </div>
 
             <div class="form-group">
+                <label>诗词内容</label><br>
+                <textarea id="editor1" name="sub_content" rows="10" cols="100" style="width: 100%;">{{$data->sub_content}}</textarea>
+            </div>
+
+            <div class="form-group">
                 <label>详情</label>
-                <textarea id="editor1" name="detail" rows="10" cols="80" >{{$data->detail}}</textarea>
+                <textarea id="editor2" name="detail" rows="10" cols="80" >{{$data->detail}}</textarea>
             </div>
 
             <div class="form-group">
@@ -52,7 +57,8 @@
 <script src="{{@asset("/admin-lte/bower_components/ckeditor/ckeditor.js")}}"></script>
 <script>
     $(function () {
-        CKEDITOR.replace('editor1')
+        CKEDITOR.replace('editor1');
+        CKEDITOR.replace('editor2');
     })
 </script>
 @include('admin.footer')
