@@ -218,7 +218,7 @@
         overflow: hidden;
         padding-top: 100px;
         font-size: larger;
-        color: #f8f8f8;
+        color: #000000;
     }
     .bottom-display {
         width: 100%;
@@ -283,7 +283,7 @@
         height: 100%;
         left: 0;
         position: relative;
-        background-color: rgba(16, 9, 9, 0.85);
+        /*background-color: rgba(16, 9, 9, 0.85);*/
         /*background: url("../../../../public/webapp/images/music_background_img.jpeg");*/
         background-repeat: no-repeat;
         background-size: cover;
@@ -312,7 +312,7 @@
         width: 100%;
         height: 30px;
         line-height: 30px;
-        color: #f9f8f6;
+        color: #000000;
         font-size: 20px;
     }
     .audio-backs{
