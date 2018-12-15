@@ -209,7 +209,8 @@
     }
     #lrc_content {
         width: 100%;
-        height: 7%;
+        height: 60px;
+        line-height: 40px;
         text-align: center;
         overflow: hidden;
         padding-top: 20px;
