@@ -23,10 +23,11 @@
                 <div class="audio-btn">
                     <div class="audio-select">
                         <!--<div class="audio-prev"></div>-->
-                        <div :class="{'audio-play':isPlay,'audio-stop':isStop}" @click="audioPlay"></div>
+                        <!--<div :class="{'audio-play':isPlay,'audio-stop':isStop}" @click="audioPlay"></div>-->
+                        <div :class="{'glyphicon glyphicon-play':isPlay,'glyphicon glyphicon-pause':isStop}" @click="audioPlay"></div>
                         <!--<div class="audio-stop" @click="audioStop"></div>-->
                         <!--<div class="audio-next"></div>-->
-                        <div class="audio-menu" @click="audoMenu"></div>
+                        <div class="glyphicon glyphicon-th-large" @click="audoMenu"></div>
                         <!--<div class="audio-volume" @click="showVolume"></div>-->
                     </div>
                     <!--<div class="audio-set-volume">
@@ -145,7 +146,7 @@
                 let content = this.setLrc();
                 let lrc_content = this.lrc_content;
                 if (content[interval] && this.lrc_tmp !== interval) {
-                    let html = this.updateLrc(interval,lrc_content,'#f8f8f8');
+                    let html = this.updateLrc(interval,lrc_content,'#000000');
                     $("#lrc_content").html(html);
                     this.lrc_tmp = this.lrc_index.shift();
                     let prev_all = $("#currentPosition").prevAll();
@@ -314,6 +315,7 @@
         line-height: 30px;
         color: #000000;
         font-size: 20px;
+        margin-bottom: 10px;
     }
     .audio-backs{
         width: 100%;
@@ -324,7 +326,8 @@
         height: 30px;
         margin-top: 20px;
         float: left;
-        color: #60d846;
+        color: #000000;
+        font-size: 20px;
     }
     .audio-this-time,
     .audio-count-time{
@@ -365,7 +368,7 @@
         cursor: pointer;
     }
     .audio-this-setbacks{
-        background-color: #ffffff;
+        background-color: #37da5a;
         width: 0px;
         z-index: 2;
     }
@@ -376,7 +379,7 @@
         margin-top: -7px;
         top: 50%;
         right: -7px;
-        background-color: #fff;
+        background-color: #37da5a;
         border-radius: 50%;
         cursor: pointer;
     }
@@ -385,6 +388,7 @@
         width: 100%;
         height: 25px;
         line-height: 25px;
+        font-size: 25px;
     }
     .audio-select{
         height: 39px;
