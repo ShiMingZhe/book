@@ -22,19 +22,9 @@
                 </div>
                 <div class="audio-btn">
                     <div class="audio-select">
-                        <!--<div class="audio-prev"></div>-->
-                        <!--<div :class="{'audio-play':isPlay,'audio-stop':isStop}" @click="audioPlay"></div>-->
                         <div :class="{'glyphicon glyphicon-play':isPlay,'glyphicon glyphicon-pause':isStop}" @click="audioPlay"></div>
-                        <!--<div class="audio-stop" @click="audioStop"></div>-->
-                        <!--<div class="audio-next"></div>-->
                         <div class="glyphicon glyphicon-th-large" @click="audoMenu"></div>
-                        <!--<div class="audio-volume" @click="showVolume"></div>-->
                     </div>
-                    <!--<div class="audio-set-volume">
-                        <div class="volume-box" @click="set_voluem">
-                            <i><span></span></i>
-                        </div>
-                    </div>-->
                 </div>
             </div>
         </div>
@@ -42,7 +32,7 @@
             <div class="bottom-content">
                 <scroller>
                     <a :href="'/qr/'+item.uniq_code" v-if="item.uniq_code" v-for="(item, index) in poetry_list">
-                        <li><span class="bottom-index">{{ index+1 }}</span>{{item.title}}</li>
+                        <li><span class="bottom-index">{{ index +1 }}</span>{{item.title}}</li>
                     </a>
                     <span class="bottom-load" v-if=" poetry_list.length%10 == 0 " @click="getData(poetry_list.length)">点击加载更多</span>
                 </scroller>
@@ -71,7 +61,7 @@
                 lrc_tmp:'',
                 poetry_content:'',
                 is_close:false,//是否关闭音频菜单
-                poetry_list:[]//音频菜单
+                poetry_list:[],//音频菜单
             }
         },
         async mounted () {
@@ -237,8 +227,6 @@
         height: 70%;
         float: left;
         position: absolute;
-        /*background-color: #f8f8f8;
-        border-radius: 5px;*/
     }
     .bottom-content li {
         width: 90%;
@@ -257,8 +245,6 @@
         position: absolute;
         left: 50%;
         transform: translate(-50%, 50%);
-        /*max-width: 50%;
-        text-align: center;*/
     }
     .bottom-display-close {
         position: absolute;
@@ -284,8 +270,6 @@
         height: 100%;
         left: 0;
         position: relative;
-        /*background-color: rgba(16, 9, 9, 0.85);*/
-        /*background: url("../../../../public/webapp/images/music_background_img.jpeg");*/
         background-repeat: no-repeat;
         background-size: cover;
         -webkit-background-size: cover;
