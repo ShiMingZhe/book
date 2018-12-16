@@ -23,8 +23,9 @@
                 </div>
                 <div class="audio-btn">
                     <div class="audio-select">
-                        <div :class="{'glyphicon glyphicon-play':isPlay,'glyphicon glyphicon-pause':isStop}" @click="audioPlay"></div>
                         <div class="glyphicon glyphicon-th-large" @click="audoMenu"></div>
+                        <div :class="{'glyphicon glyphicon-play':isPlay,'glyphicon glyphicon-pause':isStop}" @click="audioPlay"></div>
+                        <div class="glyphicon glyphicon-share-alt" @click="share"></div>
                     </div>
                 </div>
             </div>
@@ -100,6 +101,11 @@
             },
             bottomDisplayClose() {
                 this.is_close = false;
+            },
+            share() {
+                this.$http.get('/getAccessToken').then(response => {
+                    console.log(response.body);
+                });
             },
             getData(offset) {
                 this.$http.get('/have_a_look/'+offset).then(response => {
@@ -342,7 +348,7 @@
     .audio-setbacks{
         float: left;
         width: 100%;
-        height: 2px;
+        height: 1px;
         border-radius: 3px;
         background-color: #676060;
     }
@@ -388,8 +394,8 @@
     }
     .audio-select{
         height: 39px;
-        margin-top: 5px;
-        width: 178px;
+        margin-top: 25px;
+        width: 280px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -404,7 +410,7 @@
     }
     .audio-select > div + div{
         cursor: pointer;
-        margin-left: 100px;
+        margin-left: 80px;
     }
     .audio-prev{
         background-image: url('../../../../public/webapp/images/prev.png');

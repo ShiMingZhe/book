@@ -65,6 +65,8 @@ Route::post('/poetry/save', 'AdminApiController@save');
  */
 Route::get('/findPoetryContent/{uniq_id}','Mobile\MobileApiController@getPoetryContent');
 Route::get('/have_a_look/{offset}','Mobile\MobileApiController@haveALook');
+Route::get('/getAccessToken', 'Mobile\MobileApiController@getAccessToken');
+Route::get('/getJsApiTicket/{ticket}', 'Mobile\MobileApiController@getJsApiTicket');
 
 /**
  * webapp

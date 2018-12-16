@@ -8,8 +8,10 @@
 
 namespace App\Http\Controllers\Mobile;
 
+use App\constants\WeixinAPI;
 use App\Http\Controllers\Controller;
 use App\Models\Poetries;
+use GuzzleHttp\Client;
 
 class MobileApiController extends Controller
 {
@@ -27,5 +29,43 @@ class MobileApiController extends Controller
         $poetries = Poetries::where('is_available', 1)->offset($offset)->limit(10)->get();
 
         return $poetries;
+    }
+
+    //创建HTTP客户端请求
+    private function request($url, $postData, $method = 'post')
+    {
+        $client = new Client();
+        if ($method == 'post') {
+            return $client->request($method,$url, [
+                'body' => $postData
+            ])->getBody()->getContents();
+        } else {
+            return $client->request($method,$url, [
+                'query' => $postData
+            ])->getBody()->getContents();
+        }
+    }
+
+    //微信获取access_token
+    public function getAccessToken()
+    {
+        $postData = [
+            'grant_type' => 'client_credential',
+            'appid' => env('APPID'),
+            'secret' => env('SECRET'),
+        ];
+
+        return $this->request(WeixinAPI::WEIXIN_ACCESS_TOKEN, $postData, 'get');
+    }
+
+    //获取微信jsapi_ticket
+    public function getJsApiTicket($accessToken)
+    {
+        $postData = [
+            'access_token' => $accessToken,
+            'type' => 'jsapi',
+        ];
+
+        return $this->request(WeixinAPI::WEIXIN_JSAPI_TICKET, $postData, 'get');
     }
 }
