@@ -85,7 +85,7 @@
                 $("#lrc_content").html(html);
             });
 
-            this.$http.get('/getSignature'+location.href).then(response => {
+            this.$http.get('/getSignature/'+location.href).then(response => {
                 let data = response.body;
                 wx.ready(function () {   //需在用户可能点击分享按钮前就先调用
                     wx.config({

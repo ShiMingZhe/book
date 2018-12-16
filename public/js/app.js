@@ -53185,7 +53185,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                                 __WEBPACK_IMPORTED_MODULE_1_jquery___default()("#lrc_content").html(html);
                             });
 
-                            this.$http.get('/getSignature' + location.href).then(function (response) {
+                            this.$http.get('/getSignature/' + location.href).then(function (response) {
                                 var data = response.body;
                                 wx.ready(function () {
                                     //需在用户可能点击分享按钮前就先调用
