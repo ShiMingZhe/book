@@ -53183,8 +53183,6 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                                 _this.lrc_index = lrc_index;
                                 _this.lrc_content = lrc_content;
                                 __WEBPACK_IMPORTED_MODULE_1_jquery___default()("#lrc_content").html(html);
-                            }, function (response) {
-                                console.log('error');
                             });
 
                         case 2:

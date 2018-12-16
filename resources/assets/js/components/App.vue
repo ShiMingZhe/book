@@ -83,8 +83,6 @@
                 this.lrc_index = lrc_index;
                 this.lrc_content = lrc_content;
                 $("#lrc_content").html(html);
-            }, response => {
-                console.log('error');
             });
         },
         methods: {
