@@ -85,7 +85,7 @@
                 $("#lrc_content").html(html);
             });
 
-            this.$http.get('/getSignature/'+location.href).then(response => {
+            this.$http.get('/getSignature/'+this.$route.params.uniqId).then(response => {
                 let data = response.body;
                 wx.ready(function () {   //需在用户可能点击分享按钮前就先调用
                     wx.config({
@@ -131,7 +131,7 @@
                 this.is_close = false;
             },
             share() {
-                console.log(location.href);
+                console.log(this.$route.params.uniqId);
             },
             getData(offset) {
                 this.$http.get('/have_a_look/'+offset).then(response => {
