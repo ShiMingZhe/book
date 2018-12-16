@@ -94,10 +94,15 @@
                     nonceStr: data.nonceStr, // 必填，生成签名的随机串
                     signature: data.signature,// 必填，签名
                     jsApiList: [
-                        'updateAppMessageShareData',
-                        'updateTimelineShareData',
-                        'onMenuShareWeibo',
-                        'onMenuShareQZone',
+                        'onMenuShareAppMessage',
+                        'onMenuShareTimeline',
+                        'chooseWXPay',
+                        'showOptionMenu',
+                        "updateAppMessageShareData",
+                        "hideMenuItems",
+                        "showMenuItems",
+                        "onMenuShareTimeline",
+                        'onMenuShareAppMessage',
                     ] // 必填，需要使用的JS接口列表
                 });
 
