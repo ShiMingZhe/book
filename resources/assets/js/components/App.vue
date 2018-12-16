@@ -86,8 +86,7 @@
             });
 
             this.$http.get('/getSignature').then(response => {
-                console.log(response.body);
-                let data = JSON.parse(response.body);
+                let data = response.body;
                 wx.ready(function () {   //需在用户可能点击分享按钮前就先调用
                     wx.config({
                         debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。

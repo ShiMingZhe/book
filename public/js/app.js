@@ -53186,8 +53186,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                             });
 
                             this.$http.get('/getSignature').then(function (response) {
-                                console.log(response.body);
-                                var data = JSON.parse(response.body);
+                                var data = response.body;
                                 wx.ready(function () {
                                     //需在用户可能点击分享按钮前就先调用
                                     wx.config({
