@@ -89,4 +89,37 @@ class MobileApiController extends Controller
         }
 
     }
+
+    //获取随机字符串
+    private function getNoncestr()
+    {
+        $strs="QWERTYUIOPASDFGHJKLZXCVBNM1234567890qwertyuiopasdfghjklzxcvbnm";
+        $name=substr(str_shuffle($strs),mt_rand(0,strlen($strs)-11),10);
+        return $name;
+    }
+
+    //获取微信签名
+    public function getSignature()
+    {
+        $noncestr = $this->getNoncestr();
+        $timestamp = time();
+        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+        $url = "$protocol$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        $accessToken = $this->getAccessToken();
+        $jsapiTicket = $this->getJsApiTicket($accessToken);
+        $string = "jsapi_ticket=$jsapiTicket&noncestr=$noncestr=$timestamp&url=$url";
+        $signature = sha1($string);
+        $data = [
+            "appId" => env('APPID'),
+            "nonceStr" => $noncestr,
+            "timestamp" => $timestamp,
+            "url" => $url,
+            "signature" => $signature,
+            "rawString" => $string,
+            "ticket" => $jsapiTicket,
+            "token" => $accessToken,
+        ];
+
+        echo json_encode($data);
+    }
 }
