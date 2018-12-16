@@ -53218,17 +53218,22 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
             this.is_close = false;
         },
         share: function share() {
+            var _this2 = this;
+
             this.$http.get('/getAccessToken').then(function (response) {
-                console.log(response.body);
+                var accessToken = response.body;
+                _this2.$http.get('/getJsApiTicket/' + accessToken).then(function (response) {
+                    console.log(response.body);
+                });
             });
         },
         getData: function getData(offset) {
-            var _this2 = this;
+            var _this3 = this;
 
             this.$http.get('/have_a_look/' + offset).then(function (response) {
                 var bodyContent = response.body;
                 for (var i = 0; i < bodyContent.length; i++) {
-                    _this2.poetry_list.push(bodyContent[i]);
+                    _this3.poetry_list.push(bodyContent[i]);
                 }
             });
         },

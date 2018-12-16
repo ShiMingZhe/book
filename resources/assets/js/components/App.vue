@@ -104,7 +104,10 @@
             },
             share() {
                 this.$http.get('/getAccessToken').then(response => {
-                    console.log(response.body);
+                    let accessToken = response.body;
+                    this.$http.get('/getJsApiTicket/'+accessToken).then(response => {
+                        console.log(response.body);
+                    });
                 });
             },
             getData(offset) {
