@@ -53,17 +53,16 @@ class MobileApiController extends Controller
     //微信获取access_token
     public function getAccessToken()
     {
-
         $postData = [
             'grant_type' => 'client_credential',
             'appid' => env('APPID'),
             'secret' => env('SECRET'),
         ];
-        $result = $this->request(WeixinAPI::WEIXIN_ACCESS_TOKEN, $postData, 'get');
-        $result = json_decode($result,true);
         if (Redis::exists(self::WEIXIN_ACCESS_TOKEN)) {
             return Redis::get(self::WEIXIN_ACCESS_TOKEN);
         } else {
+            $result = $this->request(WeixinAPI::WEIXIN_ACCESS_TOKEN, $postData, 'get');
+            $result = json_decode($result,true);
             Redis::setex(self::WEIXIN_ACCESS_TOKEN,$result['expires_in']-60,$result['access_token']);
 
             return Redis::get(self::WEIXIN_ACCESS_TOKEN);
