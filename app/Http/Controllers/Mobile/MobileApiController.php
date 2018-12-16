@@ -12,9 +12,13 @@ use App\constants\WeixinAPI;
 use App\Http\Controllers\Controller;
 use App\Models\Poetries;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Redis;
 
 class MobileApiController extends Controller
 {
+    const WEIXIN_ACCESS_TOKEN = 'WeixinAccessToken';
+    const WEIXIN_TICKET = 'WeixinTicket';
+
     //获取诗词
     public function getPoetryContent($uniqId)
     {
@@ -49,13 +53,22 @@ class MobileApiController extends Controller
     //微信获取access_token
     public function getAccessToken()
     {
+
         $postData = [
             'grant_type' => 'client_credential',
             'appid' => env('APPID'),
             'secret' => env('SECRET'),
         ];
+        $result = $this->request(WeixinAPI::WEIXIN_ACCESS_TOKEN, $postData, 'get');
+        $result = json_decode($result,true);
+        if (Redis::exists(self::WEIXIN_ACCESS_TOKEN)) {
+            return Redis::get(self::WEIXIN_ACCESS_TOKEN);
+        } else {
+            Redis::setex(self::WEIXIN_ACCESS_TOKEN,$result['expires_in']-60,$result['access_token']);
 
-        return $this->request(WeixinAPI::WEIXIN_ACCESS_TOKEN, $postData, 'get');
+            return Redis::get(self::WEIXIN_ACCESS_TOKEN);
+        }
+
     }
 
     //获取微信jsapi_ticket
@@ -66,6 +79,15 @@ class MobileApiController extends Controller
             'type' => 'jsapi',
         ];
 
-        return $this->request(WeixinAPI::WEIXIN_JSAPI_TICKET, $postData, 'get');
+        $result =  $this->request(WeixinAPI::WEIXIN_JSAPI_TICKET, $postData, 'get');
+        $result = json_decode($result, true);
+        if (Redis::exists(self::WEIXIN_TICKET)) {
+            return Redis::get(self::WEIXIN_TICKET);
+        } else {
+            Redis::setex(self::WEIXIN_TICKET, $result['expires_in']-60,$result['ticket']);
+
+            return Redis::get(self::WEIXIN_TICKET);
+        }
+
     }
 }
