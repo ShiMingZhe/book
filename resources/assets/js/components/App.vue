@@ -98,7 +98,6 @@
                         'onMenuShareTimeline',
                         'chooseWXPay',
                         'showOptionMenu',
-                        "updateAppMessageShareData",
                         "hideMenuItems",
                         "showMenuItems",
                         "onMenuShareTimeline",
