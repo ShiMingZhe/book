@@ -94,6 +94,7 @@
                     nonceStr: data.nonceStr, // 必填，生成签名的随机串
                     signature: data.signature,// 必填，签名
                     jsApiList: [
+                        'updateAppMessageShareData',
                         'onMenuShareAppMessage',
                         'onMenuShareTimeline',
                         'chooseWXPay',
