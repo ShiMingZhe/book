@@ -67,7 +67,7 @@ Route::get('/findPoetryContent/{uniq_id}','Mobile\MobileApiController@getPoetryC
 Route::get('/have_a_look/{offset}','Mobile\MobileApiController@haveALook');
 Route::get('/getAccessToken', 'Mobile\MobileApiController@getAccessToken');
 Route::get('/getJsApiTicket/{ticket}', 'Mobile\MobileApiController@getJsApiTicket');
-Route::get('/getSignature/{url}', 'Mobile\MobileApiController@getSignature');
+Route::get('/getSignature/{url?}', 'Mobile\MobileApiController@getSignature');
 
 /**
  * webapp
