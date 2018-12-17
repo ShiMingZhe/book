@@ -103,12 +103,12 @@ class MobileApiController extends Controller
     {
         $noncestr = $this->getNoncestr();
         $timestamp = time();
-        /*$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
-        $url = "$protocol$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";*/
-        $url = 'http://www.mukeen.com/qr/'.$uniqId;
+        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+        /*$url = "$protocol$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";*/
+        $url = $protocol.$_SERVER[HTTP_HOST].'/qr/'.$uniqId;
         $accessToken = $this->getAccessToken();
         $jsapiTicket = $this->getJsApiTicket($accessToken);
-        $string = "jsapi_ticket=$jsapiTicket&noncestr=$noncestr=$timestamp&url=$url";
+        $string = "jsapi_ticket=$jsapiTicket&noncestr=$noncestr&timestamp=$timestamp&url=$url";
         $signature = sha1($string);
         $data = [
             "appId" => env('APPID'),
