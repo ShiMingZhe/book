@@ -99,13 +99,13 @@ class MobileApiController extends Controller
     }
 
     //获取微信签名
-    public function getSignature($path)
+    public function getSignature($url)
     {
         $noncestr = $this->getNoncestr();
         $timestamp = time();
-        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+        /*$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";*/
         /*$url = "$protocol$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";*/
-        $url = "$protocol$_SERVER[HTTP_HOST]/".$path;
+        /*$url = "$protocol$_SERVER[HTTP_HOST]/".$path;*/
         $accessToken = $this->getAccessToken();
         $jsapiTicket = $this->getJsApiTicket($accessToken);
         $string = "jsapi_ticket=$jsapiTicket&noncestr=$noncestr&timestamp=$timestamp&url=$url";
