@@ -53185,7 +53185,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                                 __WEBPACK_IMPORTED_MODULE_1_jquery___default()("#lrc_content").html(html);
                             });
 
-                            this.$http.get('/getSignature' + this.$route.path).then(function (response) {
+                            this.$http.get('/getSignature/' + location.href).then(function (response) {
                                 var data = response.body;
                                 wx.config({
                                     debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
