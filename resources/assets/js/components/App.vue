@@ -25,21 +25,24 @@
                     <div class="audio-select">
                         <div class="glyphicon glyphicon-th-large" @click="audoMenu"></div>
                         <div :class="{'glyphicon glyphicon-play':isPlay,'glyphicon glyphicon-pause':isStop}" @click="audioPlay"></div>
-                        <div class="glyphicon glyphicon-share-alt" @click="share"></div>
+                        <div :class="{'glyphicon glyphicon-repeat':isLoop, 'glyphicon glyphicon-remove':isCancelLoop}" @click="loop"></div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="bottom-display" v-if="is_close">
-            <div class="bottom-content">
-                <scroller>
-                    <a :href="'/qr/'+item.uniq_code" v-if="item.uniq_code" v-for="(item, index) in poetry_list">
-                        <li><span class="bottom-index">{{ index +1 }}</span>{{item.title}}</li>
-                    </a>
-                    <span class="bottom-load" v-show=" poetry_list.length%10 == 0 " @click="getData(poetry_list.length)" v-cloak>{{more_load}}</span>
-                </scroller>
+            <div class="bottom-display-content">
+                <div class="bottom-title">古诗词音频</div>
+                <div class="bottom-content">
+                    <scroller>
+                        <a :href="'/qr/'+item.uniq_code" v-if="item.uniq_code" v-for="(item, index) in poetry_list">
+                            <li>{{item.title}}</li>
+                        </a>
+                        <span class="bottom-load" v-show=" poetry_list.length%10 == 0 " @click="getData(poetry_list.length)" v-cloak>{{more_load}}</span>
+                    </scroller>
+                </div>
+                <div class="bottom-display-close" @click="bottomDisplayClose">关闭</div>
             </div>
-            <div class="bottom-display-close" @click="bottomDisplayClose">关闭</div>
         </div>
     </div>
 </template>
@@ -65,6 +68,8 @@
                 is_close:false,//是否关闭音频菜单
                 poetry_list:[],//音频菜单
                 more_load:'点击加载更多',
+                isLoop:true,
+                isCancelLoop:false,
             }
         },
         async mounted () {
@@ -84,34 +89,6 @@
                 this.lrc_content = lrc_content;
                 $("#lrc_content").html(html);
             });
-
-            this.$http.get('/getSignature/'+location.href).then(response => {
-                let data = response.body;
-                wx.config({
-                    debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-                    appId: data.appId, // 必填，公众号的唯一标识
-                    timestamp: data.timestamp, // 必填，生成签名的时间戳
-                    nonceStr: data.nonceStr, // 必填，生成签名的随机串
-                    signature: data.signature,// 必填，签名
-                    jsApiList: [
-                        'onMenuShareAppMessage',
-                    ] // 必填，需要使用的JS接口列表
-                });
-
-                wx.ready(function () {      //需在用户可能点击分享按钮前就先调用
-                    wx.onMenuShareAppMessage({
-                        title: '分享标题', // 分享标题
-                        desc: '分享描述', // 分享描述
-                        link: '', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-                        imgUrl: '', // 分享图标
-                        type: '', // 分享类型,music、video或link，不填默认为link
-                        dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-                        success: function () {
-                            // 用户点击了分享后执行的回调函数
-                        }
-                    });
-                });
-            });
         },
         methods: {
             audioPlay() {
@@ -128,12 +105,16 @@
             bottomDisplayClose() {
                 this.is_close = false;
             },
-            share() {
-                console.log(this.$route.params.uniqId);
-                console.log(location.href);
-                console.log(this.$route.path);
-                console.log(this.$route.params);
-                console.log(this.$route.query);
+            loop() {
+                if (this.$refs.audio.loop) {
+                    this.$refs.audio.loop = false;
+                    this.isLoop = true;
+                    this.isCancelLoop = false;
+                } else {
+                    this.$refs.audio.loop = true;
+                    this.isLoop = false;
+                    this.isCancelLoop = true;
+                }
             },
             getData(offset) {
                 this.$http.get('/have_a_look/'+offset).then(response => {
@@ -158,7 +139,7 @@
             updateTime (event) {
                 let interval = event.target.currentTime | 0;
                 let interDuration = event.target.duration;
-                this.duration = (interDuration / 60 | 0) + ':' + (interDuration % 60 | 0);
+                this.duration = '0'+(interDuration / 60 | 0) + ':' + (interDuration % 60 | 0);
                 let munite = interval / 60 | 0;
                 let secend = interval % 60;
                 if (secend < 60) {
@@ -177,6 +158,11 @@
                     this.lrc_tmp = this.lrc_index.shift();
                     let prev_all = $("#currentPosition").prevAll();
                     prev_all.remove();
+                }
+                //判断是否结束
+                if (this.currentTime == this.duration) {
+                    this.isPlay = true;
+                    this.isStop = false;
                 }
             },
             setProgress(event) {
@@ -259,7 +245,7 @@
     }
     .bottom-display {
         width: 100%;
-        height: 60%;
+        height: 100%;
         background-color: #ebebeb;
         position: absolute;
         z-index: 2;
@@ -268,48 +254,67 @@
         /*opacity:0.5;
         filter:Alpha(opacity=50);*/ /* IE8 以及更早的浏览器 */
     }
+    .bottom-display-content {
+        position: absolute;
+        width: 100%;
+        height: 80%;
+        z-index: 3;
+        bottom: 0;
+    }
+    .bottom-title {
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        font-size: 16px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        float: left;
+        background-color: #ffffff;
+        border-bottom: 1px solid #f3f3f3;
+        position: absolute;
+    }
     .bottom-content {
         width: 100%;
-        height: 70%;
+        height: 100%;
         float: left;
+        margin-top: 60px;
+        background-color: white;
+        margin-bottom: 100px;
         position: absolute;
     }
     .bottom-content li {
         width: 90%;
-        height: 40px;
-        line-height: 40px;
+        height: 60px;
+        line-height: 60px;
         margin-left: 5%;
-        margin-top: 10px;
-        color: #f8f8f8;
-        font-size: 20px;
+        color: #000000;
+        font-size: 16px;
+        background-color: white;
+        /*border: 1px solid #f1eef3;*/
+        border-bottom: 1px silver dashed;
+        border-radius: 3px;
+        padding-left: 25px;
         list-style-type: none;
-        border-bottom: 1px solid #3b3b3b;
     }
     .bottom-content .bottom-load {
-        color: #f8f8f8;
-        font-size: 20px;
+        color: #3e3a3a;
+        font-size: 16px;
         position: absolute;
         left: 50%;
         transform: translate(-50%, 50%);
     }
     .bottom-display-close {
         position: absolute;
-        width: 90%;
+        width: 100%;
         height: 50px;
         line-height: 50px;
         float: left;
-        bottom: 10px;
-        background-color: #f8f8f8;
-        margin-left: 5%;
-        border-radius: 10px;
+        bottom: 0px;
+        background-color: #ffffff;
+        border-top: 1px solid #d0c9c9;
         text-align: center;
         font-size: 20px;
-    }
-    .bottom-index {
-        color: #00b3ee;
-        font-size: 30px;
-        font-style: italic;
-        margin-right: 20px;
     }
     .audio-box {
         width: 100%;
