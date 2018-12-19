@@ -23,7 +23,7 @@
                 </div>
                 <div class="audio-btn">
                     <div class="audio-select">
-                        <div class="glyphicon glyphicon-th-large" @click="audoMenu"></div>
+                        <div class="glyphicon glyphicon-list" @click="audoMenu"></div>
                         <div :class="{'glyphicon glyphicon-play':isPlay,'glyphicon glyphicon-pause':isStop}" @click="audioPlay"></div>
                         <div :class="{'glyphicon glyphicon-repeat':isLoop, 'glyphicon glyphicon-remove':isCancelLoop}" @click="loop"></div>
                     </div>
