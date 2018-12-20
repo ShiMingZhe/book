@@ -271,7 +271,7 @@
         border-top-right-radius: 10px;
         float: left;
         background-color: #ffffff;
-        border-bottom: 1px solid #b5b2b2;
+        border-bottom: 1px solid #f1f1f1;
         position: absolute;
     }
     .bottom-content {
