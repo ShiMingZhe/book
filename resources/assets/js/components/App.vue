@@ -25,7 +25,7 @@
                     <div class="audio-select">
                         <div class="glyphicon glyphicon-list" @click="audoMenu"></div>
                         <div :class="{'glyphicon glyphicon-play':isPlay,'glyphicon glyphicon-pause':isStop}" @click="audioPlay"></div>
-                        <div :class="{'glyphicon glyphicon-repeat':isLoop, 'glyphicon glyphicon-remove':isCancelLoop}" @click="loop"></div>
+                        <!--<div :class="{'glyphicon glyphicon-play-circle':isLoop, 'glyphicon glyphicon-remove-circle':isCancelLoop}" @click="loop"></div>-->
                     </div>
                 </div>
             </div>
@@ -257,28 +257,28 @@
     .bottom-display-content {
         position: absolute;
         width: 100%;
-        height: 80%;
+        height: 85%;
         z-index: 3;
         bottom: 0;
     }
     .bottom-title {
         width: 100%;
-        height: 60px;
-        line-height: 60px;
+        height: 50px;
+        line-height: 50px;
         text-align: center;
         font-size: 16px;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         float: left;
         background-color: #ffffff;
-        border-bottom: 1px solid #f3f3f3;
+        border-bottom: 1px solid #b5b2b2;
         position: absolute;
     }
     .bottom-content {
         width: 100%;
         height: 100%;
         float: left;
-        margin-top: 60px;
+        margin-top: 50px;
         background-color: white;
         margin-bottom: 100px;
         position: absolute;
@@ -428,7 +428,7 @@
     .audio-select{
         height: 39px;
         margin-top: 25px;
-        width: 280px;
+        width: 165px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -443,7 +443,7 @@
     }
     .audio-select > div + div{
         cursor: pointer;
-        margin-left: 80px;
+        margin-left: 86px;
     }
     .audio-prev{
         background-image: url('../../../../public/webapp/images/prev.png');
