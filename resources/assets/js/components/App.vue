@@ -36,7 +36,7 @@
                 <div class="bottom-title">古诗词音频</div>
                 <div class="bottom-content">
                     <scroller>
-                        <a :href="'/qr/'+item.uniq_code" v-if="item.uniq_code" v-for="(item, index) in poetry_list">
+                        <a :href="'/qr/'+item.uniq_code" v-if="item.uniq_code" v-for="item in poetry_list">
                             <li>{{item.title}}</li>
                         </a>
                         <span class="bottom-load" v-show=" poetry_list.length%10 == 0 " @click="getData(poetry_list.length)" v-cloak>{{more_load}}</span>
@@ -236,7 +236,6 @@
         overflow: hidden;
         padding-top: 20px;
         font-size: 20px;
-        /*color: #0a612f;*/
     }
     #content-detail {
         width: 100%;
@@ -296,12 +295,10 @@
         padding-left: 25px;
         list-style-type: none;
     }
-    .bottom-content .bottom-load {
-        color: #3e3a3a;
-        font-size: 16px;
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%, 50%);
+    .bottom-load {
+        font-size: 17px;
+        line-height: 60px;
+        margin-left: 37%;
     }
     .bottom-display-close {
         position: absolute;
@@ -349,14 +346,14 @@
         text-align: center;
         margin-bottom: 10px;
         padding-top: 20px;
-        font-size: 23px;
+        font-size: 24px;
         color: #0a612f;
     }
     .audio-author {
         font-size: 16px;
         float: right;
         margin-right: 70px;
-        margin-top: 20px;
+        margin-top: 30px;
     }
     .audio-backs{
         width: 100%;
