@@ -2,14 +2,12 @@
     <div class="audio-box">
         <div class="audio-title">{{poetry_content.title}}</div>
         <div class="audio-author">{{poetry_content.author}}</div>
-        <!--<div id="lrc_content"></div>-->
         <div id="content-detail" v-html="poetry_content.sub_content"></div>
         <div class="audio-container">
             <div class="audio-view">
                 <audio :src="poetry_content.mp3_url" ref="audio" @timeupdate="updateTime"></audio>
                 <div class="audio-body">
                     <div id="lrc_content"></div>
-                    <!--<div class="audio-title">{{poetry_content.title}}</div>-->
                     <div class="audio-backs">
                         <div class="audio-setbacks" @click="setProgress">
                             <i class="audio-this-setbacks">
@@ -287,13 +285,12 @@
     }
     .bottom-content li {
         width: 90%;
-        height: 60px;
-        line-height: 60px;
+        height: 50px;
+        line-height: 50px;
         margin-left: 5%;
         color: #000000;
         font-size: 16px;
         background-color: white;
-        /*border: 1px solid #f1eef3;*/
         border-bottom: 1px silver dashed;
         border-radius: 3px;
         padding-left: 25px;
@@ -350,8 +347,6 @@
         height: 30px;
         line-height: 30px;
         text-align: center;
-        /*color: #000000;
-        font-size: 20px;*/
         margin-bottom: 10px;
         padding-top: 20px;
         font-size: 23px;
@@ -455,48 +450,6 @@
     .audio-select > div + div{
         cursor: pointer;
         margin-left: 86px;
-    }
-    .audio-prev{
-        background-image: url('../../../../public/webapp/images/prev.png');
-    }
-    .audio-next{
-        background-image: url('../../../../public/webapp/images/next.png');
-    }
-    .audio-play{
-        background-image: url('../../../../public/webapp/images/play.png');
-    }
-    .audio-stop{
-        background-image: url('../../../../public/webapp/images/pause.png');
-    }
-    .audio-menu{
-        background-image: url('../../../../public/webapp/images/menu.png');
-    }
-    .audio-volume{
-        background-image: url('../../../../public/webapp/images/volume.png');
-    }
-
-    .audio-set-volume {
-        background-color: #d3d6d6;
-        background-color: rgba(0,0,0,0.5);
-        position: absolute;
-        bottom: 68px;
-        width: 30px;
-        height: 120px;
-        z-index: 999;
-        display:block;
-        margin-left: 23px;
-        float: left;
-        display: none;
-    }
-    .volume-box{
-        width: 5px;
-        margin: auto;
-        display: block;
-        position: relative;
-        background-color: #000;
-        border-radius: 2.5px;
-        height: 100px;
-        bottom: -10px;
     }
     .volume-box span{
         display: block;
