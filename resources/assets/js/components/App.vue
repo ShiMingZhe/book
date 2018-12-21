@@ -1,12 +1,15 @@
 <template>
     <div class="audio-box">
-        <div id="lrc_content"></div>
+        <div class="audio-title">{{poetry_content.title}}</div>
+        <div class="audio-author">{{poetry_content.author}}</div>
+        <!--<div id="lrc_content"></div>-->
         <div id="content-detail" v-html="poetry_content.sub_content"></div>
         <div class="audio-container">
             <div class="audio-view">
                 <audio :src="poetry_content.mp3_url" ref="audio" @timeupdate="updateTime"></audio>
                 <div class="audio-body">
-                    <div class="audio-title">{{poetry_content.title}}</div>
+                    <div id="lrc_content"></div>
+                    <!--<div class="audio-title">{{poetry_content.title}}</div>-->
                     <div class="audio-backs">
                         <div class="audio-setbacks" @click="setProgress">
                             <i class="audio-this-setbacks">
@@ -23,8 +26,8 @@
                 </div>
                 <div class="audio-btn">
                     <div class="audio-select">
-                        <div class="glyphicon glyphicon-list" @click="audoMenu"></div>
                         <div :class="{'glyphicon glyphicon-play':isPlay,'glyphicon glyphicon-pause':isStop}" @click="audioPlay"></div>
+                        <div class="glyphicon glyphicon-list" @click="audoMenu"></div>
                         <!--<div :class="{'glyphicon glyphicon-play-circle':isLoop, 'glyphicon glyphicon-remove-circle':isCancelLoop}" @click="loop"></div>-->
                     </div>
                 </div>
@@ -153,7 +156,7 @@
                 let content = this.setLrc();
                 let lrc_content = this.lrc_content;
                 if (content[interval] && this.lrc_tmp !== interval) {
-                    let html = this.updateLrc(interval,lrc_content,'#0a612f');
+                    let html = this.updateLrc(interval,lrc_content,'#000000');
                     $("#lrc_content").html(html);
                     this.lrc_tmp = this.lrc_index.shift();
                     let prev_all = $("#currentPosition").prevAll();
@@ -199,7 +202,7 @@
                 let html = '';
                 content.forEach(function (val,index) {
                     if (index == currentTime) {
-                        html += "<p id='currentPosition' style='color:"+color+";font-size: 23px;'>"+ val +"</p>";
+                        html += "<p id='currentPosition' style='color:"+color+";font-size: 20px;'>"+ val +"</p>";
                     }
                     html += "<p>"+ val + "</p>";
                 });
@@ -231,17 +234,17 @@
         width: 100%;
         height: 60px;
         line-height: 40px;
-        text-align: center;
+        text-align: left;
         overflow: hidden;
         padding-top: 20px;
-        font-size: 23px;
-        color: #0a612f;
+        font-size: 20px;
+        /*color: #0a612f;*/
     }
     #content-detail {
         width: 100%;
         text-align: center;
-        font-size: 16px;
-        margin-top: 60px;
+        font-size: 20px;
+        margin-top: 90px;
     }
     .bottom-display {
         width: 100%;
@@ -257,8 +260,7 @@
     .bottom-display-content {
         position: absolute;
         width: 100%;
-        height: 85%;
-        z-index: 3;
+        height: 560px;
         bottom: 0;
     }
     .bottom-title {
@@ -276,7 +278,7 @@
     }
     .bottom-content {
         width: 100%;
-        height: 100%;
+        height: 460px;
         float: left;
         margin-top: 50px;
         background-color: white;
@@ -312,7 +314,6 @@
         float: left;
         bottom: 0px;
         background-color: #ffffff;
-        border-top: 1px solid #d0c9c9;
         text-align: center;
         font-size: 20px;
     }
@@ -348,9 +349,19 @@
         width: 100%;
         height: 30px;
         line-height: 30px;
-        color: #000000;
-        font-size: 20px;
+        text-align: center;
+        /*color: #000000;
+        font-size: 20px;*/
         margin-bottom: 10px;
+        padding-top: 20px;
+        font-size: 23px;
+        color: #0a612f;
+    }
+    .audio-author {
+        font-size: 16px;
+        float: right;
+        margin-right: 70px;
+        margin-top: 20px;
     }
     .audio-backs{
         width: 100%;
