@@ -4,11 +4,10 @@
          <div id="content_left">
             <div id="introduce_top">
                <span id="title">{{ content.title }}</span>
-               <span id="author">【{{content.author}}】</span>
+               <span id="author">{{content.author}}</span>
             </div>
             <div id="introduce_bottom">{{ content.short_introduce }}</div>
          </div>
-         <div id="content_right"><span id="signal">></span></div>
       </div>
       <div v-if="is_detail" v-html="detail"></div>
    </div>
@@ -85,26 +84,15 @@
       padding-left: 10px;
       float: left;
    }
-   #content_right {
-      width: 10%;
-      line-height: 60px;
-      font-size: 20px;
-      float: right;
-   }
-   #signal {
-      margin-right: 10px;
-      color: #c5c8c6;
-      float: right;
-   }
    #introduce_top {
       font-size: 15px;
    }
    #title {
-      /*font-size: 15px;*/
+      font-size: 19px;
    }
    #author {
-      /*font-size: 10px;*/
-      /*margin-left: 5px;*/
+      font-size: 12px;
+      margin-left: 10px;
    }
    #introduce_bottom {
       color: #b5b5b5;

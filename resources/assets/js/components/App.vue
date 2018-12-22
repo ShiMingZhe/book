@@ -37,7 +37,7 @@
                 <div class="bottom-content">
                     <scroller>
                         <a :href="'/qr/'+item.uniq_code" v-if="item.uniq_code" v-for="item in poetry_list">
-                            <li>{{item.title}}</li>
+                            <li><span class="title">{{item.title}}</span><span class="author">{{item.author}}</span></li>
                         </a>
                         <span class="bottom-load" v-show=" poetry_list.length%10 == 0 " @click="getData(poetry_list.length)" v-cloak>{{more_load}}</span>
                     </scroller>
@@ -277,10 +277,9 @@
         width: 100%;
         height: 460px;
         float: left;
-        margin-top: 50px;
         background-color: white;
-        margin-bottom: 100px;
         position: absolute;
+        bottom: 50px;
     }
     .bottom-content li {
         width: 90%;
@@ -294,6 +293,14 @@
         border-radius: 3px;
         padding-left: 25px;
         list-style-type: none;
+    }
+    .bottom-content li .title {
+        font-size: 20px;
+    }
+    .bottom-content li .author {
+        font-size: 15px;
+        margin-left: 10px;
+        color: #585858;
     }
     .bottom-load {
         font-size: 17px;
@@ -310,6 +317,7 @@
         background-color: #ffffff;
         text-align: center;
         font-size: 20px;
+        border-top: 1px solid #dedcdc;
     }
     .audio-box {
         width: 100%;
