@@ -9,7 +9,10 @@
             <div id="introduce_bottom">{{ content.short_introduce }}</div>
          </div>
       </div>
-      <div v-if="is_detail" v-html="detail"></div>
+      <div v-if="is_detail">
+         <div v-html="detail"></div>
+         <div class="back" @click="goPrevious">返回</div>
+      </div>
    </div>
 </template>
 
@@ -39,6 +42,10 @@
                 this.is_list = false;
                 this.is_detail = true;
                 this.detail = detail;
+            },
+            goPrevious() {
+                this.is_list = true;
+                this.is_detail = false;
             },
             getData(offset) {
                 this.$http.get('/have_a_look/'+offset).then(response => {
@@ -88,14 +95,28 @@
       font-size: 15px;
    }
    #title {
-      font-size: 19px;
+      font-size: 20px;
    }
    #author {
-      font-size: 12px;
+      font-size: 15px;
       margin-left: 10px;
+      color: #585858;
    }
    #introduce_bottom {
       color: #b5b5b5;
       margin-top: 2px;
+   }
+   .back {
+      width: 95px;
+      height: 45px;
+      line-height: 45px;
+      background-color: #ffffff;
+      box-shadow: 0px 7px 20px #a5a1a1;
+      position: absolute;
+      text-align: center;
+      margin-left: 20px;
+      border-radius: 30px;
+      bottom: 70px;
+      font-size: 16px;
    }
 </style>
