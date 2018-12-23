@@ -15,7 +15,7 @@
         "doctrine/dbal": "^2.5",
         "guzzlehttp/guzzle": "~6.0",
         "predis/predis": "^1.1",
-        "ext-json":"*",
+        "ext-json":"*"
     },
     "require-dev": {
         "filp/whoops": "^2.0",
