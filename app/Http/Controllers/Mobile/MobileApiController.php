@@ -20,7 +20,7 @@ class MobileApiController extends Controller
     const WEIXIN_ACCESS_TOKEN = 'WeixinAccessToken';
     const WEIXIN_TICKET = 'WeixinTicket';
 
-    //获取诗词
+    //获取诗词内容
     public function getPoetryContent($uniqId)
     {
         $poetry = Poetries::where('uniq_code', $uniqId)->first();
