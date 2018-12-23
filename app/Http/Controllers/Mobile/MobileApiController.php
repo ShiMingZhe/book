@@ -13,7 +13,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Poetries;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Redis;
-use Overtrue\Pinyin\Pinyin;
 
 class MobileApiController extends Controller
 {
@@ -24,13 +23,6 @@ class MobileApiController extends Controller
     public function getPoetryContent($uniqId)
     {
         $poetry = Poetries::where('uniq_code', $uniqId)->first();
-        $pinyin = new Pinyin();
-        $contents = explode('</p>',$poetry['sub_content']);
-        $data = '';
-        foreach ($contents as $content) {
-            $data .= '<p>'.$pinyin->sentence(strip_tags($content), PINYIN_TONE).'</p>'.'<p>'.strip_tags($content).'</p>';
-        }
-        $poetry['sub_content'] = $data;
 
         return $poetry;
     }
