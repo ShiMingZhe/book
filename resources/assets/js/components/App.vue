@@ -272,6 +272,7 @@
         background-color: #ffffff;
         border-bottom: 1px solid #f1f1f1;
         position: absolute;
+        color: #000;
     }
     .bottom-content {
         width: 100%;
@@ -306,6 +307,7 @@
         font-size: 17px;
         line-height: 60px;
         margin-left: 37%;
+        color: #000;
     }
     .bottom-display-close {
         position: absolute;
