@@ -313,7 +313,8 @@
         height: 50px;
         line-height: 50px;
         float: left;
-        bottom: 0px;
+        bottom: 0;
+        color: #000;
         background-color: #ffffff;
         text-align: center;
         font-size: 20px;
@@ -329,7 +330,8 @@
         -webkit-background-size: cover;
         -o-background-size: cover;
         background-position: center 0;
-        color: #2b2b2b;
+        background-color: #313234;
+        color: #fff;
     }
     .audio-container{
         width: 100%;
@@ -355,7 +357,7 @@
         margin-bottom: 10px;
         padding-top: 20px;
         font-size: 24px;
-        color: #0a612f;
+        color: #ffffff;
     }
     .audio-author {
         font-size: 16px;
@@ -372,7 +374,7 @@
         height: 30px;
         margin-top: 20px;
         float: left;
-        color: #000000;
+        color: #a0a0a0;
         font-size: 20px;
     }
     .audio-this-time,
@@ -414,7 +416,7 @@
         cursor: pointer;
     }
     .audio-this-setbacks{
-        background-color: #37da5a;
+        background-color: #bc7d66;
         width: 0px;
         z-index: 2;
     }
@@ -425,7 +427,7 @@
         margin-top: -7px;
         top: 50%;
         right: -7px;
-        background-color: #37da5a;
+        background-color: #bc7d66;
         border-radius: 50%;
         cursor: pointer;
     }

@@ -1,17 +1,21 @@
 <template>
    <div id="container" ref="poetry_content">
-      <div v-for="content in contents" v-if="content.is_available == 1 && is_list" id="item" @click="goTo(content.detail)">
-         <div id="content_left">
-            <div id="introduce_top">
-               <span id="title">{{ content.title }}</span>
-               <span id="author">{{content.author}}</span>
+      <div v-if="is_list" class="content-item">
+         <div v-for="content in contents" v-if="content.is_available == 1" id="item" @click="goTo(content.detail)">
+            <div id="content_left">
+               <div id="introduce_top">
+                  <span id="title">{{ content.title }}</span>
+                  <span id="author">{{content.author}}</span>
+               </div>
+               <div id="introduce_bottom">{{ content.short_introduce }}</div>
             </div>
-            <div id="introduce_bottom">{{ content.short_introduce }}</div>
          </div>
       </div>
       <div v-if="is_detail">
-         <div v-html="detail"></div>
          <div class="back" @click="goPrevious">返回</div>
+         <div class="detail">
+            <div v-html="detail"></div>
+         </div>
       </div>
    </div>
 </template>
@@ -73,16 +77,17 @@
 
 <style scoped>
    #container {
-      height: 100%;
+      background-color: #313234;
+      padding-top: 10px;
    }
    #item {
       width: 95%;
       height: 60px;
       margin-left: auto;
       margin-right: auto;
-      margin-top: 10px;
       border-radius: 5px;
       background-color: #ffffff;
+      margin-top: 10px;
    }
    #content_left {
       width: 90%;
@@ -107,16 +112,22 @@
       margin-top: 2px;
    }
    .back {
-      width: 95px;
-      height: 45px;
-      line-height: 45px;
+      width: 40px;
+      height: 26px;
+      line-height: 26px;
       background-color: #ffffff;
-      box-shadow: 0px 7px 20px #a5a1a1;
-      position: absolute;
       text-align: center;
       margin-left: 20px;
-      border-radius: 30px;
-      bottom: 70px;
-      font-size: 16px;
+      float: right;
+      border-radius: 8px;
+      margin-right: 10px;
+      font-size: 12px;
+   }
+   .detail {
+      color: #ffffff;
+      padding-bottom: 70px;
+   }
+   .content-item {
+      padding-bottom: 70px;
    }
 </style>
