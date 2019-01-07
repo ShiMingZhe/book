@@ -12,7 +12,7 @@
          </div>
       </div>
       <div v-if="is_detail">
-         <div class="back" @click="goPrevious">返回</div>
+         <div class="back" @click="goPrevious"><i class="glyphicon glyphicon-menu-left"></i>返回</div>
          <div class="detail">
             <div v-html="detail"></div>
          </div>
@@ -124,7 +124,7 @@
       font-size: 12px;
    }
    .detail {
-      color: #ffffff;
+      color: #000;
       padding-bottom: 70px;
    }
    .content-item {

@@ -334,7 +334,6 @@
         -o-background-size: cover;
         background-position: center 0;
         background-color: #ebebeb;
-        color: #fff;
     }
     .audio-container{
         width: 100%;
@@ -378,7 +377,7 @@
         height: 30px;
         margin-top: 20px;
         float: left;
-        color: #a0a0a0;
+        color: #000;
         font-size: 20px;
     }
     .audio-this-time,
@@ -420,7 +419,7 @@
         cursor: pointer;
     }
     .audio-this-setbacks{
-        background-color: #bc7d66;
+        background-color: #38c172;
         width: 0px;
         z-index: 2;
     }
@@ -431,7 +430,7 @@
         margin-top: -7px;
         top: 50%;
         right: -7px;
-        background-color: #bc7d66;
+        background-color: #38c172;
         border-radius: 50%;
         cursor: pointer;
     }
