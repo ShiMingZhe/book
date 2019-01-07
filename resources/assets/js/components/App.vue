@@ -242,6 +242,7 @@
         text-align: center;
         font-size: 20px;
         margin-top: 90px;
+        color: #000;
     }
     .bottom-display {
         width: 100%;
@@ -332,7 +333,7 @@
         -webkit-background-size: cover;
         -o-background-size: cover;
         background-position: center 0;
-        background-color: #313234;
+        background-color: #ebebeb;
         color: #fff;
     }
     .audio-container{
@@ -359,13 +360,14 @@
         margin-bottom: 10px;
         padding-top: 20px;
         font-size: 24px;
-        color: #ffffff;
+        color: #000000;
     }
     .audio-author {
         font-size: 16px;
         float: right;
         margin-right: 70px;
         margin-top: 30px;
+        color: #000;
     }
     .audio-backs{
         width: 100%;

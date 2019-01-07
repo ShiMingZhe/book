@@ -15,7 +15,8 @@
         "doctrine/dbal": "^2.5",
         "guzzlehttp/guzzle": "~6.0",
         "predis/predis": "^1.1",
-        "ext-json":"*"
+        "ext-json":"*",
+        "barryvdh/laravel-ide-helper": ">=2.1.0"
     },
     "require-dev": {
         "filp/whoops": "^2.0",
@@ -54,6 +55,11 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover"
+        ],
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "php artisan optimize",
+            "php artisan ide-helper:generate"
         ],
         "serve":"php -S localhost:8200/index.php -t public"
     },

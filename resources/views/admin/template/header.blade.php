@@ -22,10 +22,10 @@
                     <!-- Menu Toggle Button -->
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-flag-o"></i>
-                        <span class="label label-danger">{{$task}}</span>
+                        <span class="label label-danger">{{$taskNum}}</span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="header">你有{{$task}}个任务待完成</li>
+                        <li class="header">你有{{$taskNum}}个任务待完成</li>
                         <li class="footer">
                             <a href="{{@url("/task/admin/index")}}">查看任务</a>
                         </li>

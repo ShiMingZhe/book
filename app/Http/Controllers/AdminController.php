@@ -106,11 +106,6 @@ class AdminController extends Controller
         return md5(time().$str);
     }
 
-    public function index()
-    {
-        return view('admin/index');
-    }
-
     //生成二维码
     protected function createQr($uniqId)
     {

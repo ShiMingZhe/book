@@ -1,4 +1,6 @@
-@include('admin.header')
+{{--@include('admin.header')--}}
+@extends('admin.template.layouts')
+@section('content')
 <div class="box">
     <div class="box-header">
         <h3>管理员管理</h3>
@@ -104,4 +106,6 @@
     <!-- /.modal -->
 </div>
 <!-- /.box -->
-@include('admin.footer')
+@endsection
+{{--
+@include('admin.footer')--}}

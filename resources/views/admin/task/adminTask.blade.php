@@ -1,4 +1,6 @@
-@include('admin.header')
+{{--@include('admin.header')--}}
+@extends('admin.template.layouts')
+@section('content')
 <div class="box">
     <div class="box-header">
         <h4>共做<span style="color: red;font-size: xx-large">{{$total}}</span>个任务，
@@ -20,19 +22,19 @@
             </thead>
             <tbody>
 
-            @foreach($data as $task)
+            @foreach($data as $taskItem)
                 <tr>
-                    <td>{{$task->id}}</td>
-                    <td>{{$task->name}}</td>
-                    <td>{{$task->describe}}</td>
-                    @if($task->is_pass == '0')
+                    <td>{{$taskItem->id}}</td>
+                    <td>{{$taskItem->name}}</td>
+                    <td>{{$taskItem->describe}}</td>
+                    @if($taskItem->is_pass == '0')
                         <td>待审核</td>
-                    @elseif($task->is_pass == '1')
+                    @elseif($taskItem->is_pass == '1')
                         <td>审核通过</td>
-                    @elseif($task->is_pass == '2')
+                    @elseif($taskItem->is_pass == '2')
                         <td>审核拒绝</td>
                     @endif
-                    <td>{{$task->reason}}</td>
+                    <td>{{$taskItem->reason}}</td>
                 </tr>
             @endforeach
             </tbody>
@@ -41,4 +43,6 @@
     <!-- /.box-body -->
 </div>
 <!-- /.box -->
-@include('admin.footer')
+@endsection
+{{--
+@include('admin.footer')--}}

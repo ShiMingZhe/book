@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\OuterAdminLogin;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -61,5 +62,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'admin.login' => \App\Http\Middleware\AdminLogin::class,
         'view.dispatch' => \App\Http\Middleware\ViewDispatch::class,
+        'outer.admin.login' =>OuterAdminLogin::class,
     ];
 }

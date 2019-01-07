@@ -23,7 +23,7 @@ Route::get('/index', 'IndexController@index');
  */
 
 Route::group(['middleware' => ['web', 'admin.login']], function () {
-    Route::get('/mkadmin', 'AdminController@index');
+    Route::get('/mkadmin', 'LoginController@login');
     Route::get('/listen', 'AdminController@listen');
 });
 //生成二维码
@@ -37,7 +37,7 @@ Route::group(['middleware' => ['view.dispatch']], function () {
     Route::get('/listen/uniqid/{poetry_id}', 'AdminController@createUniqId');
     Route::post('/listen/update', 'AdminController@update');
 
-    Route::get('/login', 'LoginController@login');
+    Route::get('/internal_login', 'LoginController@login');
     Route::get('/captcha_code', 'LoginController@captchaCode');
     Route::post('/login/validation', 'LoginController@validation');
     Route::get('/register', 'LoginController@register');
@@ -77,3 +77,23 @@ Route::get('/getSignature/{url}', 'Mobile\MobileApiController@getSignature')
 Route::get('/qr/{uniq_id}', 'WebAppController@index');
 Route::get('/library', 'WebAppController@library');
 Route::get('/library/item', 'WebAppController@library');
+
+/**
+ * 小程序对接
+ */
+Route::group(['middleware' => ['web']], function () {
+    Route::get('/adminBook', 'MiniProgram\OuterLoginController@index');
+    /*Route::get('/adminBook', 'MiniProgram\OuterAdminController@index');*/
+    /*Route::get('/listen', 'AdminController@listen');*/
+});
+Route::get('/outer/register', 'MiniProgram\OuterLoginController@register');
+Route::post('/outer/register', 'MiniProgram\OuterLoginController@registerSave');
+Route::get('/outer/login', 'MiniProgram\OuterLoginController@index');
+Route::post('/outer/login/validation', 'MiniProgram\OuterLoginController@validation');
+Route::get('/outer/loginOut', 'MiniProgram\OuterLoginController@loginOut');
+
+Route::get('/outer/brand/index', 'MiniProgram\OuterBrandController@index');
+
+Route::get('/outer/knowledge/index', 'MiniProgram\OuterKnowledgeController@index');
+
+Route::get('/outer/users/index', 'MiniProgram\OuterUsersController@index');

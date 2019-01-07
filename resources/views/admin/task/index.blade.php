@@ -1,4 +1,6 @@
-@include('admin.header')
+{{--@include('admin.header')--}}
+@extends('admin.template.layouts')
+@section('content')
 <div class="box">
     <div class="box-header">
         <h3>待处理任务-共<span style="color: red;">{{count($data)}}</span>条任务</h3>
@@ -18,25 +20,25 @@
             </thead>
             <tbody>
 
-            @foreach($data as $task)
-                @if($task->is_pass == '0')
+            @foreach($data as $taskItem)
+                @if($taskItem->is_pass == '0')
                     <tr>
-                        <td>{{$task->id}}</td>
-                        <td>{{$task->name}}</td>
-                        <td>{{$task->operator}}</td>
-                        <td>{{$task->describe}}</td>
-                        @if($task->is_pass == '0')
+                        <td>{{$taskItem->id}}</td>
+                        <td>{{$taskItem->name}}</td>
+                        <td>{{$taskItem->operator}}</td>
+                        <td>{{$taskItem->describe}}</td>
+                        @if($taskItem->is_pass == '0')
                             <td>待审核</td>
-                        @elseif($task->is_pass == '1')
+                        @elseif($taskItem->is_pass == '1')
                             <td>审核通过</td>
-                        @elseif($task->is_pass == '2')
+                        @elseif($taskItem->is_pass == '2')
                             <td>审核拒绝</td>
                         @endif
                         <td>
-                            <a href="{{@url("/task/admin/pass/{$task->id}/{$task->task_id}/{$task->type}")}}">
+                            <a href="{{@url("/task/admin/pass/{$taskItem->id}/{$taskItem->task_id}/{$taskItem->type}")}}">
                                 <button type="button" class="btn btn-block btn-primary">通过</button>
                             </a>
-                            <a href="{{@url("/task/admin/reject/{$task->id}/{$task->task_id}/{$task->type}")}}">
+                            <a href="{{@url("/task/admin/reject/{$taskItem->id}/{$taskItem->task_id}/{$taskItem->type}")}}">
                                 <button type="button" class="btn btn-block btn-danger">拒绝</button>
                             </a>
                         </td>
@@ -49,4 +51,6 @@
     <!-- /.box-body -->
 </div>
 <!-- /.box -->
-@include('admin.footer')
+@endsection
+{{--
+@include('admin.footer')--}}

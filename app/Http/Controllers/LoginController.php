@@ -24,7 +24,7 @@ class LoginController extends Controller
     {
         $code = $this->captchaCode();
 
-        return view('admin.login',['code' => $code]);
+        return view('admin.login', ['code' => $code]);
     }
 
     /**
@@ -37,16 +37,16 @@ class LoginController extends Controller
         $user = Users::where('email',$input['email'])->get();
         if (!$user->isEmpty()) {
             if ($input['password'] != decrypt($user->first()->password)) {
-                return redirect('/login')->with(['login_errors' => '登录密码错误']);
+                return redirect('/internal_login')->with(['login_errors' => '登录密码错误']);
             } elseif($input['code'] != Session::get('code')) {
-                return redirect('/login')->with(['login_errors' => '登录验证码错误']);
+                return redirect('/internal_login')->with(['login_errors' => '登录验证码错误']);
             }
             Session::put('user',$user);
 
             return redirect('/listen');
         }
 
-        return redirect('/login')->with(['login_errors' => '该用户不存在']);
+        return redirect('/internal_login')->with(['login_errors' => '该用户不存在']);
     }
 
     /**
@@ -57,7 +57,7 @@ class LoginController extends Controller
     {
         Session::flush();
 
-        return redirect('/login');
+        return redirect('/internal_login');
     }
 
     /**

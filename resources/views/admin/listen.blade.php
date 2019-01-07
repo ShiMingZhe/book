@@ -1,4 +1,5 @@
-@include('admin.header')
+@extends('admin.template.layouts')
+@section('content')
 <div class="box">
     <div class="box-header">
         <a href="/listenAdd">
@@ -79,4 +80,4 @@
     <!-- /.box-body -->
 </div>
 <!-- /.box -->
-@include('admin.footer')
+@endsection

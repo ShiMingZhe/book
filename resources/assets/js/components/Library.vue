@@ -77,7 +77,7 @@
 
 <style scoped>
    #container {
-      background-color: #313234;
+      background-color: #ebebeb;
       padding-top: 10px;
    }
    #item {

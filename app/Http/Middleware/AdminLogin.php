@@ -19,7 +19,7 @@ class AdminLogin
     public function handle($request, Closure $next)
     {
         if (!Session::exists('user')) {
-            return redirect('/login');
+            return redirect('/internal_login');
         }
         $user = Session::get('user');
         $userOne = $user->first();
@@ -43,7 +43,7 @@ class AdminLogin
         view()->share([
             'adminRole' => $adminRole,
             'adminName' => $adminName,
-            'task' => $tk,
+            'taskNum' => $tk,
             'roleId' => $roleId,
         ]);
 

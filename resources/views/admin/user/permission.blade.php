@@ -1,4 +1,6 @@
-@include('admin.header')
+{{--@include('admin.header')--}}
+@extends('admin.template.layouts')
+@section('content')
 <section class="content">
 
     <div class="callout callout-danger">
@@ -9,4 +11,6 @@
 
     <!-- /.box -->
 </section>
-@include('admin.footer')
+@endsection
+{{--
+@include('admin.footer')--}}
