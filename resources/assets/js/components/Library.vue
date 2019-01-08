@@ -112,16 +112,15 @@
       margin-top: 2px;
    }
    .back {
-      width: 40px;
-      height: 26px;
-      line-height: 26px;
-      background-color: #ffffff;
+      width: 60px;
+      height: 35px;
+      line-height: 35px;
       text-align: center;
-      margin-left: 20px;
-      float: right;
-      border-radius: 8px;
-      margin-right: 10px;
-      font-size: 12px;
+      margin-left: 80%;
+      border-radius: 3px;
+      position: fixed;
+      border: 1px green dashed;
+      font-size: 16px;
    }
    .detail {
       color: #000;
