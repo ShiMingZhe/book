@@ -4,7 +4,7 @@
          <div v-for="content in contents" v-if="content.is_available == 1" id="item" @click="goTo(content.detail)">
             <div id="content_left">
                <div id="introduce_top">
-                  <span id="title">{{ content.title }}</span>
+                  <span id="title">{{ content.title | ellipsis}}</span>
                   <span id="author">{{content.author}}</span>
                </div>
                <div id="introduce_bottom">{{ content.short_introduce }}</div>
@@ -23,6 +23,15 @@
 <script>
     export default {
         name: "Library",
+        filters: {
+            ellipsis (value) {
+                if (!value) return '';
+                if (value.length > 9) {
+                    return value.slice(0,9) + '...'
+                }
+                return value
+            }
+        },
         data() {
             return {
                 contents:[],
@@ -90,7 +99,7 @@
       margin-top: 10px;
    }
    #content_left {
-      width: 90%;
+      width: 100%;
       height: 50px;
       padding-top: 6px;
       padding-left: 10px;
