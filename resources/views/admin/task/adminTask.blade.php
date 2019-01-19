@@ -3,7 +3,7 @@
 @section('content')
 <div class="box">
     <div class="box-header">
-        <h4>共做<span style="color: red;font-size: xx-large">{{$total}}</span>个任务，
+        <h4>该页面共做<span style="color: red;font-size: xx-large">{{$total}}</span>个任务，
             通过率:<span style="color: red;font-size: xx-large">{{$pass}}</span>，
             失败率:<span style="color: red;font-size: xx-large">{{$reject}}</span>
         </h4>
@@ -13,15 +13,14 @@
         <table class="table table-bordered table-striped">
             <thead>
             <tr>
-                <td>id</td>
-                <td>任务名称</td>
-                <td>任务来源</td>
-                <td>审核状态</td>
-                <td>拒绝原因</td>
+                <th>id</th>
+                <th>任务名称</th>
+                <th>任务来源</th>
+                <th>审核状态</th>
+                <th>拒绝原因</th>
             </tr>
             </thead>
             <tbody>
-
             @foreach($data as $taskItem)
                 <tr>
                     <td>{{$taskItem->id}}</td>
@@ -41,6 +40,11 @@
         </table>
     </div>
     <!-- /.box-body -->
+    <div class="box-footer clearfix">
+        <ul class="pagination pagination-sm no-margin pull-right">
+            {{ $tasks->links() }}
+        </ul>
+    </div>
 </div>
 <!-- /.box -->
 @endsection

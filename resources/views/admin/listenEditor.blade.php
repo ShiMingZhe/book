@@ -56,13 +56,8 @@
 <!-- /.box -->
 <!-- jQuery 3 -->
 <script src="{{@asset("admin-lte/bower_components/jquery/dist/jquery.min.js")}}"></script>
-<script src="{{@asset("/admin-lte/bower_components/ckeditor/ckeditor.js")}}"></script>
 <script src="{{@asset("tinymce/tinymce.min.js")}}"></script>
 <script>
-    $(function () {
-        CKEDITOR.replace('editor1');
-        CKEDITOR.replace('editor2');
-    });
     tinyMCE.init({
         selector: '#tinyMCEEditor'
     });

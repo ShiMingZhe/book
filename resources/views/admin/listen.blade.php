@@ -24,17 +24,17 @@
         <table class="table table-hover">
             <thead>
             <tr>
-                <td>id</td>
-                <td>标题</td>
-                <td>作者</td>
-                <td>一句话简介</td>
-                <td>音频词内容</td>
-                <td>诗词内容</td>
-                <td>详情</td>
-                <td>MP3地址</td>
-                <td>唯一码</td>
-                <td>二维码</td>
-                <td>操作</td>
+                <th>id</th>
+                <th>标题</th>
+                <th>作者</th>
+                <th>一句话简介</th>
+                <th>音频词内容</th>
+                <th>诗词内容</th>
+                <th>详情</th>
+                <th>MP3地址</th>
+                <th>唯一码</th>
+                <th>二维码</th>
+                <th>操作</th>
             </tr>
             </thead>
             <tbody>
@@ -55,7 +55,7 @@
                             @if($poetry->qr_url)
                                 <img width="60px" height="60px" src="{{@asset("qrcode/".$poetry->uniq_code.".png")}}">
                                 <a href="{{@url("/downloadQr/$poetry->uniq_code/$poetry->title")}}" download="download"
-                                   style="font-size: 16px;color: #c2574a;">下载</a>
+                                   style="font-size: 16px;color: #c2574a;white-space: normal !important;">下载</a>
                             @endif
                         </td>
                         <td>

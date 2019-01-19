@@ -7,15 +7,15 @@
     </div>
     <!-- /.box-header -->
     <div class="box-body">
-        <table class="table table-bordered table-striped">
+        <table class="table table-hover">
             <thead>
             <tr>
-                <td>id</td>
-                <td>任务名称</td>
-                <td>操作人员</td>
-                <td>任务来源</td>
-                <td>审核状态</td>
-                <td>操作</td>
+                <th>id</th>
+                <th>任务名称</th>
+                <th>操作人员</th>
+                <th>任务来源</th>
+                <th>审核状态</th>
+                <th>操作</th>
             </tr>
             </thead>
             <tbody>
@@ -49,8 +49,11 @@
         </table>
     </div>
     <!-- /.box-body -->
+    <div class="box-footer clearfix">
+        <ul class="pagination pagination-sm no-margin pull-right">
+            {{$data->links()}}
+        </ul>
+    </div>
 </div>
 <!-- /.box -->
 @endsection
-{{--
-@include('admin.footer')--}}

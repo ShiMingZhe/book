@@ -22,7 +22,7 @@ class TaskController extends Controller
         $roleId = $user->first()->role_id;
         $userId = $user->first()->id;
         if ($roleId == '1') {
-            $tasks = Task::where('is_pass','0')->get();
+            $tasks = Task::where('is_pass','0')->paginate(10);
             foreach ($tasks as $key => $task) {
                 $user = Users::where('id', $task->operator_id)->first();
                 if (!empty($user)) {
@@ -32,7 +32,7 @@ class TaskController extends Controller
 
             return view('admin.task.index', ['data' => $tasks]);
         }
-        $tasks = Task::where('operator_id', $userId)->get();
+        $tasks = Task::where('operator_id', $userId)->Paginate(10);
         $pass = $reject = $total = 0;
         $tasksDo = [];
         if ($tasks->isEmpty()) {
@@ -61,6 +61,7 @@ class TaskController extends Controller
             'total' => count($tasks),
             'pass' => round(($pass/$total)*100).'%',
             'reject' => round(($reject/$total)*100).'%',
+            'tasks' => $tasks,
         ]);
     }
 
