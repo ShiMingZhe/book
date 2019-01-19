@@ -37,7 +37,7 @@
 
             <div class="form-group">
                 <label>详情</label><br>
-                <textarea name="detail" rows="10" cols="100" style="width: 100%;"></textarea>
+                <textarea id="tinyMCEEditor_1" name="detail" rows="10" cols="100" style="width: 100%;"></textarea>
             </div>
 
             <div class="form-group">
@@ -54,14 +54,13 @@
 <!-- /.box -->
 <!-- jQuery 3 -->
 <script src="{{@asset("admin-lte/bower_components/jquery/dist/jquery.min.js")}}"></script>
-<script src="{{@asset("/admin-lte/bower_components/ckeditor/ckeditor.js")}}"></script>
 <script src="{{@asset("tinymce/tinymce.min.js")}}"></script>
 <script>
-    $(function () {
-        CKEDITOR.replace('editor1')
-    });
     tinyMCE.init({
         selector: '#tinyMCEEditor'
+    });
+    tinyMCE.init({
+        selector: '#tinyMCEEditor_1'
     });
 </script>
 @endsection
