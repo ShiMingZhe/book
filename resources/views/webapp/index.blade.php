@@ -10,13 +10,6 @@
 </head>
 <body>
     <div id="app">
-        {{--<nav class="navbar navbar-inverse">
-            <div class="container">
-                <div class="navbar-header">
-                    <router-link to="/index1">木客网单页应用</router-link>
-                </div>
-            </div>
-        </nav>--}}
         <div class="container_main">
             <router-view></router-view>
         </div>
