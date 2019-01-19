@@ -65,5 +65,3 @@
     });
 </script>
 @endsection
-{{--
-@include('admin.footer')--}}

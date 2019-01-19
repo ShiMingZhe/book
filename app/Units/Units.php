@@ -10,6 +10,7 @@ namespace App\Units;
 
 
 use Gregwar\Captcha\CaptchaBuilder;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
 
 class Units
@@ -25,5 +26,13 @@ class Units
         Session::put('code',$builder->getPhrase());
 
         return $code;
+    }
+
+    /**
+     * 上传图片
+     */
+    public static function uploadPic(Request $request)
+    {
+
     }
 }

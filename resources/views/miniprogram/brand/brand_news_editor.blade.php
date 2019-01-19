@@ -1,3 +1,5 @@
+@extends('miniprogram.template.main')
+@section('content')
  <!-- Main content -->
 <section class="content">
     <!-- form start -->
@@ -17,7 +19,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">动态详情</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="动态详情">
+                <input type="email" class="form-control" id="tinyMCEEditor" placeholder="动态详情">
             </div>
         </div>
         <!-- /.box-body -->
@@ -26,3 +28,10 @@
         </div>
     </form>
 </section>
+ <script src="{{@asset("tinymce/tinymce.min.js")}}"></script>
+ <script>
+     tinyMCE.init({
+         selector: '#tinyMCEEditor'
+     });
+ </script>
+@endsection

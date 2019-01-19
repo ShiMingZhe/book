@@ -14,7 +14,7 @@ class AdminController extends Controller
     //查看
     public function listen()
     {
-        $poetries = Poetries::all();
+        $poetries = Poetries::paginate(10);
         $files = scandir('../public/qrcode');
         foreach ($poetries as $k => $v) {
             if (in_array($v['uniq_code'].'.png', $files)) {

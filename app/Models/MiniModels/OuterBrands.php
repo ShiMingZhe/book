@@ -19,5 +19,5 @@ class OuterBrands extends Model
     //指定主键
     protected $primaryKey = 'id';
 
-    protected $fillable = ['user_id', 'name', 'address', 'logo_url', 'introduce'];
+    protected $fillable = ['user_id', 'name', 'address', 'logo_url', 'introduce', 'default'];
 }

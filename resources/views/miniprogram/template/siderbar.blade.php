@@ -31,7 +31,19 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">HEADER</li>
             <!-- Optionally, you can add icons to the links -->
-            <li><a href="{{@url("/outer/brand/index")}}"><i class="fa fa-cubes"></i> <span>品牌管理</span></a></li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-cubes"></i> <span>品牌管理</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{@url("/outer/brand/index")}}"><i class="fa fa-circle-o"></i>品牌介绍</a></li>
+                    <li><a href="{{@url("/outer/brand/news")}}"><i class="fa fa-circle-o"></i>品牌动态</a></li>
+                    <li><a href="{{@url("/outer/brand/productions")}}"><i class="fa fa-circle-o"></i>产品列表</a></li>
+                </ul>
+            </li>
             <li><a href="{{@url("/outer/knowledge/index")}}"><i class="fa fa-graduation-cap"></i> <span>知识付费管理</span></a></li>
             <li><a href="{{@url("/outer/users/index")}}"><i class="fa fa-user"></i> <span>人员管理</span></a></li>
         </ul>

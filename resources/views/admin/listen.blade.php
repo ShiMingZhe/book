@@ -1,5 +1,18 @@
 @extends('admin.template.layouts')
 @section('content')
+<style>
+    table{
+        width:100px;
+        table-layout:fixed;/* 只有定义了表格的布局算法为fixed，下面td的定义才能起作用。 */
+    }
+    td{
+        width:100%;
+        word-break:keep-all;/* 不换行 */
+        white-space:nowrap;/* 不换行 */
+        overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+        text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用*/
+    }
+</style>
 <div class="box">
     <div class="box-header">
         <a href="/listenAdd">
@@ -8,7 +21,7 @@
     </div>
     <!-- /.box-header -->
     <div class="box-body">
-        <table class="table table-bordered table-striped">
+        <table class="table table-hover">
             <thead>
             <tr>
                 <td>id</td>
@@ -47,25 +60,25 @@
                         </td>
                         <td>
                             <a href="{{@url("/listen/editor/$poetry->id")}}">
-                                <button type="button" class="btn btn-block btn-primary">编辑</button>
+                                <button type="button" class="btn btn-block btn-primary button-size">编辑</button>
                             </a>
-                            <button type="button" class="btn btn-block btn-danger">删除</button>
+                            <button type="button" class="btn btn-block btn-danger button-size">删除</button>
                             @if(empty($poetry->uniq_code))
                                 <a href="{{@url("/listen/uniqid/$poetry->id")}}">
-                                    <button type="button" class="btn btn-block btn-success">生成唯一码</button>
+                                    <button type="button" class="btn btn-block btn-success button-size">生成唯一码</button>
                                 </a>
 
                             @else
                                 <a href="{{@url("/listen/uniqid/$poetry->id")}}">
-                                    <button type="button" class="btn btn-block btn-success" disabled>生成唯一码</button>
+                                    <button type="button" class="btn btn-block btn-success button-size" disabled>生成唯一码</button>
                                 </a>
                                 @if(!$poetry->qr_url)
                                     <a href="{{@url("/createQr/$poetry->uniq_code")}}">
-                                        <button type="button" class="btn btn-block btn-default">生成二维码</button>
+                                        <button type="button" class="btn btn-block btn-default button-size">生成二维码</button>
                                     </a>
                                 @else
                                     <a href="{{@url("/createQr/$poetry->uniq_code")}}">
-                                        <button type="button" class="btn btn-block btn-default" disabled>生成二维码</button>
+                                        <button type="button" class="btn btn-block btn-default button-size" disabled>生成二维码</button>
                                     </a>
                                 @endif
                             @endif
@@ -78,6 +91,11 @@
         </table>
     </div>
     <!-- /.box-body -->
+    <div class="box-footer clearfix">
+        <ul class="pagination pagination-sm no-margin pull-right">
+            {{$poetries->links()}}
+        </ul>
+    </div>
 </div>
 <!-- /.box -->
 @endsection

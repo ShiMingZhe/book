@@ -83,8 +83,6 @@ Route::get('/library/item', 'WebAppController@library');
  */
 Route::group(['middleware' => ['web']], function () {
     Route::get('/adminBook', 'MiniProgram\OuterLoginController@index');
-    /*Route::get('/adminBook', 'MiniProgram\OuterAdminController@index');*/
-    /*Route::get('/listen', 'AdminController@listen');*/
 });
 Route::get('/outer/register', 'MiniProgram\OuterLoginController@register');
 Route::post('/outer/register', 'MiniProgram\OuterLoginController@registerSave');
@@ -92,8 +90,29 @@ Route::get('/outer/login', 'MiniProgram\OuterLoginController@index');
 Route::post('/outer/login/validation', 'MiniProgram\OuterLoginController@validation');
 Route::get('/outer/loginOut', 'MiniProgram\OuterLoginController@loginOut');
 
+/**
+ * 品牌
+ */
 Route::get('/outer/brand/index', 'MiniProgram\OuterBrandController@index');
+Route::get('/outer/brand/editor', 'MiniProgram\OuterBrandController@editorInfo');
+Route::post('/outer/brand/editor', 'MiniProgram\OuterBrandController@createInfo');
 
+Route::get('/outer/brand/news', 'MiniProgram\OuterBrandController@news');
+Route::get('/outer/brand/news/editor', 'MiniProgram\OuterBrandController@newsEditor');
+/**
+ * 产品列表
+ */
+Route::get('/outer/brand/productions', 'MiniProgram\OuterBrandController@productions');
+Route::get('/outer/brand/editor/productions', 'MiniProgram\OuterBrandController@editorProductions');
+/**
+ * 知识付费
+ */
 Route::get('/outer/knowledge/index', 'MiniProgram\OuterKnowledgeController@index');
-
+/**
+ * 用户管理
+ */
 Route::get('/outer/users/index', 'MiniProgram\OuterUsersController@index');
+Route::get('/outer/users/setting/rule', 'MiniProgram\OuterUsersController@settingRule');
+Route::get('/outer/users/create/cooperator', 'MiniProgram\OuterUsersController@createCooperator');
+Route::post('/outer/users/search/user', 'MiniProgram\OuterUsersController@searchUser');
+Route::get('/outer/users/bind/cooperator', 'MiniProgram\OuterUsersController@bindCooperator');
