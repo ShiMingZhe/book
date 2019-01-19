@@ -1,12 +1,14 @@
-<template>
+<template class="container">
    <div id="container" ref="poetry_content">
       <div v-if="is_list" class="content-item">
-         <div class="col-auto search">
-            <div class="input-group">
-               <input type="text" class="form-control search-input" placeholder="请输入标题名或作者名" ref="search">
+         <div class="row">
+            <div class="col-auto search">
+               <div class="input-group">
+                  <input type="text" class="form-control search-input" placeholder="请输入标题名或作者名" ref="search">
                   <span class="input-group-btn">
                     <button class="btn btn-default search-button" type="button" @click="search">搜一下</button>
                   </span>
+               </div>
             </div>
          </div>
          <div v-for="content in contents" v-if="content.is_available == 1" id="item" @click="goTo(content.detail)">

@@ -12,10 +12,12 @@ window.Vue = require('vue');
 import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
 import VueScoller from 'vue-scroller';
+import BootStrap from 'bootstrap';
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
 Vue.use(VueScoller);
+Vue.use(BootStrap);
 import store from './store/';//vuex 数据存储所需对象
 import routes from './routes';//路由配置文件
 //实例化路由
