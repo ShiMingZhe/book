@@ -36,7 +36,7 @@
                 <div class="bottom-content">
                     <scroller>
                         <a :href="'/qr/'+item.uniq_code" v-if="item.uniq_code" v-for="item in poetry_list">
-                            <li><span class="title">{{item.title}}</span><span class="author">{{item.author}}</span></li>
+                            <li><span class="title">{{item.title | ellipsis}}</span><span class="author">{{item.author}}</span></li>
                         </a>
                         <span class="bottom-load" v-show=" poetry_list.length%10 == 0 " @click="getData(poetry_list.length)" v-cloak>{{more_load}}</span>
                     </scroller>
@@ -52,6 +52,15 @@
     import Predefine from "element-ui/packages/color-picker/src/components/predefine";
     export default {
         name: "App",
+        filters: {
+            ellipsis (value) {
+                if (!value) return '';
+                if (value.length > 9) {
+                    return value.slice(0,9) + '...'
+                }
+                return value
+            }
+        },
         components: {
             Predefine
         },

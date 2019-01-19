@@ -52,12 +52,12 @@
 }
 .nav-item:active {
     color: white;
-    background-color: #59c258;
+    background-color: #5abf66;
     text-decoration: none;
 }
 .router-link-exact-active {
     color: white;
-    background-color: #59c258;
+    background-color: #5abf66;
 }
 a:hover {
     color: #f8f9fa !important;

@@ -161,7 +161,14 @@
       padding-left: 10px;
    }
    .search-input,.search-button {
-      height: 36px;
+      height: 46px;
       border: 1px solid #259c1d;
+   }
+   .search-button {
+      font-size: 16px;
+   }
+   .search-button:hover {
+      background-color: #5abf66;
+      color: #fff;
    }
 </style>
