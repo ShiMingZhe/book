@@ -33,7 +33,7 @@
                 <th>详情</th>
                 <th>MP3地址</th>
                 <th>唯一码</th>
-                <th>二维码</th>
+                <th  style="width: 70px;">二维码</th>
                 <th>操作</th>
             </tr>
             </thead>
