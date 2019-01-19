@@ -4,7 +4,6 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
 require('./bootstrap');
 
 window.Vue = require('vue');
@@ -14,14 +13,10 @@ import routes from './routes';//路由配置文件
 import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
 import VueScoller from 'vue-scroller';
-import $ from 'jquery';
-import BootStrap from 'bootstrap';
 
-Vue.use($);
 Vue.use(VueRouter);
 Vue.use(VueResource);
 Vue.use(VueScoller);
-Vue.use(BootStrap);
 
 //实例化路由
 const router = new VueRouter({

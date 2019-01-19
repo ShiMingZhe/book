@@ -1,8 +1,8 @@
-<template class="container">
+<template>
    <div id="container" ref="poetry_content">
       <div v-if="is_list" class="content-item">
-         <div class="row">
-            <div class="col-auto search">
+         <!--<div class="row">-->
+            <div class="col-sm-12 search">
                <div class="input-group">
                   <input type="text" class="form-control search-input" placeholder="请输入标题名或作者名" ref="search">
                   <span class="input-group-btn">
@@ -10,7 +10,7 @@
                   </span>
                </div>
             </div>
-         </div>
+         <!--</div>-->
          <div v-for="content in contents" v-if="content.is_available == 1" id="item" @click="goTo(content.detail)">
             <div id="content_left">
                <div id="introduce_top">
@@ -105,6 +105,7 @@
 </script>
 
 <style scoped>
+   @import '../../../../public/css/bootstrap.min.css';
    #container {
       background-color: #ebebeb;
       padding-top: 10px;
