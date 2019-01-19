@@ -165,6 +165,7 @@
       width: 100%;
       height: 30px;
       background-color: #f0ad4e;
+      float: left;
    }
    /*.search {
       padding-right: 10px;
