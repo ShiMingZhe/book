@@ -7,7 +7,7 @@
     </div>
     <div class="box-body">
         <table class="table table-hover">
-            @foreach($data as $key => $value)
+            @foreach($dataInfo as $key => $value)
                 <tr><td>{{$key}}</td><td>http://music.mukeen.com/{{$value}}</td></tr>
             @endforeach
         </table>

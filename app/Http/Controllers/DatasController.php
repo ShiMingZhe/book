@@ -39,7 +39,6 @@ class DatasController
         $dataInfo = $paginateSearchResults_a->setPath('/music/list');
 
         return view('admin.data.music', [
-            'data' => $data,
             'dataInfo' => $dataInfo,
         ]);
     }
