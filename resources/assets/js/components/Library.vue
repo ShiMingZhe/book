@@ -167,8 +167,4 @@
    .search-button {
       font-size: 16px;
    }
-   .search-button:hover {
-      background-color: #5abf66;
-      color: #fff;
-   }
 </style>
