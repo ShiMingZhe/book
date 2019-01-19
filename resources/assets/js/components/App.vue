@@ -26,7 +26,6 @@
                     <div class="audio-select">
                         <div :class="{'glyphicon glyphicon-play':isPlay,'glyphicon glyphicon-pause':isStop}" @click="audioPlay"></div>
                         <div class="glyphicon glyphicon-list" @click="audoMenu"></div>
-                        <!--<div :class="{'glyphicon glyphicon-play-circle':isLoop, 'glyphicon glyphicon-remove-circle':isCancelLoop}" @click="loop"></div>-->
                     </div>
                 </div>
             </div>

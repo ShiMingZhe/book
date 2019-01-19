@@ -164,7 +164,4 @@
       height: 36px;
       border: 1px solid #259c1d;
    }
-   .search-button {
-
-   }
 </style>
