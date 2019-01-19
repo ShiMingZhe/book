@@ -24,7 +24,7 @@
         <table class="table table-hover">
             <thead>
             <tr>
-                <th>id</th>
+                <th style="width: 20px">ID</th>
                 <th>标题</th>
                 <th>作者</th>
                 <th>一句话简介</th>

@@ -13,7 +13,7 @@
         <table class="table table-bordered table-striped">
             <thead>
             <tr>
-                <th>id</th>
+                <th>ID</th>
                 <th>任务名称</th>
                 <th>任务来源</th>
                 <th>审核状态</th>

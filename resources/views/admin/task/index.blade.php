@@ -10,7 +10,7 @@
         <table class="table table-hover">
             <thead>
             <tr>
-                <th>id</th>
+                <th>ID</th>
                 <th>任务名称</th>
                 <th>操作人员</th>
                 <th>任务来源</th>

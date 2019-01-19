@@ -10,15 +10,15 @@
         <table class="table table-bordered table-striped">
             <thead>
             <tr>
-                <td>id</td>
-                <td>姓名</td>
-                <td>性别</td>
-                <td>邮箱</td>
-                <td>手机</td>
-                <td>头像</td>
-                <td>昵称</td>
-                <td>角色</td>
-                <td>操作</td>
+                <th>ID</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>邮箱</th>
+                <th>手机</th>
+                <th>头像</th>
+                <th>昵称</th>
+                <th>角色</th>
+                <th>操作</th>
             </tr>
             </thead>
             <tbody>
