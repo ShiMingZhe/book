@@ -33,6 +33,7 @@ Route::get('/downloadQr/{uniqId}/{name}', 'AdminController@downloadQr');
 
 Route::group(['middleware' => ['view.dispatch']], function () {
     Route::any('/listenAdd', 'AdminController@listenAdd');
+    Route::get('/listen/select/{poetry_id}', 'AdminController@listenContent');
     Route::get('/listen/editor/{poetry_id}', 'AdminController@editor');
     Route::get('/listen/uniqid/{poetry_id}', 'AdminController@createUniqId');
     Route::post('/listen/update', 'AdminController@update');

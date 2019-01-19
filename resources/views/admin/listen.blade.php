@@ -59,10 +59,13 @@
                             @endif
                         </td>
                         <td>
-                            <a href="{{@url("/listen/editor/$poetry->id")}}">
-                                <button type="button" class="btn btn-block btn-primary button-size">编辑</button>
+                            <a href="{{@url("/listen/select/$poetry->id")}}">
+                                <button type="button" class="btn btn-block btn-primary button-size">查看</button>
                             </a>
-                            <button type="button" class="btn btn-block btn-danger button-size">删除</button>
+                            <a href="{{@url("/listen/editor/$poetry->id")}}">
+                                <button type="button" class="btn btn-block btn-danger button-size">编辑</button>
+                            </a>
+
                             @if(empty($poetry->uniq_code))
                                 <a href="{{@url("/listen/uniqid/$poetry->id")}}">
                                     <button type="button" class="btn btn-block btn-success button-size">生成唯一码</button>

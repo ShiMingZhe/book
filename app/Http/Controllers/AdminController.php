@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
-    //查看
+    //查看诗词列表
     public function listen()
     {
         $poetries = Poetries::paginate(10);
@@ -25,6 +25,14 @@ class AdminController extends Controller
         }
 
         return view('admin/listen', ['poetries' => $poetries]);
+    }
+
+    //查看诗词
+    public function listenContent($poetryId)
+    {
+        $poetry = Poetries::find($poetryId);
+
+        return view('admin.listen_content', ['poetry' => $poetry]);
     }
 
     //增加
