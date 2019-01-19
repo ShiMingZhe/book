@@ -2,15 +2,16 @@
    <div id="container" ref="poetry_content">
       <div v-if="is_list" class="content-item">
          <!--<div class="row">-->
-            <div class="col-sm-12 search">
-               <div class="input-group">
-                  <input type="text" class="form-control search-input" placeholder="请输入标题名或作者名" ref="search">
-                  <span class="input-group-btn">
-                    <button class="btn btn-default search-button" type="button" @click="search">搜一下</button>
-                  </span>
-               </div>
+         <!--<div class="col-sm-12 search">
+            <div class="input-group">
+               <input type="text" class="form-control search-input" placeholder="请输入标题名或作者名" ref="search">
+               <span class="input-group-btn">
+                 <button class="btn btn-default search-button" type="button" @click="search">搜一下</button>
+               </span>
             </div>
+         </div>-->
          <!--</div>-->
+         <div class="search"></div>
          <div v-for="content in contents" v-if="content.is_available == 1" id="item" @click="goTo(content.detail)">
             <div id="content_left">
                <div id="introduce_top">
@@ -105,7 +106,6 @@
 </script>
 
 <style scoped>
-   @import '../../../../public/css/bootstrap.min.css';
    #container {
       background-color: #ebebeb;
       padding-top: 10px;
@@ -160,9 +160,14 @@
       padding-bottom: 70px;
    }
    .search {
+      width: 100%;
+      height: 30px;
+      background-color: #f0ad4e;
+   }
+   /*.search {
       padding-right: 10px;
       padding-left: 10px;
-   }
+   }*/
    .search-input,.search-button {
       height: 36px;
       border: 1px solid #259c1d;
