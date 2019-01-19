@@ -35,6 +35,18 @@ class MobileApiController extends Controller
         return $poetries;
     }
 
+    //根据关键字搜索
+    public function search($keywords)
+    {
+        $poetries = Poetries::where(function ($query) use ($keywords) {
+            $query->where('title','like','%'.$keywords.'%');
+        })->orWhere(function ($query) use($keywords) {
+            $query->where('author','like','%'.$keywords.'%');
+        })->get();
+
+        return $poetries;
+    }
+
     //创建HTTP客户端请求
     private function request($url, $postData, $method = 'post')
     {

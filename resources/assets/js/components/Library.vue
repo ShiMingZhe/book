@@ -1,6 +1,14 @@
 <template>
    <div id="container" ref="poetry_content">
       <div v-if="is_list" class="content-item">
+         <div class="col-auto search">
+            <div class="input-group">
+               <input type="text" class="form-control search-input" placeholder="请输入标题名或作者名" ref="search">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default search-button" type="button" @click="search">搜一下</button>
+                  </span>
+            </div>
+         </div>
          <div v-for="content in contents" v-if="content.is_available == 1" id="item" @click="goTo(content.detail)">
             <div id="content_left">
                <div id="introduce_top">
@@ -55,6 +63,16 @@
                 this.is_list = false;
                 this.is_detail = true;
                 this.detail = detail;
+            },
+            search() {
+               let keywords = this.$refs.search.value;
+               this.$http.get('/search/'+keywords).then(response => {
+                   this.contents = [];
+                   let bodyContent = response.body;
+                   for (let i = 0;i < bodyContent.length;i++) {
+                       this.contents.push(bodyContent[i]);
+                   }
+               });
             },
             goPrevious() {
                 this.is_list = true;
@@ -137,5 +155,16 @@
    }
    .content-item {
       padding-bottom: 70px;
+   }
+   .search {
+      padding-right: 10px;
+      padding-left: 10px;
+   }
+   .search-input,.search-button {
+      height: 36px;
+      border: 1px solid #259c1d;
+   }
+   .search-button {
+
    }
 </style>

@@ -31,8 +31,21 @@ class Units
     /**
      * 上传图片
      */
-    public static function uploadPic(Request $request)
+    public static function uploadPic($data)
     {
-
+        $handle = new \upload($data['image_field']);
+        if ($handle->uploaded) {
+            $handle->file_new_name_body = 'image_resized';
+            $handle->image_resize = true;
+            $handle->image_x = 100;
+            $handle->image_ratio_y = true;
+            $handle->process('../../public/');
+            if ($handle->processed) {
+                echo 'image resized';
+                $handle->clean();
+            } else {
+                echo 'error:'.$handle->error;
+            }
+        }
     }
 }

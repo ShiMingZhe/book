@@ -69,6 +69,7 @@ Route::get('/getAccessToken', 'Mobile\MobileApiController@getAccessToken');
 Route::get('/getJsApiTicket/{ticket}', 'Mobile\MobileApiController@getJsApiTicket');
 Route::get('/getSignature/{url}', 'Mobile\MobileApiController@getSignature')
     ->where('url', '.*');
+Route::get('/search/{keywords}','Mobile\MobileApiController@search');
 
 /**
  * webapp

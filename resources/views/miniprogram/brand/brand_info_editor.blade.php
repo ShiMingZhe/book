@@ -8,7 +8,7 @@
         <div class="box-body">
             <div class="form-group">
                 <label for="inputFile">品牌logo</label>
-                <input type="file" id="inputFile" name="inputFile">
+                <input type="file" id="inputFile" name="image_field" value="">
             </div>
             <div class="form-group">
                 <label for="brandName">品牌名称</label>

@@ -11,6 +11,7 @@ namespace App\Http\Controllers\MiniProgram;
 
 use App\Http\Controllers\Controller;
 use App\Models\MiniModels\OuterBrands;
+use App\Units\Units;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 
@@ -41,6 +42,7 @@ class OuterBrandController extends Controller
     public function createInfo()
     {
         $input = Input::except("_token");
+        Units::uploadPic($input);
         var_dump($input);
     }
 

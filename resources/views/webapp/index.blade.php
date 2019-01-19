@@ -27,7 +27,7 @@
             </router-link>
             <router-link class="nav-item" to="/library">
                 <div class="glyphicon glyphicon-book" id="music-item"></div>
-                <div id="music-item"><span>看一看</span></div>
+                <div id="music-item"><span>资料库</span></div>
             </router-link>
         </footer>
     </div>
