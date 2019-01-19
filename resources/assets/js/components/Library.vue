@@ -11,7 +11,7 @@
             </div>
          </div>-->
          <!--</div>-->
-         <div class="search"></div>
+         <div id="item"></div>
          <div>
             <div v-for="content in contents" v-if="content.is_available == 1" id="item" @click="goTo(content.detail)">
                <div id="content_left">
