@@ -12,13 +12,15 @@
          </div>-->
          <!--</div>-->
          <div class="search"></div>
-         <div v-for="content in contents" v-if="content.is_available == 1" id="item" @click="goTo(content.detail)">
-            <div id="content_left">
-               <div id="introduce_top">
-                  <span id="title">{{ content.title | ellipsis}}</span>
-                  <span id="author">{{content.author}}</span>
+         <div>
+            <div v-for="content in contents" v-if="content.is_available == 1" id="item" @click="goTo(content.detail)">
+               <div id="content_left">
+                  <div id="introduce_top">
+                     <span id="title">{{ content.title | ellipsis}}</span>
+                     <span id="author">{{content.author}}</span>
+                  </div>
+                  <div id="introduce_bottom">{{ content.short_introduce }}</div>
                </div>
-               <div id="introduce_bottom">{{ content.short_introduce }}</div>
             </div>
          </div>
       </div>
