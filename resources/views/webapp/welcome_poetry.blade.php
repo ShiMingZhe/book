@@ -19,7 +19,7 @@
             <div class="animated fadeIn">思考</div>
         </div>
         <div class="animate-item-2">
-            <div class="animated fadeIn">让阅读变的更加有效</div>
+            <div class="animated fadeIn">让阅读变得更加有效</div>
         </div>
         <div id="skip" onclick="skip()">进入质料库</div>
     </div>
@@ -39,7 +39,7 @@
 <script type="text/javascript" src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
 <script>
     $(function () {
-        setInterval(ChangeTime, 1000);
+        //setInterval(ChangeTime, 1000);
     });
 
     function ChangeTime() {
