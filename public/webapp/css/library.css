@@ -16,25 +16,25 @@
     float: right;
 }
 .animate-item-1 .animated {
-    -webkit-animation-duration: 3s !important;
-    animation-duration: 3s !important; // 动画执行时间
+    -webkit-animation-duration: 5s !important;
+    animation-duration: 5s !important; // 动画执行时间
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
 .animate-item-2 .animated {
     -webkit-animation-duration: 5s !important;
     animation-duration: 5s !important; // 动画执行时间
-    animation-delay: 1s !important;
-    -webkit-animation-delay: 1s !important;
+    animation-delay: 2s !important;
+    -webkit-animation-delay: 2s !important;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
 
 .animate-item-1 {
-    width: 100%;
+    width: 180px;
     margin-top: 43%;
     font-size: 26px;
-    text-align: center;
+    text-align: left;
     color: #000000;
     float: left;
 }
@@ -57,7 +57,7 @@
     height: 38px;
     line-height: 38px;
     text-align: center;
-    border: 1px dashed #000;
+    border: 1px solid #000;
     border-radius: 5px;
     position: absolute;
     bottom: 60px;
