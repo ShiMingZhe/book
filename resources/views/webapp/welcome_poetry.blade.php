@@ -14,7 +14,7 @@
 
 <div id="app">
     <div id="animate">
-        <div id="time">5s</div>
+        <div id="time">6s</div>
         <div class="animate-item-1">
             <div class="animated fadeIn">思考</div>
         </div>
