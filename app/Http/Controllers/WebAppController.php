@@ -8,6 +8,7 @@
 
 namespace App\Http\Controllers;
 
+
 class WebAppController extends Controller
 {
     public function index($uniqId)
@@ -21,6 +22,17 @@ class WebAppController extends Controller
 
     public function library()
     {
-        return redirect('/qr/'.session('uniq_id'));
+        if (session('uniq_id') == 'poetry') {
+            return redirect('/poetry/welcome');
+        } else {
+            return redirect('/qr/'.session('uniq_id'));
+        }
+    }
+
+    public function poetryWelcome()
+    {
+        session(['uniq_id' => 'poetry']);
+
+        return view('webapp/welcome_poetry');
     }
 }

@@ -77,8 +77,8 @@ Route::get('/search/{keywords}','Mobile\MobileApiController@search');
  */
 
 Route::get('/qr/{uniq_id}', 'WebAppController@index');
-Route::get('/library', 'WebAppController@library');
-Route::get('/library/item', 'WebAppController@library');
+Route::get('/library', 'WebAppController@library');//解决在library刷新的问题
+Route::get('/poetry/welcome', 'WebAppController@poetryWelcome');
 
 /**
  * 小程序对接

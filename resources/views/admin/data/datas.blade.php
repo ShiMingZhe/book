@@ -3,5 +3,3 @@
 @section('content')
 <div class="alert alert-warning" role="alert"><h4>等待开发</h4></div>
 @endsection
-{{--
-@include('admin.footer')--}}

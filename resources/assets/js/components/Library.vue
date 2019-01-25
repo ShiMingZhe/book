@@ -50,6 +50,8 @@
             }
         },
         async mounted() {
+            let url = this.$route.path;
+            console.log(url);
             this.$http.get('/have_a_look/0').then(response => {
                 this.contents = response.body;
             });

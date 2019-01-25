@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 use App\Models\MiniModels\OuterBrands;
 use App\Units\Units;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
 
 class OuterBrandController extends Controller
@@ -39,8 +40,9 @@ class OuterBrandController extends Controller
         return view('miniprogram.brand.brand_info_editor');
     }
 
-    public function createInfo()
+    public function createInfo(Request $request)
     {
+        var_dump($request::all());die;
         $input = Input::except("_token");
         Units::uploadPic($input);
         var_dump($input);
