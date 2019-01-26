@@ -15,11 +15,13 @@
 <div id="app">
     <div id="animate">
         <div id="time">6s</div>
-        <div class="animate-item-1">
-            <div class="animated fadeIn">思考</div>
-        </div>
-        <div class="animate-item-2">
-            <div class="animated fadeIn">让阅读变得更加有效</div>
+        <div class="animate-item">
+            <div class="animate-item-1">
+                <div class="animated fadeIn">资料库</div>
+            </div>
+            <div class="animate-item-2">
+                <div class="animated fadeIn">思考，让阅读变得更加有效</div>
+            </div>
         </div>
         <div id="skip" onclick="skip()">进入资料库</div>
     </div>
@@ -40,6 +42,8 @@
 <script>
     $(function () {
         setInterval(ChangeTime, 1000);
+        $(".animate-item").hide();
+        $(".animate-item").fadeIn(3000);
     });
 
     function ChangeTime() {
