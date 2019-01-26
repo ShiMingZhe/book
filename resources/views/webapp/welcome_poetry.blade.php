@@ -21,7 +21,7 @@
         <div class="animate-item-2">
             <div class="animated fadeIn">让阅读变得更加有效</div>
         </div>
-        <div id="skip" onclick="skip()">进入质料库</div>
+        <div id="skip" onclick="skip()">进入资料库</div>
     </div>
     <div id="content">
         <div class="container_main">
