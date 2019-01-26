@@ -17,7 +17,7 @@
         <div id="time">6s</div>
         <div class="animate-item">
             <div class="animate-item-1">
-                <div class="animated fadeIn">资料库</div>
+                <img src="{{@asset("webapp/images/logo.png")}}">
             </div>
             <div class="animate-item-2">
                 <div class="animated fadeIn">思考，让阅读变得更加有效</div>
