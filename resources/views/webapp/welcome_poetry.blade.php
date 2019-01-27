@@ -41,7 +41,7 @@
 <script type="text/javascript" src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
 <script>
     $(function () {
-        setInterval(ChangeTime, 1000);
+        //setInterval(ChangeTime, 1000);
         $(".animate-item").hide();
         $(".animate-item").fadeIn(3000);
     });
