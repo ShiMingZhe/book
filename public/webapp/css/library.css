@@ -41,9 +41,6 @@
     width: 20%;
     height: auto;
 }
-.animate-item-1 span {
-    margin-bottom: 0;
-}
 .animate-item-2 {
     width: 100%;
     font-size: 20px;
@@ -54,7 +51,7 @@
 }
 .animate-item {
     width: 100%;
-    margin-top: 26%;
+    margin-top: 30%;
     float: left;
 }
 #content {
