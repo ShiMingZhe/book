@@ -11,9 +11,7 @@ namespace App\Http\Controllers\MiniProgram;
 
 use App\Http\Controllers\Controller;
 use App\Models\MiniModels\OuterBrands;
-use App\Units\Units;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 class OuterBrandController extends Controller
@@ -42,10 +40,14 @@ class OuterBrandController extends Controller
 
     public function createInfo(Request $request)
     {
-        var_dump($request::all());die;
-        $input = Input::except("_token");
-        Units::uploadPic($input);
-        var_dump($input);
+        $fileCharater = $request->file('image_field');
+        if ($fileCharater->isValid()) {
+            $ext = $fileCharater->getClientOriginalExtension();
+            $path = $fileCharater->getRealPath();
+            $filename = date('Y-m-d-h-i-s').'.'.$ext;
+            $fileCharater->move('/var/local/images/muke',$filename);
+            var_dump($filename);
+        }
     }
 
     /**

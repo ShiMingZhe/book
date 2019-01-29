@@ -3,7 +3,7 @@
 <!-- Main content -->
 <section class="content">
     <!-- form start -->
-    <form role="form" action="{{@url("/outer/brand/editor")}}" method="post">
+    <form role="form" action="{{@url("/outer/brand/editor")}}" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="box-body">
             <div class="form-group">
