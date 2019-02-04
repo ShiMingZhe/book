@@ -81,7 +81,7 @@ class OuterLoginController extends Controller
             $input['password'] = encrypt($input['password']);
             $res = OuterUsers::create($input);
             if ($res) {
-                return redirect("/outer/brand/index");
+                return redirect("/outer/login");
             }
         }
 
