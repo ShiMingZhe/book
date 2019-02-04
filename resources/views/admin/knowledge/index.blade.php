@@ -1,4 +1,4 @@
-@extends('miniprogram.template.main')
+@extends('admin.template.layouts')
 @section('content')
 <section>
     <div class="row">
@@ -6,6 +6,9 @@
             <div class="box">
                 <div class="box-header">
                     <h3 class="box-title">知识付费管理</h3>
+                    <div class="box-tools">
+                        <a type="button" href="{{@url("/outer/knowledge/create")}}" style="width: 100px;" class="btn btn-default">新增</a>
+                    </div>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
@@ -26,13 +29,11 @@
                             <td>{{ $knowledge->category }}</td>
                             <td>{{ $knowledge->price }}￥</td>
                             <td>{{ $knowledge->origin }}</td>
-                            <td>{{ $knowledge->create_at }}</td>
+                            <td>{{ $knowledge->created_at }}</td>
                             <td>
                                 <a type="button" class="btn btn-default button-size" href="{{@url("/outer/knowledge/find/detail/{$knowledge->id}")}}">查看</a>
-                                @if($knowledge->status != '1')
-                                <a type="button" class="btn btn-primary button-size" href="{{@url("/outer/knowledge/bind/{$knowledge->id}")}}">代理</a>
-                                @endif
-                                <a type="button" class="btn btn-danger button-size" href="{{@url("/outer/knowledge/cancel/bind/{$knowledge->id}")}}">取消</a>
+                                <a type="button" class="btn btn-primary button-size" href="{{@url("/outer/knowledge/editor/{$knowledge->id}")}}">编辑</a>
+                                <a type="button" class="btn btn-danger button-size" href="{{@url("/outer/users/setting/rule")}}">取消</a>
                             </td>
                         </tr>
                         @endforeach

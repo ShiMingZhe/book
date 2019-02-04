@@ -52,8 +52,15 @@ Route::group(['middleware' => ['view.dispatch']], function () {
     Route::get('/task/admin/pass/{id}/{task_id}/{type}', 'TaskController@taskPass');
     Route::get('/task/admin/reject/{id}/{task_id}/{type}', 'TaskController@taskReject');
 
-    Route::get('/datas', 'DatasController@index');
+    //Route::get('/datas', 'DatasController@index');
     Route::get('/music/list', 'DatasController@list');
+    //知识付费管理
+    Route::get('/outer/knowledge/index', 'MiniProgram\OuterKnowledgeController@list');
+    Route::get('/outer/knowledge/create', 'MiniProgram\OuterKnowledgeController@createKnowledge');
+    Route::post('/outer/knowledge/create', 'MiniProgram\OuterKnowledgeController@storageKnowledge');
+    Route::get('/outer/knowledge/editor/{knowledgeId}', 'MiniProgram\OuterKnowledgeController@editorKnowledge');
+    Route::post('/outer/knowledge/update', 'MiniProgram\OuterKnowledgeController@updateKnowledge');
+    Route::get('/outer/knowledge/find/detail/{knowledgeId}', 'MiniProgram\OuterKnowledgeController@findKnowledge');
 });
 
 Route::any('/captcha/code', 'LoginController@captchaCode');
@@ -97,19 +104,31 @@ Route::get('/outer/loginOut', 'MiniProgram\OuterLoginController@loginOut');
  */
 Route::get('/outer/brand/index', 'MiniProgram\OuterBrandController@index');
 Route::get('/outer/brand/editor', 'MiniProgram\OuterBrandController@editorInfo');
-Route::post('/outer/brand/editor', 'MiniProgram\OuterBrandController@createInfo');
-
+Route::post('/outer/brand/editor', 'MiniProgram\OuterBrandController@editorSave');
+Route::post('/outer/brand/create', 'MiniProgram\OuterBrandController@createInfo');
+/**
+ * 品牌动态
+ */
 Route::get('/outer/brand/news', 'MiniProgram\OuterBrandController@news');
-Route::get('/outer/brand/news/editor', 'MiniProgram\OuterBrandController@newsEditor');
+Route::get('/outer/brand/news/create', 'MiniProgram\OuterBrandController@createNews');
+Route::post('/outer/brand/news/storage', 'MiniProgram\OuterBrandController@storageNews');
+Route::get('/outer/brand/news/editor/{brandId}', 'MiniProgram\OuterBrandController@newsEditor');
+Route::post('/outer/brand/news/save', 'MiniProgram\OuterBrandController@newsSave');
 /**
  * 产品列表
  */
 Route::get('/outer/brand/productions', 'MiniProgram\OuterBrandController@productions');
-Route::get('/outer/brand/editor/productions', 'MiniProgram\OuterBrandController@editorProductions');
+Route::get('/outer/brand/productions/editor/{productId}', 'MiniProgram\OuterBrandController@editorProductions');
+Route::post('/outer/brand/productions/save', 'MiniProgram\OuterBrandController@saveProduct');
+Route::get('/outer/brand/productions/create', 'MiniProgram\OuterBrandController@editorProductions');
+Route::post('/outer/brand/productions/create', 'MiniProgram\OuterBrandController@createProductions');
 /**
  * 知识付费
  */
-Route::get('/outer/knowledge/index', 'MiniProgram\OuterKnowledgeController@index');
+Route::get('/outer/knowledge/list', 'MiniProgram\OuterKnowledgeController@index');
+Route::get('/outer/knowledge/find/detail/{knowledgeId}', 'MiniProgram\OuterKnowledgeController@findOuterKnowledge');
+Route::get('/outer/knowledge/bind/{knowledgeId}', 'MiniProgram\OuterKnowledgeController@bindBrandKnowledge');
+Route::get('/outer/knowledge/cancel/bind/{knowledgeId}', 'MiniProgram\OuterKnowledgeController@cancelBindBrandKnowledge');
 /**
  * 用户管理
  */

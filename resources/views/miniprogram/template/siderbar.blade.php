@@ -44,7 +44,7 @@
                     <li><a href="{{@url("/outer/brand/productions")}}"><i class="fa fa-circle-o"></i>产品列表</a></li>
                 </ul>
             </li>
-            <li><a href="{{@url("/outer/knowledge/index")}}"><i class="fa fa-graduation-cap"></i> <span>知识付费管理</span></a></li>
+            <li><a href="{{@url("/outer/knowledge/list")}}"><i class="fa fa-graduation-cap"></i> <span>知识付费管理</span></a></li>
             <li><a href="{{@url("/outer/users/index")}}"><i class="fa fa-user"></i> <span>人员管理</span></a></li>
         </ul>
         <!-- /.sidebar-menu -->

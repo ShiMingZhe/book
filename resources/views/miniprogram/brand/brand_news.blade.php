@@ -7,7 +7,7 @@
             <div class="box-header">
                 <h3 class="box-title">品牌动态</h3>
                 <div class="box-tools">
-                    <a type="button" href="{{@url("/outer/brand/news/editor")}}" style="width: 100px;" class="btn btn-default">新增</a>
+                    <a type="button" href="{{@url("/outer/brand/news/create")}}" style="width: 100px;" class="btn btn-default">新增</a>
                 </div>
             </div>
             <!-- /.box-header -->
@@ -21,32 +21,19 @@
                         <th>封面地址</th>
                         <th>操作</th>
                     </tr>
+                    @foreach($news as $new)
                     <tr>
-                        <td>1.</td>
-                        <td>Update software</td>
-                        <td>
-
-                        </td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $new->id }}</td>
+                        <td>{{ $new->short_introduce }}</td>
+                        <td>{{ $new->abstract }}</td>
+                        <td>{!! $new->detail !!}</td>
+                        <td>{{ $new->cover_url }}</td>
                         <td style="width: 130px;">
-                            <a type="button" href="{{@url("/outer/brand/news/editor")}}" class="btn btn-primary button-size">编辑</a>
+                            <a type="button" href="{{@url("/outer/brand/news/editor/$new->id")}}" class="btn btn-primary button-size">编辑</a>
                             <a type="button" href="" class="btn btn-danger button-size">删除</a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>2.</td>
-                        <td>Update software</td>
-                        <td>
-
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td style="width: 130px;">
-                            <a type="button" href="{{@url("/outer/brand/news/editor")}}" class="btn btn-primary button-size">编辑</a>
-                            <a type="button" href="" class="btn btn-danger button-size">删除</a>
-                        </td>
-                    </tr>
+                    @endforeach
                 </table>
             </div>
             <!-- /.box-body -->

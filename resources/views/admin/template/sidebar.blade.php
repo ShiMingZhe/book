@@ -41,7 +41,7 @@
                 <li><a href="{{@url("/task/admin/index")}}"><i class="fa fa-tasks"></i> <span>查看任务</span></a></li>
             @endif
             <li><a href="{{@url("/music/list")}}"><i class="fa fa-list"></i> <span>音频列表</span></a></li>
-            <li><a href="{{@url("/datas")}}"><i class="fa fa-bookmark-o"></i> <span>资料库</span></a></li>
+            <li><a href="{{@url("/outer/knowledge/index")}}"><i class="fa fa-bookmark-o"></i> <span>知识付费管理</span></a></li>
         </ul>
         <!-- /.sidebar-menu -->
     </section>

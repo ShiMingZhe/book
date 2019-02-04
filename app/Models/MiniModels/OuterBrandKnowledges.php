@@ -11,13 +11,13 @@ namespace App\Models\MiniModels;
 
 use Illuminate\Database\Eloquent\Model;
 
-class OuterBrandsNews extends Model
+class OuterBrandKnowledges extends Model
 {
     //指定表名
-    protected $table = 'outer_brands_news';
+    protected $table = 'outer_brand_knowledges';
 
     //指定主键
     protected $primaryKey = 'id';
 
-    protected $fillable = ['brand_id', 'cover_url', 'short_introduce', 'abstract', 'detail'];
+    protected $fillable = ['brand_id', 'knowledge_id', 'status'];
 }

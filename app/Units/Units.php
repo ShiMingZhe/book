@@ -10,7 +10,7 @@ namespace App\Units;
 
 
 use Gregwar\Captcha\CaptchaBuilder;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 class Units
@@ -28,24 +28,22 @@ class Units
         return $code;
     }
 
+
     /**
-     * 上传图片
+     * laravel 上传图片
+     * @param Request $request
+     * @param string $brandName
+     * @return string
      */
-    public static function uploadPic($data)
+    public static function uploadPic(Request $request, $brandName)
     {
-        $handle = new \upload($data['image_field']);
-        if ($handle->uploaded) {
-            $handle->file_new_name_body = 'image_resized';
-            $handle->image_resize = true;
-            $handle->image_x = 100;
-            $handle->image_ratio_y = true;
-            $handle->process('../../public/');
-            if ($handle->processed) {
-                echo 'image resized';
-                $handle->clean();
-            } else {
-                echo 'error:'.$handle->error;
-            }
+        $fileCharater = $request->file('image_field');
+        if ($fileCharater->isValid()) {
+            $ext = $fileCharater->getClientOriginalExtension();
+            $filename = date('Ymdhis').'.'.$ext;
+            $fileCharater->move('/var/local/images/'.$brandName, $filename);
+
+            return 'http://images.mukeen.com/'.$brandName.'/'.$filename;
         }
     }
 }
