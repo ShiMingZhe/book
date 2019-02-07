@@ -28,4 +28,11 @@ class CommonFunctions
 
         return $brandId = $brand[0]->id;
     }
+
+    public static function getBrand($userId)
+    {
+        $brand = OuterBrands::where('user_id', $userId)->where('default', '1')->first();
+
+        return $brand;
+    }
 }

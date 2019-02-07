@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 use App\Models\MiniModels\OuterBrands;
 use App\Models\MiniModels\OuterBrandsNews;
 use App\Models\MiniModels\OuterBrandsProducts;
+use App\Units\CommonFunctions;
 use App\Units\Units;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -133,9 +134,9 @@ class OuterBrandController extends Controller
     /**
      * 保存品牌动态
      */
-    public function storageNews()
+    public function storageNews(Request $request)
     {
-        $input = Input::except(['_token']);
+        $input = $request->except(['_token']);
         $userId = $this->getBrandUserId();
         $brandId = $this->getBrandId($userId);
         $data = [
@@ -144,6 +145,11 @@ class OuterBrandController extends Controller
             'abstract' => $input['BrandAbstract'],
             'detail' => $input['BrandDetail'],
         ];
+        if (!empty($input['image_field'])) {
+            $brand = CommonFunctions::getBrand($userId);
+            $coverUrl = Units::uploadPic($request, $brand->name);
+            $data['cover_url'] = $coverUrl;
+        }
         $res = OuterBrandsNews::create($data);
         if ($res) {
             return redirect('/outer/brand/news');
@@ -165,14 +171,28 @@ class OuterBrandController extends Controller
     /**
      * 保存修改品牌动态
      */
-    public function newsSave()
+    public function newsSave(Request $request)
     {
-        $input = Input::except(['_token']);
+        $input = $request->except(['_token']);
         $data = [
             'short_introduce' => $input['BrandShortIntroduce'],
             'abstract' => $input['BrandAbstract'],
             'detail' => $input['BrandDetail'],
         ];
+        if (!empty($input['image_field'])) {
+            $userId = CommonFunctions::getBrandUserId();
+            $brand = CommonFunctions::getBrand($userId);
+            $coverUrl = Units::uploadPic($request, $brand->name);
+            $new = OuterBrandsNews::where('id', $input['newId'])->first();
+            if ($brand) {
+                $url = $new->cover_url;
+                $arr = explode('/',$url);
+                $file = end($arr);
+                $brandName = prev($arr);
+                Units::deletePic($brandName, $file);
+            }
+            $data['cover_url'] = $coverUrl;
+        }
         $new = OuterBrandsNews::where('id', $input['newId'])->update($data);
         if ($new) {
             return redirect('/outer/brand/news');
@@ -262,7 +282,5 @@ class OuterBrandController extends Controller
         } else {
             return redirect('/outer/brand/index');
         }
-
-
     }
 }
