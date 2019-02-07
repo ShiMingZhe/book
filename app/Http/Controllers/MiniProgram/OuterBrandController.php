@@ -243,7 +243,7 @@ class OuterBrandController extends Controller
     private function getBrandId($userId)
     {
         $brand = OuterBrands::where('user_id', $userId)->where('default', '1')->get();
-        if ($brand) {
+        if ($brand->isNotEmpty()) {
             return $brandId = $brand[0]->id;
         } else {
             return redirect('/outer/brand/index');
