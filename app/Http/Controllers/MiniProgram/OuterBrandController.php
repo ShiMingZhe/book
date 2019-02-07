@@ -65,7 +65,6 @@ class OuterBrandController extends Controller
             'introduce' => $input['brandIntroduce'],
         ];
         if (!empty($input['image_field'])) {
-            $logoUrl = Units::uploadPic($request, $input['brandName']);
             $brand = OuterBrands::where('user_id', $userId)->where('default', '1')->first();
             if ($brand) {
                 $url = $brand->logo_url;
@@ -73,8 +72,9 @@ class OuterBrandController extends Controller
                 $file = end($arr);
                 $brandName = prev($arr);
                 Units::deletePic($brandName, $file);
+                $logoUrl = Units::uploadPic($request, $input['brandName']);
+                $data['logo_url'] = $logoUrl;
             }
-            $data['logo_url'] = $logoUrl;
         }
         $res = OuterBrands::where('user_id', $userId)->update($data);
         if ($res) {
@@ -92,7 +92,6 @@ class OuterBrandController extends Controller
         ];
         $validator = Validator::make($input, ['brandName'=> 'required'], $message);
         if (!$validator->fails()) {
-            //$logoUrl = 'http://images.mukeen.com/muke/2019-01-29-02-30-52.png';
             $logoUrl = Units::uploadPic($request, $input['brandName']);
             $userId = $this->getBrandUserId();
             $data = [
@@ -182,7 +181,6 @@ class OuterBrandController extends Controller
         if (!empty($input['image_field'])) {
             $userId = CommonFunctions::getBrandUserId();
             $brand = CommonFunctions::getBrand($userId);
-            $coverUrl = Units::uploadPic($request, $brand->name);
             $new = OuterBrandsNews::where('id', $input['newId'])->first();
             if ($brand) {
                 $url = $new->cover_url;
@@ -190,8 +188,9 @@ class OuterBrandController extends Controller
                 $file = end($arr);
                 $brandName = prev($arr);
                 Units::deletePic($brandName, $file);
+                $coverUrl = Units::uploadPic($request, $brand->name);
+                $data['cover_url'] = $coverUrl;
             }
-            $data['cover_url'] = $coverUrl;
         }
         $new = OuterBrandsNews::where('id', $input['newId'])->update($data);
         if ($new) {
