@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 use App\Models\MiniModels\OuterBrands;
 use App\Models\MiniModels\OuterBrandsNews;
 use App\Models\MiniModels\OuterBrandsProducts;
+use App\Units\Units;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
@@ -53,15 +54,25 @@ class OuterBrandController extends Controller
     /**
      * 保存品牌介绍更改
      */
-    public function editorSave()
+    public function editorSave(Request $request)
     {
         $userId = $this->getBrandUserId();
-        $input = Input::except(['_token']);
+        $input = $request->except(['_token']);
         $data = [
             'name' => $input['brandName'],
             'address' => $input['brandAddress'],
             'introduce' => $input['brandIntroduce'],
         ];
+        if (!empty($input['image_field'])) {
+            $logoUrl = Units::uploadPic($request, $input['brandName']);
+            $brand = OuterBrands::where('user_id', $userId)->where('default', '1')->first();
+            if ($brand) {
+                $url = $brand->logo_url;
+                $file = end(explode('/',$url));
+                Units::deletePic($brand->name, $file);
+            }
+            $data['logo_url'] = $logoUrl;
+        }
         $res = OuterBrands::where('user_id', $userId)->update($data);
         if ($res) {
             return redirect('/outer/brand/index');
@@ -78,7 +89,8 @@ class OuterBrandController extends Controller
         ];
         $validator = Validator::make($input, ['brandName'=> 'required'], $message);
         if (!$validator->fails()) {
-            $logoUrl = 'http://images.mukeen.com/muke/2019-01-29-02-30-52.png';
+            //$logoUrl = 'http://images.mukeen.com/muke/2019-01-29-02-30-52.png';
+            $logoUrl = Units::uploadPic($request, $input['brandName']);
             $userId = $this->getBrandUserId();
             $data = [
                 'user_id' => $userId,

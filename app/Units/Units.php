@@ -12,6 +12,7 @@ namespace App\Units;
 use Gregwar\Captcha\CaptchaBuilder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Overtrue\Pinyin\Pinyin;
 
 class Units
 {
@@ -37,6 +38,8 @@ class Units
      */
     public static function uploadPic(Request $request, $brandName)
     {
+        $pinyin = new Pinyin();
+        $brandName = $pinyin->permalink($brandName);
         $fileCharater = $request->file('image_field');
         if ($fileCharater->isValid()) {
             $ext = $fileCharater->getClientOriginalExtension();
@@ -45,5 +48,13 @@ class Units
 
             return 'http://images.mukeen.com/'.$brandName.'/'.$filename;
         }
+    }
+
+    public static function deletePic($brandName,$fileName)
+    {
+        $pinyin = new Pinyin();
+        $brandName = $pinyin->permalink($brandName);
+        $file = '/var/local/images/'.$brandName.'/'.$fileName;
+        unlink($file);
     }
 }
