@@ -68,8 +68,10 @@ class OuterBrandController extends Controller
             $brand = OuterBrands::where('user_id', $userId)->where('default', '1')->first();
             if ($brand) {
                 $url = $brand->logo_url;
-                $file = end(explode('/',$url));
-                Units::deletePic($brand->name, $file);
+                $arr = explode('/',$url);
+                $file = end($arr);
+                $brandName = prev($arr);
+                Units::deletePic($brandName, $file);
             }
             $data['logo_url'] = $logoUrl;
         }
