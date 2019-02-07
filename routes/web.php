@@ -137,3 +137,6 @@ Route::get('/outer/users/setting/rule', 'MiniProgram\OuterUsersController@settin
 Route::get('/outer/users/create/cooperator', 'MiniProgram\OuterUsersController@createCooperator');
 Route::post('/outer/users/search/user', 'MiniProgram\OuterUsersController@searchUser');
 Route::get('/outer/users/bind/cooperator', 'MiniProgram\OuterUsersController@bindCooperator');
+
+//小程序API
+Route::get('/wx/login', 'LoginApiController@wxLogin');
