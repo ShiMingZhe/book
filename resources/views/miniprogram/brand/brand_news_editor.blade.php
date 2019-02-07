@@ -32,7 +32,7 @@
         </form>
     @else
         <!-- form start -->
-        <form role="form" action="{{@url("/outer/brand/news/storage")}}" method="post">
+        <form role="form" action="{{@url("/outer/brand/news/storage")}}" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
             <div class="box-body">
                 <div class="form-group">
