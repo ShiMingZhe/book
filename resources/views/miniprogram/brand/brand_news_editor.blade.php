@@ -4,7 +4,7 @@
 <section class="content">
     @if(!empty($new))
         <!-- form start -->
-        <form role="form" action="{{@url("/outer/brand/news/save")}}" method="post">
+        <form role="form" action="{{@url("/outer/brand/news/save")}}" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
             <div class="box-body">
                 <input type="hidden" name="newId" value="{{ $new->id }}">
