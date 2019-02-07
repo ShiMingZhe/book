@@ -41,8 +41,13 @@ class OuterBrandController extends Controller
     {
         $userId = $this->getBrandUserId();
         $brandInfo = OuterBrands::where('user_id', $userId)->get();
+        if ($brandInfo) {
+            return view('miniprogram.brand.brand_info_editor', ['brandInfo' => $brandInfo]);
+        } else {
+            return view('miniprogram.brand.brand_info_editor', ['brandInfo' => []]);
+        }
 
-        return view('miniprogram.brand.brand_info_editor', ['brandInfo' => $brandInfo]);
+
     }
 
     /**
