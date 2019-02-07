@@ -52,8 +52,6 @@ class Units
 
     public static function deletePic($brandName,$fileName)
     {
-        $pinyin = new Pinyin();
-        $brandName = $pinyin->permalink($brandName);
         $file = '/var/local/images/'.$brandName.'/'.$fileName;
         unlink($file);
     }
