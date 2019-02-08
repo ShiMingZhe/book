@@ -139,4 +139,4 @@ Route::post('/outer/users/search/user', 'MiniProgram\OuterUsersController@search
 Route::get('/outer/users/bind/cooperator', 'MiniProgram\OuterUsersController@bindCooperator');
 
 //小程序API
-Route::get('/wx/login', 'LoginApiController@wxLogin');
+Route::get('/wx/login', 'MiniProgram\LoginApiController@wxLogin');
