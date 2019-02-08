@@ -23,6 +23,6 @@ class LoginApiController extends Controller
         $client = new Client();
         $res = $client->request('get','https://api.weixin.qq.com/sns/jscode2session?appid='.$appId.'&secret='.$appSecret.'&js_code='.$code.'&grant_type=authorization_code');
 
-        echo $res;
+        return $res;
     }
 }
