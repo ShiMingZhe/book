@@ -21,8 +21,8 @@ class LoginApiController extends Controller
         $appId = WeixinAPI::APP_ID;
         $appSecret = WeixinAPI::APP_SECRET;
         $client = new Client();
-        $res = $client->request('get','https://api.weixin.qq.com/sns/jscode2session?appid='.$appId.'&secret='.$appSecret.'&js_code='.$code.'&grant_type=authorization_code');
+        $res = $client->request('GET','https://api.weixin.qq.com/sns/jscode2session?appid='.$appId.'&secret='.$appSecret.'&js_code='.$code.'&grant_type=authorization_code');
 
-        return $res;
+        return $res->getBody()->getContents();
     }
 }
