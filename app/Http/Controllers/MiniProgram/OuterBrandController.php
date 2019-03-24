@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: shimingzhe
- * Date: 2018/12/31
- * Time: 10:37 PM
- */
 
 namespace App\Http\Controllers\MiniProgram;
-
 
 use App\Http\Controllers\Controller;
 use App\Models\MiniModels\OuterBrands;

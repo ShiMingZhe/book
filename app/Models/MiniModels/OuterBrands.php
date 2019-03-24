@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: shimingzhe
- * Date: 2019/1/1
- * Time: 3:03 PM
- */
 
 namespace App\Models\MiniModels;
-
 
 use Illuminate\Database\Eloquent\Model;
 

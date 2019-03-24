@@ -1,25 +1,35 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: shimingzhe
- * Date: 2019/2/4
- * Time: 6:56 PM
- */
 
 namespace App\Units;
 
 
 use App\Models\MiniModels\OuterBrands;
+use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Session;
 
 class CommonFunctions
 {
-    public static function getBrandUserId()
+    public static function getBrandUserId($id = '')
     {
-        $user = Session::get('outerUser');
-        $userId = $user->all()[0]['id'];
+        if (empty($id)) {
+            $user = Session::get('outerUser');
+            if ($user) {
+                $userId = $user->all()[0]['id'];
 
-        return $userId;
+                return $userId;
+            } else {
+                return false;
+            }
+        } else {//微信小程序专用
+            $user = Redis::get('outerUser:'.$id);
+            if ($user) {
+                $user = json_decode($user, true);
+
+                return $user[0]['id'];
+            } else {
+                return false;
+            }
+        }
     }
 
     public static function getBrandId($userId)

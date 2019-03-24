@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: shimingzhe
- * Date: 2018/12/31
- * Time: 2:45 PM
- */
 
 namespace App\Http\Controllers\MiniProgram;
 
