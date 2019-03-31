@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4872658a115c148707dbe4c9f18ccb01",
+    "content-hash": "14b7f0ab262e106e5f65bb2fc85ebe0c",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1604,6 +1604,57 @@
                 "url"
             ],
             "time": "2018-12-04T20:46:45+00:00"
+        },
+        {
+            "name": "inpsyde/wp-db-tools",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inpsyde/wp-db-tools.git",
+                "reference": "9f8dc4eac42c31b6ad92681d61bfcd90fa6f39c7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inpsyde/wp-db-tools/zipball/9f8dc4eac42c31b6ad92681d61bfcd90fa6f39c7",
+                "reference": "9f8dc4eac42c31b6ad92681d61bfcd90fa6f39c7",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require-dev": {
+                "inpsyde/monkery-test-case": "^3.0",
+                "inpsyde/wordpress-dev": "^4.4",
+                "inpsyde/wp-tests-starter": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WpDbTools\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Naber",
+                    "email": "kontakt@dnaber.de",
+                    "homepage": "https://dnaber.de/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Inpsyde GmbH",
+                    "homepage": "http://inpsyde.com",
+                    "role": "Company"
+                }
+            ],
+            "description": "Provides an engine-independent, simplified interface to MySQL databases.",
+            "time": "2017-04-27T10:03:06+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",

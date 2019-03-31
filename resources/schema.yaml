@@ -1,0 +1,158 @@
+## 图书表
+mk_users:
+  columns:
+    id: 'integer notnull autoincrement {"comment":"用户id"}'
+    created_at: 'datetime notnull'
+    updated_at: 'datetime notnull'
+    name: 'string(45) {"comment":"用户名"}'
+    sex: 'tinyint notnull {"default":"0","comment":"用户的性别，值为1时时男性，值为2时是女性，值为0时是未知"}'
+    email: 'string(64) {"default":"","comment":"联系人邮箱"}'
+    password: 'string(255) {"default":"","comment":"密码"}'
+    phone: 'string(45) {"comment":"手机号"}'
+    headimgurl: 'string(225) {"comment":"头像"}'
+    role_id: 'tinyint notnull {"default":"3","comment":"角色id,1超级管理员,2管理员,3普通管理员"}'
+  indexes:
+    PRIMARY: 'PRIMARY KEY(id)'
+    id: 'UNIQUE KEY(id)'
+
+mk_poetry:
+  columns:
+    id: 'integer notnull autoincrement'
+    created_at: 'datetime notnull'
+    updated_at: 'datetime notnull'
+    title: 'string(30) {"comment":"诗的标题"}'
+    author: 'string(15) {"default":"","comment":"作者名称"}'
+    content: 'text {"comment":"内容"}'
+    sub_content: 'text {"comment":"诗词内容"}'
+    mp3_url: 'string(100) {"comment":"音频地址"}'
+    is_available: 'tinyint notnull {"default":"1","comment":"该条信息是否可用,1可用,0不可用"}'
+    uniq_code: 'string(100) {"default":"","comment":"唯一码"}'
+    short_introduce: 'string(600) {"default":"","comment":"短简介"}'
+    detail: 'text {"comment":"详情页"}'
+  indexes:
+    PRIMARY: 'PRIMARY KEY(id)'
+    id: 'UNIQUE KEY(id)'
+
+mk_role:
+  columns:
+    id: 'integer notnull autoincrement'
+    created_at: 'datetime'
+    updated_at: 'datetime'
+    name: 'string(45) {"comment":"角色名称"}'
+  indexes:
+    PRIMARY: 'PRIMARY KEY(id)'
+    id: 'UNIQUE KEY(id)'
+
+mk_task:
+  columns:
+    id: 'integer notnull autoincrement'
+    created_at: 'datetime'
+    updated_at: 'datetime'
+    name: 'string(45) {"default":"","comment":"任务名称"}'
+    type: 'tinyint notnull {"default":"1","comment":"任务类型,1听一听"}'
+    is_pass: 'tinyint notnull {"default":"0","comment":"是否通过,0不通过,1通过"}'
+    operator_id: 'integer {"comment":"执行任务的id"}'
+    task_id: 'integer {""comment":"相应表的id"}'
+    describe: 'string(100) {"default":"","comment":"描述"}'
+    reason: 'string(300) {"default":"","comment":"拒绝原因"}'
+  indexes:
+    PRIMARY: 'PRIMARY KEY(id)'
+    id: 'UNIQUE KEY(id)'
+
+mk_knowledges:
+  columns:
+    id: 'integer notnull autoincrement'
+    created_at: 'datetime notnull'
+    updated_at: 'datetime notnull'
+    name: 'string(100) {"default":"","comment":"知识名称"}'
+    category: 'string(30) {"default":"","comment":"类别"}'
+    price: 'string(10) {"default":"","comment":"价格"}'
+    content: 'text {"comment":"内容"}'
+    origin: 'string(60) {"default":"","comment":"来源"}'
+  indexes:
+    PRIMARY: 'PRIMARY KEY(id)'
+    id: 'UNIQUE KEY(id)'
+
+outer_users:
+  columns:
+    id: 'integer notnull autoincrement'
+    created_at: 'datetime notnull'
+    updated_at: 'datetime notnull'
+    name: 'string(45) {"comment":"用户名"}'
+    sex: 'tinyint notnull {"default":"0","comment":"用户的性别，值为1时时男性，值为2时是女性，值为0时是未知"}'
+    email: 'string(64) {"default":"","comment":"联系人邮箱"}'
+    password: 'string(255) {"default":"","comment":"密码"}'
+    phone: 'string(45) {"comment":"手机号"}'
+    headimgurl: 'string(225) {"comment":"头像"}'
+    role_id: 'tinyint notnull {"default":"3","comment":"角色id,1超级管理员,2管理员,3普通管理员"}'
+  indexes:
+    PRIMARY: 'PRIMARY KEY(id)'
+    id: 'UNIQUE KEY(id)'
+
+outer_brands:
+  columns:
+    id: 'integer notnull autoincrement'
+    created_at: 'datetime notnull'
+    updated_at: 'datetime notnull'
+    user_id: 'integer notnull {"comment":"用户Id"}'
+    name: 'string(100) {"default":"","comment":"品牌名称"}'
+    address: 'string(100) {"default":"","comment":"品牌地址"}'
+    logo_url: 'string(100) {"default":"","comment":"品牌logo"}'
+    introduce: 'text {"comment":"品牌介绍"}'
+    default: 'tinyint notnull {"default":"1","comment":"是否是默认品牌1是 0否"}'
+  indexes:
+    PRIMARY: 'PRIMARY KEY(id)'
+    id: 'UNIQUE KEY(id)'
+
+outer_brands_news:
+  columns:
+    id: 'integer notnull autoincrement'
+    created_at: 'datetime notnull'
+    updated_at: 'datetime notnull'
+    brand_id: 'integer notnull {"comment":"品牌Id"}'
+    cover_url: 'string(100) {"default":"","comment":"品牌动态封面"}'
+    short_introduce: 'string(100) {"default":"","comment":"一句话简介"}'
+    abstract: 'string(300) {"default":"","comment":"摘要"}'
+    detail: 'text {"comment":"动态详情"}'
+  indexes:
+    PRIMARY: 'PRIMARY KEY(id)'
+    id: 'UNIQUE KEY(id)'
+
+outer_brands_products:
+  columns:
+    id: 'integer notnull autoincrement'
+    created_at: 'datetime notnull'
+    updated_at: 'datetime notnull'
+    brand_id: 'integer notnull {"comment":"品牌Id"}'
+    name: 'string(100) {"default":"","comment":"产品名称"}'
+    price: 'string(10) {"default":"","comment":"产品价格"}'
+    spec: 'string(60) {"default":"","comment":"产品规格说明"}'
+    detail: 'text {"comment":"产品详情"}'
+  indexes:
+    PRIMARY: 'PRIMARY KEY(id)'
+    id: 'UNIQUE KEY(id)'
+
+outer_users_rule:
+  columns:
+    id: 'integer notnull autoincrement'
+    created_at: 'datetime notnull'
+    updated_at: 'datetime notnull'
+    brand_user_id: 'integer notnull {"comment":"品牌用户Id"}'
+    brand_coordinator_id: 'integer notnull {"comment":"品牌协管员"}'
+    brand_id: 'integer notnull {"comment":"协管员所属的品牌"}'
+    rule: 'string(100) {"default":"","comment":"协管员权限"}'
+  indexes:
+    PRIMARY: 'PRIMARY KEY(id)'
+    id: 'UNIQUE KEY(id)'
+
+outer_brand_knowledges:
+  columns:
+    id: 'integer notnull autoincrement'
+    created_at: 'datetime notnull'
+    updated_at: 'datetime notnull'
+    brand_id: 'integer notnull {"comment":"品牌Id"}'
+    knowledge_id: 'integer notnull {"comment":"知识Id"}'
+    status: 'tinyint notnull {"default":"1","comment":"1 使用中 0废弃"}'
+  indexes:
+    PRIMARY: 'PRIMARY KEY(id)'
+    id: 'UNIQUE KEY(id)'

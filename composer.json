@@ -18,7 +18,8 @@
         "ext-json":"*",
         "barryvdh/laravel-ide-helper": ">=2.1.0",
         "verot/class.upload.php": "dev-master",
-        "overtrue/pinyin": "~4.0"
+        "overtrue/pinyin": "~4.0",
+        "inpsyde/wp-db-tools": "~0.1.0"
     },
     "require-dev": {
         "filp/whoops": "^2.0",
