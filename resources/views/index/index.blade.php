@@ -1,333 +1,173 @@
-<!Doctype html>
-<html class="no-js" lang="">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>木客网</title>
-    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>木客网—图书知识付费智能硬件</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/icon" href="{{@asset('images/website/favicon.ico')}}"/>
+    <!-- Font Awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="{{@asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <!-- Slick slider -->
+    <link href="{{@asset('css/website/slick.css')}}" rel="stylesheet">
+    <!-- Theme color -->
+    <link id="switcher" href="{{@asset('css/website/theme-color/default-theme.css')}}" rel="stylesheet">
 
-    <link rel="icon" href="{{@asset("img/header-logo1.jpg")}}">
-    <!-- Place favicon.ico in the root directory -->
+    <!-- Main Style -->
+    <link href="{{@asset('css/website/style.css')}}" rel="stylesheet">
 
-    <!-- Google Fonts -->
-    {{--<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">--}}
+    <!-- Fonts -->
 
-    <link rel="stylesheet" href="{{@asset("css/bootstrap.min.css")}}">
-    <link rel="stylesheet" href="{{@asset("css/slicknav.min.css")}}">
-    <link rel="stylesheet" href="{{@asset("css/bootstrap-theme.min.css")}}">
-    <link rel="stylesheet" href="{{@asset("css/owl.carousel.min.css")}}">
-    <link rel="stylesheet" href="{{@asset("css/owl.theme.default.min.css")}}">
-    <link rel="stylesheet" href="{{@asset("css/animate.min.css")}}">
-    <link rel="stylesheet" href="{{@asset("css/animate-text.css")}}">
-    <link rel="stylesheet" href="{{@asset("css/magnific-popup.css")}}">
-    <link rel="stylesheet" href="{{@asset("css/font-awesome.min.css")}}">
+    <!-- Open Sans for body font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800" rel="stylesheet">
+    <!-- Lato for Title -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
-    <!-- Ruby CSS -->
-    <link rel="stylesheet" href="{{@asset("css/normalize.css")}}">
-    <link rel="stylesheet" href="{{@asset("css/style.css")}}">
-    <link rel="stylesheet" href="{{@asset("css/responsive.css")}}">
 
-    <!-- Color CSS -->
-    <link rel="stylesheet" href="{{@asset("css/color/color7.css")}}">
-    <!--<link rel="stylesheet" href="css/color/color1.css">-->
-    <!--<link rel="stylesheet" href="css/color/color2.css">-->
-    <!--<link rel="stylesheet" href="css/color/color3.css">-->
-    <!--<link rel="stylesheet" href="css/color/color4.css">-->
-    <!--<link rel="stylesheet" href="css/color/color5.css">-->
-    <!--<link rel="stylesheet" href="css/color/color6.css">-->
-    <!--<link rel="stylesheet" href="css/color/color8.css">-->
-    <!--<link rel="stylesheet" href="css/color/color9.css">-->
 
-    <link rel="stylesheet" href="#" id="colors">
-
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
+
 <body>
 
-<div class="color-plate ">
-    <a class="icon"><i class="fa fa-cog fa-spin"></i></a>
-    <h2>Ruby Color</h2>
-    <div class="color-head">
-        <span class="color1"></span>
-        <span class="color2"></span>
-        <span class="color3"></span>
-        <span class="color4"></span>
-        <span class="color5"></span>
-        <span class="color6"></span>
-        <span class="color7"></span>
-        <span class="color8"></span>
-        <span class="color9"></span>
-    </div>
-</div>
 
-<!-- Header Area -->
-<header id="header" class="header">
-    <!-- Header Inner -->
-    <div class="header-inner">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-2 col-xs-2">
-                    <div class="logo">
-                        {{--<a href="index.html"><img src="{{@asset("img/logo.png")}}" alt="logo.png"></a>--}}
-                        <h4>北京木客文化科技有限公司</h4>
-                    </div>
+<!-- Start Header -->
+<header id="mu-header" class="" role="banner">
+    <div class="container">
+        <nav class="navbar navbar-default mu-navbar">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <!-- Text Logo -->
+                    <a class="navbar-brand" href="index.html"><i class="fa fa-book" aria-hidden="true"></i> 木客网 MUKE</a>
+
+                    <!-- Image Logo -->
+                    <!-- <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png"></a> -->
+
+
                 </div>
-                <div class="col-md-9 col-sm-10">
-                    <div class="mobile-menu"></div>
-                    <nav class="navbar navbar-default">
-                        <div class="collapse navbar-collapse">
-                            <ul id="nav" class="nav navbar-nav">
-                                <li class="current"><a href="#slider">首页</a>
-                                </li>
-                                <li><a href="#Services">服务</a></li>
-                                <li><a href="#latest-works">合作项目</a></li>
-                                <li><a href="#team">产品</a></li>
-                                <li><a href="#contact">关于我们</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav mu-menu navbar-right">
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#mu-book-overview">资料中心</a></li>
+                        <li><a href="#mu-author">硬件设备</a></li>
+                        <li><a href="#mu-pricing">网络产品</a></li>
+                        <li><a href="#mu-testimonials">图书产品</a></li>
+                        <li><a href="#mu-contact">知识付费</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
     </div>
 </header>
-<!--/ End Header Area -->
+<!-- End Header -->
 
-<!-- Slider Area -->
-<section id="slider">
-    <div class="single-slider" style="background-image:url('img/slider1.jpg')">
-        <div id="particles-js"></div>
+<!-- Start Featured Slider -->
+
+<section id="mu-hero">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 col-sm-6 col-sm-push-6">
+                <div class="mu-hero-right">
+                    <img src="{{@asset('images/website/ebook.png')}}" alt="Ebook img">
+                </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-sm-pull-6">
+                <div class="mu-hero-left">
+                    <h1>深度学习古诗词</h1>
+                    <p>诗词学习是小学语文学习的重要内容。为培养小学生的古诗词阅读赏析能力，
+                        本书精选了113首吉诗词，分两个阶段进行深度解读:基础阶段75首，进阶阶段38首。
+                        每首诗都配有精美的插图和诗词创作背景介绍、生字词注释，现代译文、精简赏析
+                        以及与该苫诗相关的小知识。诗人小传等，拓展了学生的知识面。另外，为培养小
+                        学生的横向思维能力，扩大小学生古诗词的储备量，还增加了相似诗歌的内容:每
+                        诗码，扫码听读，是-本有声读物:随书赠送226首古许词口袋书，方便学生随时学
+                        习，查阅。</p>
+                    <a href="#" class="mu-primary-btn">立马购买</a>
+                    <span>思考，让阅读变得更加有效</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Start Featured Slider -->
+
+<!-- Start main content -->
+
+<main role="main">
+
+    <!-- Start Counter -->
+    <section id="mu-counter">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="text">
-                        <h1 class="cd-headline clip is-full-width">
-                            图书
-                            <span class="cd-words-wrapper">
-											<b class="is-visible">组稿</b>
-											<b>编辑</b>
-                                            <b>校对</b>
-											<b>排版</b>
-                                            <b>插画</b>
-                                            <b>封面设计</b>
-										</span>
-                        </h1>
-                        <p>全流程出版服务 为你制作一本专业又好看的图书<br> 交流与合作平台</p>
-                        <div class="button-head">
-                            <div class="button">
-                                <span></span>
-                                <a href="#" class="btn">Load More</a>
+                    <div class="mu-counter-area">
+
+                        <div class="mu-counter-block">
+                            <div class="row">
+
+                                <!-- Start Single Counter -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-single-counter">
+                                        <i class="fa fa-files-o" aria-hidden="true"></i>
+                                        <div class="counter-value" data-count="240">0</div>
+                                        <h5 class="mu-counter-name">总页码</h5>
+                                    </div>
+                                </div>
+                                <!-- / Single Counter -->
+
+                                <!-- Start Single Counter -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-single-counter">
+                                        <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                                        <div class="counter-value" data-count="113">0</div>
+                                        <h5 class="mu-counter-name">章节</h5>
+                                    </div>
+                                </div>
+                                <!-- / Single Counter -->
+
+                                <!-- Start Single Counter -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-single-counter">
+                                        <i class="fa fa-users" aria-hidden="true"></i>
+                                        <div class="counter-value" data-count="1055">0</div>
+                                        <h5 class="mu-counter-name">读者</h5>
+                                    </div>
+                                </div>
+                                <!-- / Single Counter -->
+
+                                <!-- Start Single Counter -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-single-counter">
+                                        <i class="fa fa-trophy" aria-hidden="true"></i>
+                                        <div class="counter-value" data-count="03">0</div>
+                                        <h5 class="mu-counter-name">评论</h5>
+                                    </div>
+                                </div>
+                                <!-- / Single Counter -->
+
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--/ End Slider Area -->
-
-<!-- Start Service area -->
-<section id="Services" class="section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title">
-                    <h2>我们的服务{{-- <span></span>--}}</h2>
-                    <p>致力于打造专业 优质 的服务</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.4s">
-                <div class="single-service">
-                    <i class="fa fa-briefcase" aria-hidden="true"></i>
-                    <h3>组稿</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                <div class="single-service">
-                    <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
-                    <h3>编辑</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.6s">
-                <div class="single-service">
-                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                    <h3>校对</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                <div class="single-service">
-                    <i class="fa fa-meetup" aria-hidden="true"></i>
-                    <h3>排版</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.8s">
-                <div class="single-service">
-                    <i class="fa fa-globe" aria-hidden="true"></i>
-                    <h3>插画</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.9s">
-                <div class="single-service">
-                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                    <h3>封面设计</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-<!-- End Service -->
-
-<!-- Latest Works Area -->
-<section id="latest-works" class="latest-works section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title">
-                    <h2>图书编辑、校对、排版项目合作</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. </p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <!-- Project Nav -->
-                <div class="works-menu wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
-                    <ul>
-                        <li class="active" data-filter="*">All Works</li>
-                        <li data-filter=".print">Print</li>
-                        <li data-filter=".identity">Identity</li>
-                        <li data-filter=".branding">Branding</li>
-                        <li data-filter=".web">Web</li>
-                        <li data-filter=".wordpress">Wordpress</li>
-                    </ul>
-                </div>
-                <!--/ End Project Nav -->
-            </div>
-        </div>
-        <div class="row">
-            <div class="isotop-active">
-                <div class="col-md-4 col-sm-4 col-xs-12 print identity">
-                    <!-- Single Works -->
-                    <div class="single-work">
-                        <img src="img/pf1.jpg" alt="">
-                        <div class="works-hover">
-                            <a href="portfolio-single.html"><h4>Project Name</h4></a>
-                            <a class="link popup" href="img/pf1.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
-                            <a href="portfolio-single.html"><i class="fa fa-link" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <!--/ End Single Works -->
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-12 wordpress branding">
-                    <!-- Single Works -->
-                    <div class="single-work">
-                        <img src="img/pf2.jpg" alt="">
-                        <div class="works-hover">
-                            <a href="portfolio-single.html"><h4>Project Name</h4></a>
-                            <a class="link popup" href="img/pf2.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
-                            <a href="portfolio-single.html"><i class="fa fa-link" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <!--/ End Single Works -->
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-12 web">
-                    <!-- Single Works -->
-                    <div class="single-work">
-                        <img src="img/pf3.jpg" alt="">
-                        <div class="works-hover">
-                            <a href="portfolio-single.html"><h4>Project Name</h4></a>
-                            <a class="link popup" href="img/pf3.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
-                            <a href="portfolio-single.html"><i class="fa fa-link" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <!--/ End Single Works -->
-                </div>
-                <div class="col-md-4  col-sm-4 col-xs-12 wordpress">
-                    <!-- Single Works -->
-                    <div class="single-work">
-                        <img src="img/pf4.jpg" alt="#">
-                        <div class="works-hover">
-                            <a href="portfolio-single.html"><h4>Project Name</h4></a>
-                            <a class="link popup" href="img/pf4.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
-                            <a href="portfolio-single.html"><i class="fa fa-link" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <!--/ End Single Works -->
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-12 branding">
-                    <!-- Single Works -->
-                    <div class="single-work">
-                        <img src="img/pf5.jpg" alt="#">
-                        <div class="works-hover">
-                            <a href="portfolio-single.html"><h4>Project Name</h4></a>
-                            <a class="link popup" href="img/pf5.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
-                            <a href="portfolio-single.html"><i class="fa fa-link" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <!--/ End Single Works -->
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-12 web print">
-                    <!-- Single Works -->
-                    <div class="single-work">
-                        <img src="img/pf6.jpg" alt="#">
-                        <div class="works-hover">
-                            <a href="portfolio-single.html"><h4>Project Name</h4></a>
-                            <a class="link popup" href="img/pf6.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
-                            <a href="portfolio-single.html"><i class="fa fa-link" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <!--/ End Single Works -->
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="button-head">
-                    <div class="button">
-                        <span></span>
-                        <a href="#" class="btn">Load More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--/ End Works Area -->
-
-<!-- Testimonials -->
-<section id="testimonials" class="section" data-stellar-background-ratio="0.5">
-    <section class="bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="owl-carousel testimonial-slider">
-                        <div class="single-testimonial">
-                            <img src="img/testi-1.jpg" alt="#">
-                            <h2><i>What Clients  Says</i></h2>
-                            <p><i class="fa fa-quote-left" aria-hidden="true"></i><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua sed do eiusmod tempor incididunt ut labore et dolore aliqua.<i class="fa fa-quote-right" aria-hidden="true"></i></i></p>
-                            <span> -Naimur Rahman</span>
-                        </div>
-                        <div class="single-testimonial">
-                            <img src="img/testi-2.jpg" alt="#">
-                            <h2><i>What Clients  Says</i></h2>
-                            <p><i class="fa fa-quote-left" aria-hidden="true"></i><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua sed do eiusmod tempor incididunt ut labore et dolore aliqua.<i class="fa fa-quote-right" aria-hidden="true"></i></i></p>
-                            <span> -Rakib Hasan</span>
-                        </div>
-                        <div class="single-testimonial">
-                            <img src="img/testi-3.jpg" alt="#">
-                            <h2><i>What Clients  Says</i></h2>
-                            <p><i class="fa fa-quote-left" aria-hidden="true"></i><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua sed do eiusmod tempor incididunt ut labore et dolore aliqua.<i class="fa fa-quote-right" aria-hidden="true"></i></i></p>
-                            <span> -Sabbir Ahmed</span>
                         </div>
 
 
@@ -336,320 +176,558 @@
             </div>
         </div>
     </section>
-</section>
-<!--/ End Testimonials -->
-<div class="tlinks">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
+    <!-- End Counter -->
 
-<!-- Team -->
-<section id="team" class="section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <div class="section-title">
-                    <h2>产品</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. </p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInRight" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                <!-- Single Team -->
-                <div class="single-team">
-                    <div class="team-head">
-                        <img src="img/team1.png" alt="">
-                        <div class="team-hover">
-                            <ul class="social">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="t-name">
-                        <h4>naimur rahman<span>Branding</span></h4>
-                    </div>
-                </div>
-                <!--/ End Single Team -->
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInRight" data-wow-duration="0.8s" data-wow-delay="0.6s">
-                <!-- Single Team -->
-                <div class="single-team">
-                    <div class="team-head">
-                        <img src="{{@asset("img/team2.png")}}" alt="">
-                        <div class="team-hover">
-                            <ul class="social">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="t-name">
-                        <h4>rakib hassan<span>Designer</span></h4>
-                    </div>
-                </div>
-                <!--/ End Single Team -->
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInRight" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                <!-- Single Team -->
-                <div class="single-team">
-                    <div class="team-head">
-                        <img src="img/team3.png" alt="">
-                        <div class="team-hover">
-                            <ul class="social">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="t-name">
-                        <h4>afsana mimi<span>Photographer</span></h4>
-                    </div>
-                </div>
-                <!--/ End Single Team -->
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInRight" data-wow-duration="0.8s" data-wow-delay="0.4s">
-                <!-- Single Team -->
-                <div class="single-team">
-                    <div class="team-head">
-                        <img src="{{@asset("img/team1.png")}}" alt="">
-                        <div class="team-hover">
-                            <ul class="social">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="t-name">
-                        <h4>saiful abir<span>Developer</span></h4>
-                    </div>
-                </div>
-                <!--/ End Single Team -->
-            </div>
-        </div>
-    </div>
-</section>
-<!--/ End Team -->
-
-<!-- Fun Facts Area -->
-<section id="fun-facts" class="fun-facts section" data-stellar-background-ratio="0.5">
-    <div class="bf-color">
+    <!-- Start Book Overview -->
+    <section id="mu-book-overview">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.4s">
-                    <!-- Single Fun -->
-                    <div class="single-fun">
-                        <i class="fa fa-th-list" aria-hidden="true"></i>
-                        <span class="counter">3468</span>
-                        <p>Project Finished</p>
+                <div class="col-md-12">
+                    <div class="mu-book-overview-area">
+
+                        <div class="mu-heading-area">
+                            <h2 class="mu-heading-title">资料中心</h2>
+                            <span class="mu-header-dot"></span>
+                            <p>各种社科，教辅，知识付费等优质学习资源，所有内容只供学习参考，商业用途需要联系版权方</p>
+                        </div>
+
+                        <!-- Start Book Overview Content -->
+                        <div class="mu-book-overview-content">
+                            <div class="row">
+
+                                <!-- Book Overview Single Content -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-book-overview-single">
+											<span class="mu-book-overview-icon-box">
+												<i class="fa fa-list" aria-hidden="true"></i>
+											</span>
+                                        <h4>语文</h4>
+                                        <p>提供初中语文、高中语文各类优质教学资源</p>
+                                    </div>
+                                </div>
+                                <!-- / Book Overview Single Content -->
+
+                                <!-- About Us Single Content -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-book-overview-single">
+											<span class="mu-book-overview-icon-box">
+												<i class="fa fa-percent" aria-hidden="true"></i>
+											</span>
+                                        <h4>数学</h4>
+                                        <p>提供初中数学、高中语文各类优质教学资源</p>
+                                    </div>
+                                </div>
+                                <!-- / Book Overview Single Content -->
+
+                                <!-- About Us Single Content -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-book-overview-single">
+											<span class="mu-book-overview-icon-box">
+												<i class="fa fa-language" aria-hidden="true"></i>
+											</span>
+                                        <h4>英语</h4>
+                                        <p>提供初中英语、高中语文各类优质教学资源</p>
+                                    </div>
+                                </div>
+                                <!-- / Book Overview Single Content -->
+
+                                <!-- About Us Single Content -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-book-overview-single">
+											<span class="mu-book-overview-icon-box">
+												<i class="fa fa-balance-scale" aria-hidden="true"></i>
+											</span>
+                                        <h4>物理</h4>
+                                        <p>提供初中物理、高中语文各类优质教学资源</p>
+                                    </div>
+                                </div>
+                                <!-- / Book Overview Single Content -->
+
+                                <!-- Book Overview Single Content -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-book-overview-single">
+											<span class="mu-book-overview-icon-box">
+												<i class="	fa fa-flask" aria-hidden="true"></i>
+											</span>
+                                        <h4>化学</h4>
+                                        <p>提供初中化学、高中语文各类优质教学资源</p>
+                                    </div>
+                                </div>
+                                <!-- / Book Overview Single Content -->
+
+                                <!-- About Us Single Content -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-book-overview-single">
+											<span class="mu-book-overview-icon-box">
+												<i class="fa fa-tree" aria-hidden="true"></i>
+											</span>
+                                        <h4>生物</h4>
+                                        <p>提供初中生物、高中语文各类优质教学资源</p>
+                                    </div>
+                                </div>
+                                <!-- / Book Overview Single Content -->
+
+                                <!-- About Us Single Content -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-book-overview-single">
+											<span class="mu-book-overview-icon-box">
+												<i class="fa fa-file-text" aria-hidden="true"></i>
+											</span>
+                                        <h4>政治</h4>
+                                        <p>提供初中政治、高中语文各类优质教学资源</p>
+                                    </div>
+                                </div>
+                                <!-- / Book Overview Single Content -->
+
+                                <!-- About Us Single Content -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-book-overview-single">
+											<span class="mu-book-overview-icon-box">
+												<i class="fa fa-map" aria-hidden="true"></i>
+											</span>
+                                        <h4>历史</h4>
+                                        <p>提供初中历史、高中语文各类优质教学资源</p>
+                                    </div>
+                                </div>
+                                <!-- / Book Overview Single Content -->
+
+                                <!-- About Us Single Content -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-book-overview-single">
+											<span class="mu-book-overview-icon-box">
+												<i class="fa fa-globe" aria-hidden="true"></i>
+											</span>
+                                        <h4>地理</h4>
+                                        <p>提供初中地理、高中语文各类优质教学资源</p>
+                                    </div>
+                                </div>
+                                <!-- / Book Overview Single Content -->
+
+                                <!-- About Us Single Content -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-book-overview-single">
+											<span class="mu-book-overview-icon-box">
+												<i class="fa fa-filter" aria-hidden="true"></i>
+											</span>
+                                        <h4>理综</h4>
+                                        <p>提供初中理综、高中语文各类优质教学资源</p>
+                                    </div>
+                                </div>
+                                <!-- / Book Overview Single Content -->
+
+                                <!-- About Us Single Content -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-book-overview-single">
+											<span class="mu-book-overview-icon-box">
+												<i class="fa fa-files-o" aria-hidden="true"></i>
+											</span>
+                                        <h4>文综</h4>
+                                        <p>提供初中文综、高中语文各类优质教学资源</p>
+                                    </div>
+                                </div>
+                                <!-- / Book Overview Single Content -->
+
+                                <!-- About Us Single Content -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-book-overview-single">
+											<span class="mu-book-overview-icon-box">
+												<i class="fa fa-book" aria-hidden="true"></i>
+											</span>
+                                        <h4>名著</h4>
+                                        <p>提供各种名著、阅读理解各类优质教学资源</p>
+                                    </div>
+                                </div>
+                                <!-- / Book Overview Single Content -->
+
+
+                            </div>
+                        </div>
+                        <!-- End Book Overview Content -->
+
                     </div>
-                    <!--/ End Single Fun -->
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.6s">
-                    <!-- Single Fun -->
-                    <div class="single-fun">
-                        <i class="fa fa-smile-o" aria-hidden="true"></i>
-                        <span class="counter">468</span>
-                        <p>Happy Clients</p>
-                    </div>
-                    <!--/ End Single Fun -->
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.8s">
-                    <!-- Single Fun -->
-                    <div class="single-fun">
-                        <i class="fa fa-briefcase" aria-hidden="true"></i>
-                        <span class="counter">4368</span>
-                        <p>Hourse Work</p>
-                    </div>
-                    <!--/ End Single Fun -->
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn" data-wow-duration="0.8s" data-wow-delay="1s">
-                    <!-- Single Fun -->
-                    <div class="single-fun">
-                        <i class="fa fa-coffee" aria-hidden="true"></i>
-                        <span class="counter">3468</span>
-                        <p>Cups of coffes</p>
-                    </div>
-                    <!--/ End Single Fun -->
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!--/ End Fun Facts Area -->
+    </section>
+    <!-- End Book Overview -->
 
-<!--/ contact Area -->
-<section id="contact" class="contact section" data-stellar-background-ratio="0.5">
-    <div class="container">
-        <div class="row">
-            <p style="text-indent: 2em;font-size: 20px;line-height: 50px;">北京木客工作室成立于2013年7月，2016年6月正式注册成立为北京木客文化科技有限公司。团队成员都是来自于在出版社或图书公司有多年经验的编辑和插画师组成，在图书策划、编辑、封面设计、儿童插画、书籍排版上有多年经验。自成立至今已经跟很多出版社和图书公司建立了合作关系，编辑校对和提供插画服务的图书涉及孕产、菜谱类百科图书，青少年名著，中小学教辅，大专教材，科普图书，小说等各类图书570余本。</p>
-        </div>
-    </div>
-</section>
-<!--/ End contact Area -->
 
-<!-- Clients Area -->
-<div id="clients" class="clients section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="owl-carousel clients-slider">
-                    <!-- Single Clients -->
-                    <div class="single-clients">
-                        <img src="img/client1.jpg" alt="#">
-                    </div>
-                    <!--/ End Single Client -->
-                    <!-- Single Client -->
-                    <div class="single-clients">
-                        <img src="img/client2.jpg" alt="#">
-                    </div>
-                    <!--/ End Single Client -->
-                    <!-- Single Client -->
-                    <div class="single-clients">
-                        <img src="img/client3.jpg" alt="#">
-                    </div>
-                    <!--/ End Single Client -->
-                    <!-- Single Client -->
-                    <div class="single-clients">
-                        <img src="img/client4.jpg" alt="#">
-                    </div>
-                    <!--/ End Single Client -->
-                    <!-- Single Client -->
-                    <div class="single-clients">
-                        <img src="img/client5.jpg" alt="#">
-                    </div>
-                    <!--/ End Single Client -->
-                    <!-- Single Client -->
-                    <div class="single-clients">
-                        <img src="img/client6.jpg" alt="#">
-                    </div>
-                    <!--/ End Single Client -->
-                    <!-- Single Client -->
-                    <div class="single-clients">
-                        <img src="img/client1.jpg" alt="#">
-                    </div>
-                    <!--/ End Single Client -->
-                    <!-- Single Client -->
-                    <div class="single-clients">
-                        <img src="img/client2.jpg" alt="#">
-                    </div>
-                    <!--/ End Single Client -->
-                    <!-- Single Client -->
-                    <div class="single-clients">
-                        <img src="img/client3.jpg" alt="#">
-                    </div>
-                    <!--/ End Single Client -->
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--/ End Clients Area -->
-
-<!-- Footer Area -->
-<footer id="footer" class="footer section">
-    <!-- Footer Top -->
-    <div class="footer-top">
-        <div class="container">
-            <div class="row" align="center">
-                <h2><i class="fa fa-sliders" aria-hidden="true"></i>QQ群</h2><br>
-                <span class="logo">
-                    <img src="img/chahua.jpg" alt="#" width="150">
-                </span>
-                    <span class="logo">
-                    <img src="img/chahua.jpg" alt="#" width="150">
-                </span>
-                    <span class="logo">
-                    <img src="img/chahua.jpg" alt="#" width="150">
-                </span>
-                    <span class="logo">
-                    <img src="img/chahua.jpg" alt="#" width="150">
-                </span>
-                    <span class="logo">
-                    <img src="img/chahua.jpg" alt="#" width="150">
-                </span>
-                    <span class="logo">
-                    <img src="img/chahua.jpg" alt="#" width="150">
-                </span>
-                    <span class="logo">
-                    <img src="img/chahua.jpg" alt="#" width="150">
-                </span>
-                    <span class="logo">
-                    <img src="img/chahua.jpg" alt="#" width="150">
-                </span>
-                    <span class="logo">
-                    <img src="img/chahua.jpg" alt="#" width="150">
-                </span>
-                    <span class="logo">
-                    <img src="img/chahua.jpg" alt="#" width="150">
-                </span>
-                    <span class="logo">
-                    <img src="img/chahua.jpg" alt="#" width="150">
-                </span>
-                    <span class="logo">
-                    <img src="img/chahua.jpg" alt="#" width="150">
-                </span>
-                    <span class="logo">
-                    <img src="img/chahua.jpg" alt="#" width="150">
-                </span>
-                    <span class="logo">
-                    <img src="img/chahua.jpg" alt="#" width="150">
-                </span>
-
-            </div><br>
-            <div class="row" align="center">
-                <h2><i class="fa fa-sliders" aria-hidden="true"></i>微信公众号</h2><br>
-                <span class="logo">
-                    <img src="img/chahua.jpg" alt="#" width="150">
-                </span>
-                <span class="logo">
-                    <img src="img/chahua.jpg" alt="#" width="150">
-                </span>
-            </div>
-        </div>
-    </div>
-    <!--/ End Footer Top -->
-
-    <!-- Copyright -->
-    <div class="copyright">
+    <!-- Start Author -->
+    <section id="mu-author">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="copyright-content">
-                        <p>Copyright 2018 </p>
+                <div class="col-md-12">
+                    <div class="mu-author-area">
+
+                        <div class="mu-heading-area">
+                            <h2 class="mu-heading-title">硬件设备</h2>
+                            <span class="mu-header-dot"></span>
+                        </div>
+
+                        <!-- Start Author Content -->
+                        <div class="mu-author-content">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mu-author-image">
+                                        <img src="{{@asset('images/website/author.jpg')}}" alt="Author Image">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mu-author-info">
+                                        <h3>新知识付费系统</h3>
+                                        <p>知识付费的本质，在于把知识变成产品或服务，以实现商业价值。知识付费有利于人们高效筛选信息，
+                                            付费的同时也激励优质内容的生产简而言之，知识付费是让知识的接受者付出相应的成本。</p>
+
+                                        <p> 知识付费目前主要指知识的接收者为所阅览知识付出资金的现象。知识付费让知识的获得者间接为向
+                                            知识的传播者与筛选者给予报酬，而不是让参与知识传播链条的人通过流量或广告等其它方式获得收益。</p>
+                                        <img class="mu-author-sign" src="{{@asset('images/website/author-signature.png')}}" alt="Author Signature">
+
+                                        <div class="mu-author-social">
+                                            <a href="#"><i class="fa fa-weibo"></i></a>
+                                            <a href="#"><i class="fa fa-wechat"></i></a>
+                                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Author Content -->
+
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+    <!-- End Author -->
+
+    <!-- Start Pricing -->
+    <section id="mu-pricing">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mu-pricing-area">
+
+                        <div class="mu-heading-area">
+                            <h2 class="mu-heading-title">网络产品</h2>
+                            <span class="mu-header-dot"></span>
+                            <p>题库，图库，文库三大类互联网产品，各种资源，提供原创精品的学习资源</p>
+                        </div>
+
+                        <!-- Start Pricing Content -->
+                        <div class="mu-pricing-content">
+                            <div class="row">
+
+                                <!-- Pricing Single Content -->
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="mu-pricing-single">
+
+                                        <div class="mu-pricing-single-head">
+                                            <h4>题库</h4>
+                                            <p class="mu-price-tag">
+                                                <span>@</span> 题
+                                            </p>
+                                        </div>
+
+                                        <ul class="mu-price-feature">
+                                            <li> 2018年高考语文真题（全国卷）</li>
+                                            <li> 2018年高考语文真题（北京卷） </li>
+                                            <li> 2018年高考语文真题（上海卷） </li>
+                                            <li> 2018年高考语文真题（天津卷） </li>
+                                        </ul>
+
+                                        <div class="mu-pricing-single-footer">
+                                            <a href="#" class="mu-order-btn">立即访问</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- / Pricing Single Content -->
+
+                                <!-- Pricing Single Content -->
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="mu-pricing-single mu-popular-price-tag">
+
+
+                                        <div class="mu-pricing-single-head">
+                                            <h4>文库</h4>
+                                            <p class="mu-price-tag">
+                                                <span>@</span> 文
+                                            </p>
+                                        </div>
+
+                                        <ul class="mu-price-feature">
+                                            <li> 《红楼梦》诗词全集 </li>
+                                            <li> 《了不起的盖茨比》英文版</li>
+                                            <li> 《假如给我三天光明》英文版 </li>
+                                            <li> 《尼尔斯骑鹅旅行记》 </li>
+                                        </ul>
+
+                                        <div class="mu-pricing-single-footer">
+                                            <a href="#" class="mu-order-btn">立即访问</a>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <!-- / Pricing Single Content -->
+
+                                <!-- Pricing Single Content -->
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="mu-pricing-single">
+
+
+                                        <div class="mu-pricing-single-head">
+                                            <h4>图库</h4>
+                                            <p class="mu-price-tag">
+                                                <span>@</span> 图
+                                            </p>
+                                        </div>
+
+                                        <ul class="mu-price-feature">
+                                            <li> 野蛮人大作战系列 </li>
+                                            <li> QQ飞车原画设计 </li>
+                                            <li> 皇室战争-高校邀请赛KV&赛事LOGO </li>
+                                            <li> 乐事薯片#粉上樱花这一刻#插画海报 </li>
+                                        </ul>
+
+                                        <div class="mu-pricing-single-footer">
+                                            <a href="#" class="mu-order-btn">立即访问</a>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <!-- / Pricing Single Content -->
+
+
+                            </div>
+                        </div>
+                        <!-- End Pricing Content -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Pricing -->
+
+    <!-- Start Testimonials -->
+    <section id="mu-testimonials">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mu-testimonials-area">
+                        <div class="mu-heading-area">
+                            <h2 class="mu-heading-title">图书产品</h2>
+                            <span class="mu-header-dot"></span>
+                        </div>
+
+                        <div class="mu-testimonials-block">
+                            <ul class="mu-testimonial-slide">
+
+                                <li>
+                                    <p>深度学习古诗词，回归诗教传统，读懂每一首诗；一诗一码，一本可以听的书；75首新课标推荐诗词，38首进阶诗词；
+                                        深度解读113首诗，38首进阶诗词，附录故事19首</p>
+                                    <img class="mu-rt-img" src="{{@asset('images/website/reader-1.png')}}" alt="img">
+                                    <h5 class="mu-rt-name"> 深度学习古诗词</h5>
+                                    <span class="mu-rt-title">小学生背诵诗词75+38首</span>
+                                </li>
+
+                                <li>
+                                    <p>深度学习古诗词，回归诗教传统，读懂每一首诗；一诗一码，一本可以听的书；75首新课标推荐诗词，38首进阶诗词；
+                                        深度解读113首诗，38首进阶诗词，附录故事19首</p>
+                                    <img class="mu-rt-img" src="{{@asset('images/website/reader-2.png')}}" alt="img">
+                                    <h5 class="mu-rt-name"> 古诗词里的知识与故事</h5>
+                                    <span class="mu-rt-title">给孩子读的古诗词</span>
+                                </li>
+
+                                <li>
+                                    <p>深度学习古诗词，回归诗教传统，读懂每一首诗；一诗一码，一本可以听的书；75首新课标推荐诗词，38首进阶诗词；
+                                        深度解读113首诗，38首进阶诗词，附录故事19首</p>
+                                    <img class="mu-rt-img" src="{{@asset('images/website/reader-3.png')}}" alt="img">
+                                    <h5 class="mu-rt-name"> 深度识字</h5>
+                                    <span class="mu-rt-title">藏在汉字里的小故事</span>
+                                </li>
+
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Testimonials -->
+
+
+    <!-- Start Contact -->
+    <section id="mu-contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mu-contact-area">
+
+                        <div class="mu-heading-area">
+                            <h2 class="mu-heading-title">知识付费</h2>
+                            <span class="mu-header-dot"></span>
+                            <p>有声读物,有声书,中小学语文英语,随时随地,听我想听。</p>
+                        </div>
+
+                        <!-- Start Book Overview Content -->
+                        <div class="mu-book-overview-content">
+                            <div class="row">
+
+                                <!-- Book Overview Single Content -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-book-overview-single">
+											<span class="mu-book-overview-icon-box">
+												<img class="zhishi-img" src="{{@asset('images/website/zhishi-1.png')}}" alt="img">
+											</span>
+                                        <h4>古诗词深度学习</h4>
+                                        <p>提供初中语文、高中语文各类优质教学资源</p>
+                                    </div>
+                                </div>
+                                <!-- / Book Overview Single Content -->
+
+                                <!-- About Us Single Content -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-book-overview-single">
+											<span class="mu-book-overview-icon-box">
+												<img class="zhishi-img" src="{{@asset('images/website/zhishi-2.png')}}" alt="img">
+											</span>
+                                        <h4>《楚辞》深度学习</h4>
+                                        <p>提供初中数学、高中语文各类优质教学资源</p>
+                                    </div>
+                                </div>
+                                <!-- / Book Overview Single Content -->
+
+                                <!-- About Us Single Content -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-book-overview-single">
+											<span class="mu-book-overview-icon-box">
+												<img class="zhishi-img" src="{{@asset('images/website/zhishi-3.png')}}" alt="img">
+											</span>
+                                        <h4>《红楼梦》诗词赏析</h4>
+                                        <p>提供初中英语、高中语文各类优质教学资源</p>
+                                    </div>
+                                </div>
+                                <!-- / Book Overview Single Content -->
+
+                                <!-- About Us Single Content -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-book-overview-single">
+											<span class="mu-book-overview-icon-box">
+											<img class="zhishi-img" src="{{@asset('images/website/zhishi-4.png')}}" alt="img">
+											</span>
+                                        <h4>《诗经》深度学习</h4>
+                                        <p>提供初中物理、高中语文各类优质教学资源</p>
+                                    </div>
+                                </div>
+                                <!-- / Book Overview Single Content -->
+
+                                <!-- Book Overview Single Content -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-book-overview-single">
+											<span class="mu-book-overview-icon-box">
+												<img class="zhishi-img" src="{{@asset('images/website/zhishi-5.png')}}" alt="img">
+											</span>
+                                        <h4>《西游记》深度解读</h4>
+                                        <p>提供初中化学、高中语文各类优质教学资源</p>
+                                    </div>
+                                </div>
+                                <!-- / Book Overview Single Content -->
+
+                                <!-- About Us Single Content -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-book-overview-single">
+											<span class="mu-book-overview-icon-box">
+												<img class="zhishi-img" src="{{@asset('images/website/zhishi-6.png')}}" alt="img">
+											</span>
+                                        <h4>《西游记》名家点评</h4>
+                                        <p>提供初中生物、高中语文各类优质教学资源</p>
+                                    </div>
+                                </div>
+                                <!-- / Book Overview Single Content -->
+                                <!-- Book Overview Single Content -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-book-overview-single">
+											<span class="mu-book-overview-icon-box">
+												<img class="zhishi-img" src="{{@asset('images/website/zhishi-1.png')}}" alt="img">
+											</span>
+                                        <h4>古诗词深度学习</h4>
+                                        <p>提供初中语文、高中语文各类优质教学资源</p>
+                                    </div>
+                                </div>
+                                <!-- / Book Overview Single Content -->
+
+                                <!-- About Us Single Content -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-book-overview-single">
+											<span class="mu-book-overview-icon-box">
+												<img class="zhishi-img" src="{{@asset('images/website/zhishi-2.png')}}" alt="img">
+											</span>
+                                        <h4>《楚辞》深度学习</h4>
+                                        <p>提供初中数学、高中语文各类优质教学资源</p>
+                                    </div>
+                                </div>
+                                <!-- / Book Overview Single Content -->
+
+                            </div>
+                        </div>
+                        <!-- End Book Overview Content -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Contact -->
+
+
+</main>
+
+<!-- End main content -->
+
+
+<!-- Start footer -->
+<footer id="mu-footer" role="contentinfo">
+    <div class="container">
+        <div class="mu-footer-area">
+            <div class="mu-social-media">
+                <a href="#"><i class="fa fa-weibo"></i></a>
+                <a href="#"><i class="fa fa-wechat"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+            </div>
+            <p class="mu-copyright">&copy; Copyright markups.io. All right reserved.More Templates <a href="" target="_blank" title="木客网">木客网</a> </p>
+        </div>
     </div>
-    <!--/ End Copyright -->
+
 </footer>
-<!--/ End Footer Area -->
+<!-- End footer -->
 
-<script src="{{@asset("js/jquery.min.js")}}"></script>
-<script src="{{@asset("js/bootstrap.min.js")}}"></script>
-<script src="{{@asset("js/colors.js")}}"></script>
-<script src="{{@asset("js/jquery.nav.js")}}"></script>
-<script src="{{@asset("js/jquery.scrollUp.min.js")}}"></script>
-<script src="{{@asset("js/jquery.slicknav.min.js")}}"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-<script src="{{@asset("js/owl.carousel.min.js")}}"></script>
-<script src="{{@asset("js/isotope.pkgd.min.js")}}"></script>
-<script src="{{@asset("js/wow.min.js")}}"></script>
-<script src="{{@asset("js/jquery.stellar.min.js")}}"></script>
-<script src="{{@asset("js/jquery.magnific-popup.min.js")}}"></script>
-<script src="{{@asset("js/animate-text.js")}}"></script>
-<script src="{{@asset("js/particles.min.js")}}"></script>
-<script src="{{@asset("js/particle-code.js")}}"></script>
-<script src="{{@asset("js/jquery.counterup.min.js")}}"></script>
 
-<script type="text/javascript" src="{{@asset("js/gmaps.min.js")}}"></script>
-<script src="{{@asset("js/main.js")}}"></script>
+
+<!-- jQuery library -->
+<script src="{{@asset('js/jquery.min.js')}}"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<!-- Bootstrap -->
+<script src="{{@asset('js/bootstrap.min.js')}}"></script>
+<!-- Slick slider -->
+<script type="text/javascript" src="{{@asset('js/website/slick.min.js')}}"></script>
+<!-- Counter js -->
+<script type="text/javascript" src="{{@asset('js/website/counter.js')}}"></script>
+<!-- Ajax contact form  -->
+<script type="text/javascript" src="{{@asset('js/website/app.js')}}"></script>
+
+
+
+<!-- Custom js -->
+<script type="text/javascript" src="{{@asset('js/website/custom.js')}}"></script>
+
+
 </body>
 </html>
