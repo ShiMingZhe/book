@@ -565,7 +565,10 @@ button:focus {
 	text-align: center;
 }
 
-
+.mu-author-sign{
+	width: auto;
+	height: 100px;
+}
 
 
 /*--------------------*/

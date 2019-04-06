@@ -69,7 +69,7 @@
                         <li><a href="#">首页</a></li>
                         <li><a href="#mu-book-overview">资料中心</a></li>
                         <li><a href="#mu-author">硬件设备</a></li>
-                        <li><a href="#mu-pricing">网络产品</a></li>
+                        <li><a href="#mu-pricing">互联网产品</a></li>
                         <li><a href="#mu-testimonials">图书产品</a></li>
                         <li><a href="#mu-contact">知识付费</a></li>
                     </ul>
@@ -103,7 +103,6 @@
                         诗码，扫码听读，是-本有声读物:随书赠送226首古许词口袋书，方便学生随时学
                         习，查阅。</p>
                     <a href="#" class="mu-primary-btn">立马购买</a>
-                    <span>思考，让阅读变得更加有效</span>
                 </div>
             </div>
 
@@ -132,7 +131,7 @@
                                     <div class="mu-single-counter">
                                         <i class="fa fa-files-o" aria-hidden="true"></i>
                                         <div class="counter-value" data-count="240">0</div>
-                                        <h5 class="mu-counter-name">总页码</h5>
+                                        <h5 class="mu-counter-name">图书</h5>
                                     </div>
                                 </div>
                                 <!-- / Single Counter -->
@@ -142,7 +141,7 @@
                                     <div class="mu-single-counter">
                                         <i class="fa fa-file-text-o" aria-hidden="true"></i>
                                         <div class="counter-value" data-count="113">0</div>
-                                        <h5 class="mu-counter-name">章节</h5>
+                                        <h5 class="mu-counter-name">文档</h5>
                                     </div>
                                 </div>
                                 <!-- / Single Counter -->
@@ -152,7 +151,7 @@
                                     <div class="mu-single-counter">
                                         <i class="fa fa-users" aria-hidden="true"></i>
                                         <div class="counter-value" data-count="1055">0</div>
-                                        <h5 class="mu-counter-name">读者</h5>
+                                        <h5 class="mu-counter-name">服务人数</h5>
                                     </div>
                                 </div>
                                 <!-- / Single Counter -->
@@ -161,8 +160,8 @@
                                 <div class="col-md-3 col-sm-6">
                                     <div class="mu-single-counter">
                                         <i class="fa fa-trophy" aria-hidden="true"></i>
-                                        <div class="counter-value" data-count="03">0</div>
-                                        <h5 class="mu-counter-name">评论</h5>
+                                        <div class="counter-value" data-count="10000">0</div>
+                                        <h5 class="mu-counter-name">浏览次数</h5>
                                     </div>
                                 </div>
                                 <!-- / Single Counter -->
@@ -382,13 +381,6 @@
                                             知识的传播者与筛选者给予报酬，而不是让参与知识传播链条的人通过流量或广告等其它方式获得收益。</p>
                                         <img class="mu-author-sign" src="{{@asset('images/website/author-signature.png')}}" alt="Author Signature">
 
-                                        <div class="mu-author-social">
-                                            <a href="#"><i class="fa fa-weibo"></i></a>
-                                            <a href="#"><i class="fa fa-wechat"></i></a>
-                                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                                            <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -410,7 +402,7 @@
                     <div class="mu-pricing-area">
 
                         <div class="mu-heading-area">
-                            <h2 class="mu-heading-title">网络产品</h2>
+                            <h2 class="mu-heading-title">互联网产品</h2>
                             <span class="mu-header-dot"></span>
                             <p>题库，图库，文库三大类互联网产品，各种资源，提供原创精品的学习资源</p>
                         </div>
@@ -696,13 +688,8 @@
 <footer id="mu-footer" role="contentinfo">
     <div class="container">
         <div class="mu-footer-area">
-            <div class="mu-social-media">
-                <a href="#"><i class="fa fa-weibo"></i></a>
-                <a href="#"><i class="fa fa-wechat"></i></a>
-                <a href="#"><i class="fa fa-google-plus"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-            </div>
-            <p class="mu-copyright">&copy; Copyright markups.io. All right reserved.More Templates <a href="" target="_blank" title="木客网">木客网</a> </p>
+            <p class="mu-copyright">&copy; Copyright <a href="#" target="_blank" title="木客网">木客网</a> </p>
+            <p class="mu-copyright">备案号 <a href="#" target="_blank" title="木客网">京ICP备16029267号-1</a> </p>
         </div>
     </div>
 
