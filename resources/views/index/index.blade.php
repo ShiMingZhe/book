@@ -689,7 +689,7 @@
     <div class="container">
         <div class="mu-footer-area">
             <p class="mu-copyright">&copy; Copyright <a href="#" target="_blank" title="木客网">木客网</a> </p>
-            <p class="mu-copyright">备案号 <a href="#" target="_blank" title="木客网">京ICP备16029267号-1</a> </p>
+            <p class="mu-copyright">备案号: <a href="#" target="_blank" title="木客网">京ICP备16029267号-1</a> </p>
         </div>
     </div>
 

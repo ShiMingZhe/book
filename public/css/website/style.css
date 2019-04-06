@@ -568,6 +568,7 @@ button:focus {
 .mu-author-sign{
 	width: auto;
 	height: 100px;
+    padding-left: 30%;
 }
 
 
@@ -960,6 +961,7 @@ button:focus {
 .mu-copyright {
 	margin-top: 10px;
 	display: inline-block;
+
 }
 
 
