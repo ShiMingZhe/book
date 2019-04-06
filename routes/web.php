@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
  * 官网
  */
 
-Route::get('/index', 'IndexController@index');
+Route::get('/', 'IndexController@index');
 
 /**
  * 管理后台
