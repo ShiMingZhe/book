@@ -24,12 +24,7 @@
             </div>
             <div class="animate-item-1">
                 <div class="animated fadeIn">
-                    <div class="left">
-                        <img src="{{@asset("webapp/images/logo.png")}}">
-                    </div>
-                    <div class="right">
-                        <div>深&nbsp;&nbsp;&nbsp;度&nbsp;&nbsp;&nbsp;阅&nbsp;&nbsp;&nbsp;读<br>DEEP READING</div>
-                    </div>
+                    <div>深&nbsp;&nbsp;&nbsp;度&nbsp;&nbsp;&nbsp;阅&nbsp;&nbsp;&nbsp;读<br>DEEP READING</div>
                 </div>
             </div>
         </div>
@@ -51,7 +46,7 @@
 <script type="text/javascript" src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
 <script>
     $(function () {
-        setInterval(ChangeTime, 1000);
+        //setInterval(ChangeTime, 1000);
         $(".animate-item").hide();
         $(".animate-item").fadeIn(3000);
     });
