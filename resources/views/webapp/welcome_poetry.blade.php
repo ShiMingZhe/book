@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <meta name="csrf-token" content="@{{ csrf_token }}">
-    <title>古诗词深度学习</title>
+    <title>深度学习古诗词</title>
     <link rel="stylesheet" type="text/css" href="{{@asset("/css/app.css")}}">
     <link rel="stylesheet" type="text/css" href="{{@asset("/webapp/css/library.css")}}">
     <link rel="stylesheet" type="text/css" href="{{@asset("/webapp/css/app.css")}}">
@@ -14,13 +14,23 @@
 
 <div id="app">
     <div id="animate">
-        <div id="time">6s</div>
+        <div id="time">10s</div>
         <div class="animate-item">
-            <div class="animate-item-1">
-                <img src="{{@asset("webapp/images/logo.png")}}">
+            <div class="animate-item-3">
+                <div class="animated fadeIn">思&nbsp;&nbsp;考</div>
             </div>
             <div class="animate-item-2">
-                <div class="animated fadeIn">思考，让阅读变得更加有效</div>
+                <div class="animated fadeIn">让阅读变得更加有效</div>
+            </div>
+            <div class="animate-item-1">
+                <div class="animated fadeIn">
+                    <div class="left">
+                        <img src="{{@asset("webapp/images/logo.png")}}">
+                    </div>
+                    <div class="right">
+                        <div>深&nbsp;&nbsp;&nbsp;度&nbsp;&nbsp;&nbsp;阅&nbsp;&nbsp;&nbsp;读<br>DEEP READING</div>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="skip" onclick="skip()">进入资料库</div>

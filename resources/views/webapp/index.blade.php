@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <meta name="csrf-token" content="@{{ csrf_token }}">
-    <title>古诗词深度学习</title>
+    <title>深度学习古诗词</title>
     <link rel="stylesheet" type="text/css" href="{{@asset("/css/app.css")}}">
     <link rel="stylesheet" type="text/css" href="{{@asset("/webapp/css/app.css")}}">
     <link rel="stylesheet" type="text/css" href="{{@asset("/css/bootstrap.min.css")}}">

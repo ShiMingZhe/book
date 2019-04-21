@@ -15,7 +15,7 @@
     font-size: 20px;
     float: right;
 }
-.animate-item-1 .animated {
+.animate-item-3 .animated {
     -webkit-animation-duration: 5s !important;
     animation-duration: 5s !important; // 动画执行时间
     -webkit-animation-fill-mode: both;
@@ -29,25 +29,61 @@
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
-
+.animate-item-1 .animated {
+    -webkit-animation-duration: 5s !important;
+    animation-duration: 5s !important; // 动画执行时间
+    animation-delay: 2s !important;
+    -webkit-animation-delay: 4s !important;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
 .animate-item-1 {
     width: 100%;
     font-size: 36px;
     text-align: center;
+    margin-top: 30px;
     color: #000000;
     float: left;
 }
-.animate-item-1 img {
-    width: 20%;
-    height: auto;
+.animate-item-1 .left {
+    width: 41%;
+    height: 60px;
+    vertical-align: middle;
+    float: left;
+}
+.animate-item-1 .right {
+    width: 36%;
+    height: 60px;
+    line-height: 23px;
+    padding-top: 10px;
+    font-size: 15px;
+    float: left;
+}
+.animate-item-1 .left img {
+    width: auto;
+    height: 100%;
+    float: right;
 }
 .animate-item-2 {
     width: 100%;
     font-size: 20px;
     text-align: center;
-    margin-top:70px;
+    margin-top:30px;
     color: #319888;
     float: left;
+}
+
+.animate-item-3 {
+    width: 100%;
+    font-size: 60px;
+    text-align: center;
+    color: #2b2b2b;
+    float: left;
+}
+.animate-item-3 div {
+    border-bottom: 5px solid #eb512d;
+    width: 44%;
+    margin-left: 28%;
 }
 .animate-item {
     width: 100%;
