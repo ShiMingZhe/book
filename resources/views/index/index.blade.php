@@ -555,12 +555,12 @@
     <!-- End Testimonials -->
 
 
-    <!-- Start Contact -->
-    <section id="mu-contact">
+    <!-- Start knowledge -->
+    <section id="mu-knowledge">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="mu-contact-area">
+                    <div class="mu-knowledge-area">
 
                         <div class="mu-heading-area">
                             <h2 class="mu-heading-title">知识付费</h2>
