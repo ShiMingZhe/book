@@ -640,7 +640,7 @@
 												<img class="zhishi-img" src="{{@asset('images/website/zhishi-6.png')}}" alt="img">
 											</span>
                                         <h4>《孟子》深度阅读</h4>
-                                        <p>充满辩论推理，语言雄浑有力，非常具有说服力</p>
+                                        <p>充满辩论推理，语言雄浑有力，非常具有说服力。</p>
                                     </div>
                                 </div>
                                 <!-- / Book Overview Single Content -->
