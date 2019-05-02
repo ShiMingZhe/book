@@ -187,7 +187,7 @@
                         <div class="mu-heading-area">
                             <h2 class="mu-heading-title">资料中心</h2>
                             <span class="mu-header-dot"></span>
-                            <p>各种社科，教辅，知识付费等优质学习资源，所有内容只供学习参考，商业用途需要联系版权方</p>
+                            <p>中小学各学科的学习资料，教育部规定的中小学生必读的社科类电子图书</p>
                         </div>
 
                         <!-- Start Book Overview Content -->
@@ -201,7 +201,7 @@
 												<i class="fa fa-list" aria-hidden="true"></i>
 											</span>
                                         <h4>语文</h4>
-                                        <p>提供初中语文、高中语文各类优质教学资源</p>
+                                        <p>中小学生学习必备的语文试题、课件等电子资料</p>
                                     </div>
                                 </div>
                                 <!-- / Book Overview Single Content -->
@@ -213,7 +213,7 @@
 												<i class="fa fa-percent" aria-hidden="true"></i>
 											</span>
                                         <h4>数学</h4>
-                                        <p>提供初中数学、高中语文各类优质教学资源</p>
+                                        <p>中小学生学习必备的数学试题、课件等电子资料</p>
                                     </div>
                                 </div>
                                 <!-- / Book Overview Single Content -->
@@ -225,7 +225,7 @@
 												<i class="fa fa-language" aria-hidden="true"></i>
 											</span>
                                         <h4>英语</h4>
-                                        <p>提供初中英语、高中语文各类优质教学资源</p>
+                                        <p>中小学生学习必备的英语试题、课件等电子资料</p>
                                     </div>
                                 </div>
                                 <!-- / Book Overview Single Content -->
@@ -237,7 +237,7 @@
 												<i class="fa fa-balance-scale" aria-hidden="true"></i>
 											</span>
                                         <h4>物理</h4>
-                                        <p>提供初中物理、高中语文各类优质教学资源</p>
+                                        <p>中学生学习必备的物理试题、课件等电子资料</p>
                                     </div>
                                 </div>
                                 <!-- / Book Overview Single Content -->
@@ -249,7 +249,7 @@
 												<i class="	fa fa-flask" aria-hidden="true"></i>
 											</span>
                                         <h4>化学</h4>
-                                        <p>提供初中化学、高中语文各类优质教学资源</p>
+                                        <p>中学生学习必备的化学试题、课件等电子资料</p>
                                     </div>
                                 </div>
                                 <!-- / Book Overview Single Content -->
@@ -261,7 +261,7 @@
 												<i class="fa fa-tree" aria-hidden="true"></i>
 											</span>
                                         <h4>生物</h4>
-                                        <p>提供初中生物、高中语文各类优质教学资源</p>
+                                        <p>中学生学习必备的生物试题、课件等电子资料</p>
                                     </div>
                                 </div>
                                 <!-- / Book Overview Single Content -->
@@ -273,7 +273,7 @@
 												<i class="fa fa-file-text" aria-hidden="true"></i>
 											</span>
                                         <h4>政治</h4>
-                                        <p>提供初中政治、高中语文各类优质教学资源</p>
+                                        <p>中学生学习必备的政治试题、课件等电子资料</p>
                                     </div>
                                 </div>
                                 <!-- / Book Overview Single Content -->
@@ -285,7 +285,7 @@
 												<i class="fa fa-map" aria-hidden="true"></i>
 											</span>
                                         <h4>历史</h4>
-                                        <p>提供初中历史、高中语文各类优质教学资源</p>
+                                        <p>中学生学习必备的历史试题、课件等电子资料</p>
                                     </div>
                                 </div>
                                 <!-- / Book Overview Single Content -->
@@ -297,7 +297,7 @@
 												<i class="fa fa-globe" aria-hidden="true"></i>
 											</span>
                                         <h4>地理</h4>
-                                        <p>提供初中地理、高中语文各类优质教学资源</p>
+                                        <p>中学生学习必备的地理试题、课件等电子资料</p>
                                     </div>
                                 </div>
                                 <!-- / Book Overview Single Content -->
@@ -309,7 +309,7 @@
 												<i class="fa fa-filter" aria-hidden="true"></i>
 											</span>
                                         <h4>理综</h4>
-                                        <p>提供初中理综、高中语文各类优质教学资源</p>
+                                        <p>中学生学习必备的理综试题、课件等电子资料</p>
                                     </div>
                                 </div>
                                 <!-- / Book Overview Single Content -->
@@ -321,7 +321,7 @@
 												<i class="fa fa-files-o" aria-hidden="true"></i>
 											</span>
                                         <h4>文综</h4>
-                                        <p>提供初中文综、高中语文各类优质教学资源</p>
+                                        <p>中学生学习必备的文综试题、课件等电子资料</p>
                                     </div>
                                 </div>
                                 <!-- / Book Overview Single Content -->
@@ -378,7 +378,7 @@
                                             付费的同时也激励优质内容的生产简而言之，知识付费是让知识的接受者付出相应的成本。</p>
 
                                         <p> 知识付费目前主要指知识的接收者为所阅览知识付出资金的现象。知识付费让知识的获得者间接为向
-                                            知识的传播者与筛选者给予报酬，而不是让参与知识传播链条的人通过流量或广告等其它方式获得收益。</p>
+                                            知识的传播者与筛选者给予报酬，而不是让参与知识传播链条的人通过流量或广告等其他方式获得收益。</p>
                                         <img class="mu-author-sign" src="{{@asset('images/website/author-signature.png')}}" alt="Author Signature">
 
                                     </div>
@@ -528,19 +528,19 @@
                                 </li>
 
                                 <li>
-                                    <p>深度学习古诗词，回归诗教传统，读懂每一首诗；一诗一码，一本可以听的书；75首新课标推荐诗词，38首进阶诗词；
-                                        深度解读113首诗，38首进阶诗词，附录故事19首</p>
+                                    <p>古诗词里的科学与故事，16首咏物诗词注释翻译，16个科学问题等你解答，16个小故事等你聆听，
+                                        培养孩子的文学素养与科学兴趣</p>
                                     <img class="mu-rt-img" src="{{@asset('images/website/reader-2.png')}}" alt="img">
-                                    <h5 class="mu-rt-name"> 古诗词里的知识与故事</h5>
-                                    <span class="mu-rt-title">给孩子读的古诗词</span>
+                                    <h5 class="mu-rt-name"> 古诗词里的科学与故事</h5>
+                                    <span class="mu-rt-title">跟妈妈一起读诗词 学科学 听故事</span>
                                 </li>
 
                                 <li>
-                                    <p>深度学习古诗词，回归诗教传统，读懂每一首诗；一诗一码，一本可以听的书；75首新课标推荐诗词，38首进阶诗词；
-                                        深度解读113首诗，38首进阶诗词，附录故事19首</p>
+                                    <p>小学各年级语文学习资料全面大汇编，适合各个年级的小学生学习查询，融会贯通，知识迁移，总体提供，
+                                        厚积薄发，举一反三，知识量提升学习力</p>
                                     <img class="mu-rt-img" src="{{@asset('images/website/reader-3.png')}}" alt="img">
-                                    <h5 class="mu-rt-name"> 深度识字</h5>
-                                    <span class="mu-rt-title">藏在汉字里的小故事</span>
+                                    <h5 class="mu-rt-name"> 进阶学习</h5>
+                                    <span class="mu-rt-title">小学语文资料库</span>
                                 </li>
 
                             </ul>
@@ -578,8 +578,21 @@
 											<span class="mu-book-overview-icon-box">
 												<img class="zhishi-img" src="{{@asset('images/website/zhishi-1.png')}}" alt="img">
 											</span>
-                                        <h4>古诗词深度学习</h4>
-                                        <p>提供初中语文、高中语文各类优质教学资源</p>
+                                        <h4>《诗经》中的文学美</h4>
+                                        <p>那些一读就令人着迷的句子，那些醉人的故事</p>
+                                    </div>
+                                </div>
+                                <!-- / Book Overview Single Content -->
+
+
+                                <!-- About Us Single Content -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="mu-book-overview-single">
+											<span class="mu-book-overview-icon-box">
+												<img class="zhishi-img" src="{{@asset('images/website/zhishi-3.png')}}" alt="img">
+											</span>
+                                        <h4>《红楼梦》诗词赏析</h4>
+                                        <p>不仅仅是一部经典的小说，书中的诗词也堪称经典</p>
                                     </div>
                                 </div>
                                 <!-- / Book Overview Single Content -->
@@ -591,19 +604,7 @@
 												<img class="zhishi-img" src="{{@asset('images/website/zhishi-2.png')}}" alt="img">
 											</span>
                                         <h4>《楚辞》深度学习</h4>
-                                        <p>提供初中数学、高中语文各类优质教学资源</p>
-                                    </div>
-                                </div>
-                                <!-- / Book Overview Single Content -->
-
-                                <!-- About Us Single Content -->
-                                <div class="col-md-3 col-sm-6">
-                                    <div class="mu-book-overview-single">
-											<span class="mu-book-overview-icon-box">
-												<img class="zhishi-img" src="{{@asset('images/website/zhishi-3.png')}}" alt="img">
-											</span>
-                                        <h4>《红楼梦》诗词赏析</h4>
-                                        <p>提供初中英语、高中语文各类优质教学资源</p>
+                                        <p>我国浪漫主义诗歌的开端，对李白等后世诗人有很大的影响</p>
                                     </div>
                                 </div>
                                 <!-- / Book Overview Single Content -->
@@ -614,8 +615,8 @@
 											<span class="mu-book-overview-icon-box">
 											<img class="zhishi-img" src="{{@asset('images/website/zhishi-4.png')}}" alt="img">
 											</span>
-                                        <h4>《诗经》深度学习</h4>
-                                        <p>提供初中物理、高中语文各类优质教学资源</p>
+                                        <h4>《西游记》名家点评</h4>
+                                        <p>神魔小说的经典之作，看看名家是怎么来点评的吧</p>
                                     </div>
                                 </div>
                                 <!-- / Book Overview Single Content -->
@@ -626,8 +627,8 @@
 											<span class="mu-book-overview-icon-box">
 												<img class="zhishi-img" src="{{@asset('images/website/zhishi-5.png')}}" alt="img">
 											</span>
-                                        <h4>《西游记》深度解读</h4>
-                                        <p>提供初中化学、高中语文各类优质教学资源</p>
+                                        <h4>《论语》深度解读</h4>
+                                        <p>儒家学派的经典著作，影响中国文学数千年</p>
                                     </div>
                                 </div>
                                 <!-- / Book Overview Single Content -->
@@ -638,8 +639,8 @@
 											<span class="mu-book-overview-icon-box">
 												<img class="zhishi-img" src="{{@asset('images/website/zhishi-6.png')}}" alt="img">
 											</span>
-                                        <h4>《西游记》名家点评</h4>
-                                        <p>提供初中生物、高中语文各类优质教学资源</p>
+                                        <h4>《孟子》深度阅读</h4>
+                                        <p>充满辩论推理，语言雄浑有力，非常具有说服力</p>
                                     </div>
                                 </div>
                                 <!-- / Book Overview Single Content -->
@@ -647,10 +648,10 @@
                                 <div class="col-md-3 col-sm-6">
                                     <div class="mu-book-overview-single">
 											<span class="mu-book-overview-icon-box">
-												<img class="zhishi-img" src="{{@asset('images/website/zhishi-1.png')}}" alt="img">
+												<img class="zhishi-img" src="{{@asset('images/website/zhishi-7.png')}}" alt="img">
 											</span>
-                                        <h4>古诗词深度学习</h4>
-                                        <p>提供初中语文、高中语文各类优质教学资源</p>
+                                        <h4>《三国演义》名家评点</h4>
+                                        <p>军事历史小说，人物形象鲜明，战争场面众多，时间跨度长</p>
                                     </div>
                                 </div>
                                 <!-- / Book Overview Single Content -->
@@ -659,10 +660,11 @@
                                 <div class="col-md-3 col-sm-6">
                                     <div class="mu-book-overview-single">
 											<span class="mu-book-overview-icon-box">
-												<img class="zhishi-img" src="{{@asset('images/website/zhishi-2.png')}}" alt="img">
+												<img class="zhishi-img" src="{{@asset('images/website/zhishi-8
+												.png')}}" alt="img">
 											</span>
-                                        <h4>《楚辞》深度学习</h4>
-                                        <p>提供初中数学、高中语文各类优质教学资源</p>
+                                        <h4>《水浒传》点评</h4>
+                                        <p>塑造了许多典型形象，故事情节波折，需要辩证去读</p>
                                     </div>
                                 </div>
                                 <!-- / Book Overview Single Content -->

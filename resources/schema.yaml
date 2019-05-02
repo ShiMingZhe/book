@@ -156,3 +156,4 @@ outer_brand_knowledges:
   indexes:
     PRIMARY: 'PRIMARY KEY(id)'
     id: 'UNIQUE KEY(id)'
+

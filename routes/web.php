@@ -152,3 +152,6 @@ Route::post('/user/info', 'MiniProgram\BrandApiController@getAdminUserInfo');
 Route::post('/brand/info', 'MiniProgram\BrandApiController@getBrandInfo');
 Route::post('/brand/news', 'MiniProgram\BrandApiController@getBrandNews');
 Route::post('/brand/products', 'MiniProgram\BrandApiController@getProductList');
+
+//官网后台
+Route::get('/website/index', 'Website\IndexController@index');
