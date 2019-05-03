@@ -55,7 +55,7 @@
                     </button>
 
                     <!-- Text Logo -->
-                    <a class="navbar-brand" href="index.html"><i class="fa fa-book" aria-hidden="true"></i> 木客网 MUKE</a>
+                    <a class="navbar-brand" href="{{url('/')}}"><i class="fa fa-book" aria-hidden="true"></i> 木客网 MUKE</a>
 
                     <!-- Image Logo -->
                     <!-- <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png"></a> -->
@@ -197,109 +197,118 @@
 
                                 <!-- Book Overview Single Content -->
                                 <div class="col-md-3 col-sm-6">
-                                    <div class="mu-book-overview-single">
+                                    <a href="{{url('/article')}}" rel="stylesheet">
+                                        <div class="mu-book-overview-single">
 											<span class="mu-book-overview-icon-box">
 												<i class="fa fa-list" aria-hidden="true"></i>
 											</span>
-                                        <a href="{{@asset('../index/article')}}" rel="stylesheet"><h4>语文</h4>
-                                        <p>中小学生学习必备的语文试题、课件等电子资料</p></a>
-                                    </div>
+                                        <h4>语文</h4>
+                                        <p>中小学生学习必备的语文试题、课件等电子资料</p>
+                                    </div></a>
                                 </div>
                                 <!-- / Book Overview Single Content -->
 
                                 <!-- About Us Single Content -->
                                 <div class="col-md-3 col-sm-6">
+                                    <a href="{{url('/article')}}" rel="stylesheet">
                                     <div class="mu-book-overview-single">
 											<span class="mu-book-overview-icon-box">
 												<i class="fa fa-percent" aria-hidden="true"></i>
 											</span>
                                         <h4>数学</h4>
                                         <p>中小学生学习必备的数学试题、课件等电子资料</p>
-                                    </div>
+                                    </div></a>
                                 </div>
                                 <!-- / Book Overview Single Content -->
 
                                 <!-- About Us Single Content -->
                                 <div class="col-md-3 col-sm-6">
+                                    <a href="{{url('/article')}}" rel="stylesheet">
                                     <div class="mu-book-overview-single">
 											<span class="mu-book-overview-icon-box">
 												<i class="fa fa-language" aria-hidden="true"></i>
 											</span>
                                         <h4>英语</h4>
                                         <p>中小学生学习必备的英语试题、课件等电子资料</p>
-                                    </div>
+                                    </div></a>
                                 </div>
                                 <!-- / Book Overview Single Content -->
 
                                 <!-- About Us Single Content -->
                                 <div class="col-md-3 col-sm-6">
+                                    <a href="{{url('/article')}}" rel="stylesheet">
                                     <div class="mu-book-overview-single">
 											<span class="mu-book-overview-icon-box">
 												<i class="fa fa-balance-scale" aria-hidden="true"></i>
 											</span>
                                         <h4>物理</h4>
                                         <p>中学生学习必备的物理试题、课件等电子资料</p>
-                                    </div>
+                                    </div></a>
                                 </div>
                                 <!-- / Book Overview Single Content -->
 
                                 <!-- Book Overview Single Content -->
                                 <div class="col-md-3 col-sm-6">
+                                    <a href="{{url('/article')}}" rel="stylesheet">
                                     <div class="mu-book-overview-single">
 											<span class="mu-book-overview-icon-box">
 												<i class="	fa fa-flask" aria-hidden="true"></i>
 											</span>
                                         <h4>化学</h4>
                                         <p>中学生学习必备的化学试题、课件等电子资料</p>
-                                    </div>
+                                    </div></a>
                                 </div>
                                 <!-- / Book Overview Single Content -->
 
                                 <!-- About Us Single Content -->
                                 <div class="col-md-3 col-sm-6">
+                                    <a href="{{url('/article')}}" rel="stylesheet">
                                     <div class="mu-book-overview-single">
 											<span class="mu-book-overview-icon-box">
 												<i class="fa fa-tree" aria-hidden="true"></i>
 											</span>
                                         <h4>生物</h4>
                                         <p>中学生学习必备的生物试题、课件等电子资料</p>
-                                    </div>
+                                    </div></a>
                                 </div>
                                 <!-- / Book Overview Single Content -->
 
                                 <!-- About Us Single Content -->
                                 <div class="col-md-3 col-sm-6">
+                                    <a href="{{url('/article')}}" rel="stylesheet">
                                     <div class="mu-book-overview-single">
 											<span class="mu-book-overview-icon-box">
 												<i class="fa fa-file-text" aria-hidden="true"></i>
 											</span>
                                         <h4>政治</h4>
                                         <p>中学生学习必备的政治试题、课件等电子资料</p>
-                                    </div>
+                                    </div></a>
                                 </div>
                                 <!-- / Book Overview Single Content -->
 
                                 <!-- About Us Single Content -->
                                 <div class="col-md-3 col-sm-6">
+                                    <a href="{{url('/article')}}" rel="stylesheet">
                                     <div class="mu-book-overview-single">
 											<span class="mu-book-overview-icon-box">
 												<i class="fa fa-map" aria-hidden="true"></i>
 											</span>
                                         <h4>历史</h4>
                                         <p>中学生学习必备的历史试题、课件等电子资料</p>
-                                    </div>
+                                    </div></a>
                                 </div>
                                 <!-- / Book Overview Single Content -->
 
                                 <!-- About Us Single Content -->
                                 <div class="col-md-3 col-sm-6">
+                                    <a href="{{url('/article')}}" rel="stylesheet">
                                     <div class="mu-book-overview-single">
 											<span class="mu-book-overview-icon-box">
 												<i class="fa fa-globe" aria-hidden="true"></i>
 											</span>
                                         <h4>地理</h4>
                                         <p>中学生学习必备的地理试题、课件等电子资料</p>
-                                    </div>
+                                    </div></a>
                                 </div>
                                 <!-- / Book Overview Single Content -->
 
@@ -557,11 +566,11 @@
 
 
     <!-- Start knowledge -->
-    <section id="mu-knowledge">
+    <section id="mu-contact">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="mu-knowledge-area">
+                    <div class="mu-contact-area">
 
                         <div class="mu-heading-area">
                             <h2 class="mu-heading-title">知识付费</h2>
