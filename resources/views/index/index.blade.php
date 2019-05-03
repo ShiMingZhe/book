@@ -187,7 +187,8 @@
                         <div class="mu-heading-area">
                             <h2 class="mu-heading-title">资料中心</h2>
                             <span class="mu-header-dot"></span>
-                            <p>中小学各学科的学习资料，教育部规定的中小学生必读的社科类电子图书</p>
+                            <p>中小学各学科的专题试题，模拟题，与书配套的练习，小升初，中考，高考真题资料，
+                                教育部规定的中小学生必读的社科类电子图书，古诗词，文言文，诗歌鉴赏，理科试验</p>
                         </div>
 
                         <!-- Start Book Overview Content -->
@@ -575,7 +576,7 @@
                                 <!-- Book Overview Single Content -->
                                 <div class="col-md-3 col-sm-6">
                                     <div class="mu-book-overview-single">
-											<span class="mu-book-overview-icon-box">
+											<span class="mu-knowledge-overview-icon-box">
 												<img class="zhishi-img" src="{{@asset('images/website/zhishi-1.png')}}" alt="img">
 											</span>
                                         <h4>《诗经》中的文学美</h4>
@@ -588,7 +589,7 @@
                                 <!-- About Us Single Content -->
                                 <div class="col-md-3 col-sm-6">
                                     <div class="mu-book-overview-single">
-											<span class="mu-book-overview-icon-box">
+											<span class="mu-knowledge-overview-icon-box">
 												<img class="zhishi-img" src="{{@asset('images/website/zhishi-3.png')}}" alt="img">
 											</span>
                                         <h4>《红楼梦》诗词赏析</h4>
@@ -600,7 +601,7 @@
                                 <!-- About Us Single Content -->
                                 <div class="col-md-3 col-sm-6">
                                     <div class="mu-book-overview-single">
-											<span class="mu-book-overview-icon-box">
+											<span class="mu-knowledge-overview-icon-box">
 												<img class="zhishi-img" src="{{@asset('images/website/zhishi-2.png')}}" alt="img">
 											</span>
                                         <h4>《楚辞》深度学习</h4>
@@ -612,7 +613,7 @@
                                 <!-- About Us Single Content -->
                                 <div class="col-md-3 col-sm-6">
                                     <div class="mu-book-overview-single">
-											<span class="mu-book-overview-icon-box">
+											<span class="mu-knowledge-overview-icon-box">
 											<img class="zhishi-img" src="{{@asset('images/website/zhishi-4.png')}}" alt="img">
 											</span>
                                         <h4>《西游记》名家点评</h4>
@@ -624,7 +625,7 @@
                                 <!-- Book Overview Single Content -->
                                 <div class="col-md-3 col-sm-6">
                                     <div class="mu-book-overview-single">
-											<span class="mu-book-overview-icon-box">
+											<span class="mu-knowledge-overview-icon-box">
 												<img class="zhishi-img" src="{{@asset('images/website/zhishi-5.png')}}" alt="img">
 											</span>
                                         <h4>《论语》深度解读</h4>
@@ -636,7 +637,7 @@
                                 <!-- About Us Single Content -->
                                 <div class="col-md-3 col-sm-6">
                                     <div class="mu-book-overview-single">
-											<span class="mu-book-overview-icon-box">
+											<span class="mu-knowledge-overview-icon-box">
 												<img class="zhishi-img" src="{{@asset('images/website/zhishi-6.png')}}" alt="img">
 											</span>
                                         <h4>《孟子》深度阅读</h4>
@@ -647,7 +648,7 @@
                                 <!-- Book Overview Single Content -->
                                 <div class="col-md-3 col-sm-6">
                                     <div class="mu-book-overview-single">
-											<span class="mu-book-overview-icon-box">
+											<span class="mu-knowledge-overview-icon-box">
 												<img class="zhishi-img" src="{{@asset('images/website/zhishi-7.png')}}" alt="img">
 											</span>
                                         <h4>《三国演义》名家评点</h4>
@@ -659,7 +660,7 @@
                                 <!-- About Us Single Content -->
                                 <div class="col-md-3 col-sm-6">
                                     <div class="mu-book-overview-single">
-											<span class="mu-book-overview-icon-box">
+											<span class="mu-knowledge-overview-icon-box">
 												<img class="zhishi-img" src="{{@asset('images/website/zhishi-8
 												.png')}}" alt="img">
 											</span>

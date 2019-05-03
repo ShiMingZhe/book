@@ -492,7 +492,6 @@ button:focus {
 	margin-bottom: 30px;
 	display: inline-block;
 }
-
 .mu-book-overview-single h4{
 	margin-bottom: 20px;
 }
@@ -782,19 +781,6 @@ button:focus {
 /*--------------------*/
 /* KNOWLEDGE PAYMENT */
 /*--------------------*/
-#mu-knowledge-overview {
-	background-color: #f8f8f8;
-	display: inline;
-	float: left;
-	width: 100%;
-}
-
-.mu-knowledge-overview-area {
-	display: inline;
-	float: left;
-	padding: 100px 0;
-	width: 100%;
-}
 
 #mu-knowledge {
 	background-color: #fff;
@@ -809,7 +795,11 @@ button:focus {
 	padding: 100px 0;
 	width: 100%;
 }
-
+.mu-knowledge-overview-icon-box {
+	font-size: 25px;
+	margin-bottom: 30px;
+	display: inline-block;
+}
 /* GOOGLE MAP */
 
 #mu-google-map {
