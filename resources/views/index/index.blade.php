@@ -201,7 +201,7 @@
 											<span class="mu-book-overview-icon-box">
 												<i class="fa fa-list" aria-hidden="true"></i>
 											</span>
-                                        <a href="{{@asset('../index/article.blade.php')}}" rel="stylesheet"><h4>语文</h4>
+                                        <a href="{{@asset('../index/article')}}" rel="stylesheet"><h4>语文</h4>
                                         <p>中小学生学习必备的语文试题、课件等电子资料</p></a>
                                     </div>
                                 </div>
