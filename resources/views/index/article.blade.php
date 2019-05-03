@@ -88,21 +88,13 @@
 
             <div class="col-md-6 col-sm-6 col-sm-push-6">
                 <div class="mu-hero-right">
-                    <img src="{{@asset('images/website/ebook.png')}}" alt="Ebook img">
+                    <a href="#mu-contact">题库·语文专题</a>
                 </div>
             </div>
 
             <div class="col-md-6 col-sm-6 col-sm-pull-6">
                 <div class="mu-hero-left">
-                    <h1>深度学习古诗词</h1>
-                    <p>诗词学习是小学语文学习的重要内容。为培养小学生的古诗词阅读赏析能力，
-                        本书精选了113首吉诗词，分两个阶段进行深度解读:基础阶段75首，进阶阶段38首。
-                        每首诗都配有精美的插图和诗词创作背景介绍、生字词注释，现代译文、精简赏析
-                        以及与该苫诗相关的小知识。诗人小传等，拓展了学生的知识面。另外，为培养小
-                        学生的横向思维能力，扩大小学生古诗词的储备量，还增加了相似诗歌的内容:每
-                        诗码，扫码听读，是一本有声读物:随书赠送226首古许词口袋书，方便学生随时学
-                        习，查阅。</p>
-                    <a href="#" class="mu-primary-btn">立马购买</a>
+                    <a href="#mu-contact">文库·语文专题</a>
                 </div>
             </div>
 
@@ -201,8 +193,8 @@
 											<span class="mu-book-overview-icon-box">
 												<i class="fa fa-list" aria-hidden="true"></i>
 											</span>
-                                        <a href="{{@asset('../index/article.blade.php')}}" rel="stylesheet"><h4>语文</h4>
-                                        <p>中小学生学习必备的语文试题、课件等电子资料</p></a>
+                                        <h4>语文</h4>
+                                        <p>中小学生学习必备的语文试题、课件等电子资料</p>
                                     </div>
                                 </div>
                                 <!-- / Book Overview Single Content -->
