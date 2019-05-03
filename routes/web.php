@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'Website\IndexController@index');
 Route::get('/article', 'Website\ArticleController@article');
+Route::get('/knowledge', 'Website\KnowledgeController@knowledge');
 /**
  * 管理后台
  */

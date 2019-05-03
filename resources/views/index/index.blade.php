@@ -584,6 +584,7 @@
 
                                 <!-- Book Overview Single Content -->
                                 <div class="col-md-3 col-sm-6">
+                                    <a href="{{url('/knowledge')}}" rel="stylesheet">
                                     <div class="mu-book-overview-single">
 											<span class="mu-knowledge-overview-icon-box">
 												<img class="zhishi-img" src="{{@asset('images/website/zhishi-1.png')}}" alt="img">
@@ -591,6 +592,7 @@
                                         <h4>《诗经》中的文学美</h4>
                                         <p>那些一读就令人着迷的句子，那些醉人的故事</p>
                                     </div>
+                                    </a>
                                 </div>
                                 <!-- / Book Overview Single Content -->
 
