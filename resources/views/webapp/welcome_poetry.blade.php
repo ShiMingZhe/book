@@ -28,8 +28,10 @@
                 </div>
             </div>
         </div>--}}
-        <div class="welcome">
-            <img src="{{@asset('webapp/images/welcome.png')}}">
+        <div class="welcome animate-item">
+            <div class="animated fadeIn">
+                <img src="{{@asset('webapp/images/welcome.png')}}">
+            </div>
         </div>
         <div id="skip" onclick="skip()">进入资料库</div>
     </div>
@@ -50,8 +52,8 @@
 <script>
     $(function () {
         setInterval(ChangeTime, 1000);
-        //$(".animate-item").hide();
-        //$(".animate-item").fadeIn(3000);
+        $(".animate-item").hide();
+        $(".animate-item").fadeIn(3000);
     });
 
     function ChangeTime() {

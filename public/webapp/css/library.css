@@ -65,12 +65,12 @@
     border-bottom: 5px solid #eb512d;
     width: 44%;
     margin-left: 28%;
-}
+}*/
 .animate-item {
     width: 100%;
     margin-top: 30%;
     float: left;
-}*/
+}
 #content {
     display: none;
 }
@@ -98,5 +98,5 @@
 .welcome img {
     width: 100%;
     height: auto;
-    margin-top: -125px;
+    margin-top: -263px;
 }

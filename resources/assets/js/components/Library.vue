@@ -1,6 +1,7 @@
 <template>
    <div id="container" ref="poetry_content">
       <div v-if="is_list" class="content-item">
+         <div class="logo">资料库</div>
          <div class="col-sm-12 search">
             <div class="input-group">
                <input type="text" class="form-control search-input" placeholder="请输入标题名或作者名" ref="search">
@@ -8,6 +9,8 @@
                  <button class="btn btn-default search-button" type="button" @click="search">搜一下</button>
                </span>
             </div>
+         </div>
+         <div class="ad">
          </div>
          <div v-for="content in contents" v-if="content.is_available == 1" id="item" @click="goTo(content.detail)">
             <div id="content_left">
@@ -106,7 +109,7 @@
 
 <style scoped>
    #container {
-      background-color: #ebebeb;
+      background-color: #ffffff;
       padding-top: 10px;
    }
    #item {
@@ -115,7 +118,7 @@
       margin-left: auto;
       margin-right: auto;
       border-radius: 5px;
-      background-color: #ffffff;
+      background-color: #f9f9f9;
       margin-top: 10px;
    }
    #content_left {
@@ -161,12 +164,29 @@
    .search {
       padding-right: 10px;
       padding-left: 10px;
+      margin-bottom: 25px;
    }
-   .search-input,.search-button {
+   .search-input {
       height: 46px;
       border: 1px solid #259c1d;
    }
    .search-button {
-      font-size: 16px;
+      height: 46px;
+      border: 1px solid #259c1d;
+      color: #f0ad4e;
+      font-size: 19px;
+   }
+   .logo {
+      text-align: center;
+      font-size: 32px;
+      margin-top: 46px;
+      margin-bottom: 27px;
+   }
+   .ad {
+      width: 100%;
+      height: 150px;
+      background: url("../../../../public/webapp/images/ad.png");
+      background-size: 100% auto;
+      background-repeat: no-repeat;
    }
 </style>
