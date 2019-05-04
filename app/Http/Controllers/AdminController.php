@@ -108,10 +108,12 @@ class AdminController extends Controller
     public function randomKeys($length)
     {
         $pattern = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLOMNOPQRSTUVWXYZ';
-        str_shuffle($pattern);
-        $str = substr($pattern, 16, $length);
+        $p0 = str_shuffle($pattern);
+        $p1 = str_shuffle($pattern);
+        $str0 = substr($p0, 16, $length);
+        $str1 = substr($p1, 16, $length);
 
-        return md5(time().$str);
+        return $str0.time().$str1;
     }
 
     //生成二维码
