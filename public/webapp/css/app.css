@@ -18,7 +18,7 @@
     padding-left: 0px;
     padding-right: 0px;
     max-width: 100%;
-    background-color: #ebebeb;
+    background-color: #ffffff;
 }
 
 .nav {
@@ -51,12 +51,12 @@
     font-size: 10px;
 }
 .nav-item:active {
-    color: white;
+    color: #f9f9f9;
     background-color: #5abf66;
     text-decoration: none;
 }
 .router-link-exact-active {
-    color: white;
+    color: #f9f9f9;
     background-color: #5abf66;
 }
 a:hover {

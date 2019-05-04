@@ -342,6 +342,10 @@
         -o-background-size: cover;
         background-position: center 0;
         background-color: #ebebeb;
+        background: url("../../../../public/webapp/images/bg.png");
+        background-size: 100% 200px;
+        background-repeat: no-repeat;
+        background-position-y: 315px;
     }
     .audio-container{
         width: 100%;
