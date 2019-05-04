@@ -23,7 +23,7 @@
          </div>
       </div>
       <div v-if="is_detail">
-         <div class="back" @click="goPrevious"><i class="glyphicon glyphicon-menu-left"></i>返回</div>
+         <div class="back" @click="goPrevious"><i class="glyphicon glyphicon-menu-left"></i></div>
          <div class="detail">
             <div v-html="detail"></div>
          </div>
@@ -144,15 +144,20 @@
       margin-top: 2px;
    }
    .back {
-      width: 60px;
+      width: 35px;
       height: 35px;
       line-height: 35px;
       text-align: center;
-      margin-left: 80%;
-      border-radius: 3px;
+      margin-left: 89%;
+      margin-top: 61%;
+      border-radius: 17px;
       position: fixed;
-      border: 1px green dashed;
-      font-size: 16px;
+      /*border: 1px green solid;*/
+      font-size: 26px;
+      color: #259c1d;
+   }
+   .glyphicon {
+      line-height: 32px;
    }
    .detail {
       color: #000;
