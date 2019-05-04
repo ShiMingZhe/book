@@ -15,7 +15,7 @@
     font-size: 20px;
     float: right;
 }
-.animate-item-3 .animated {
+/*.animate-item-3 .animated {
     -webkit-animation-duration: 5s !important;
     animation-duration: 5s !important; // 动画执行时间
     -webkit-animation-fill-mode: both;
@@ -70,7 +70,7 @@
     width: 100%;
     margin-top: 30%;
     float: left;
-}
+}*/
 #content {
     display: none;
 }
@@ -94,4 +94,9 @@
 }
 #app footer {
     display: none;
+}
+.welcome img {
+    width: 100%;
+    height: auto;
+    margin-top: -110px;
 }

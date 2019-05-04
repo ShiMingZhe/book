@@ -14,8 +14,8 @@
 
 <div id="app">
     <div id="animate">
-        <div id="time">10s</div>
-        <div class="animate-item">
+        <div id="time">3s</div>
+        {{--<div class="animate-item">
             <div class="animate-item-3">
                 <div class="animated fadeIn">思&nbsp;&nbsp;考</div>
             </div>
@@ -27,6 +27,9 @@
                     <div>深&nbsp;&nbsp;&nbsp;度&nbsp;&nbsp;&nbsp;阅&nbsp;&nbsp;&nbsp;读<br>DEEP READING</div>
                 </div>
             </div>
+        </div>--}}
+        <div class="welcome">
+            <img src="{{@asset('webapp/images/welcome.png')}}">
         </div>
         <div id="skip" onclick="skip()">进入资料库</div>
     </div>
@@ -47,8 +50,8 @@
 <script>
     $(function () {
         setInterval(ChangeTime, 1000);
-        $(".animate-item").hide();
-        $(".animate-item").fadeIn(3000);
+        //$(".animate-item").hide();
+        //$(".animate-item").fadeIn(3000);
     });
 
     function ChangeTime() {
