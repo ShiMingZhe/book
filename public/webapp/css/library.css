@@ -96,7 +96,8 @@
     display: none;
 }
 .welcome img {
-    width: 100%;
+    width: 80%;
     height: auto;
-    margin-top: -110px;
+    margin-top: -76px;
+    margin-left: 10%;
 }
