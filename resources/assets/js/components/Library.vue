@@ -1,7 +1,7 @@
 <template>
    <div id="container" ref="poetry_content">
       <div v-if="is_list" class="content-item">
-         <div class="logo">资料库</div>
+         <div class="logo"></div>
          <div class="col-sm-12 search">
             <div class="input-group">
                <input type="text" class="form-control search-input" placeholder="请输入标题名或作者名" ref="search">
@@ -177,10 +177,16 @@
       font-size: 19px;
    }
    .logo {
+      width: 146px;
+      height: 60px;
       text-align: center;
       font-size: 32px;
       margin-top: 46px;
       margin-bottom: 27px;
+      background: url("../../../../public/webapp/images/logo.png");
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      margin-left: 33%;
    }
    .ad {
       width: 100%;
